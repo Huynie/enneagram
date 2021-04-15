@@ -1,14 +1,866 @@
 [
     {
-        "choice1": "werewrwe?",
+        "choice1": "Romantic",
         "answer1": "E",
-        "choice2": "werewrwe?",
+        "choice2": "Pragmatic",
         "answer2": "B"
     },
     {
-        "choice1": "aarararar?",
+        "choice1": "take on confrontation",
+        "answer1": "G",
+        "choice2": "avoid confrontation",
+        "answer2": "A"
+    },
+    {
+        "choice1": "diplomatic, charming, and ambitious",
+        "answer1": "C",
+        "choice2": "direct, formal, and idealistic",
+        "answer2": "D"
+    },
+    {
+        "choice1": "focused and intense",
+        "answer1": "H",
+        "choice2": "spontaneous and fun-loving",
+        "answer2": "I"
+    },
+    {
+        "choice1": "hospitable and welcoming",
+        "answer1": "F",
+        "choice2": "private",
+        "answer2": "E"
+    },
+    {
+        "choice1": "difficult to relax and stop worrying",
+        "answer1": "B",
+        "choice2": "difficult to get worked up",
+        "answer2": "A"
+    },
+    {
+        "choice1": "street-smart survivor",
+        "answer1": "G",
+        "choice2": "high-minded idealist",
+        "answer2": "D"
+    },
+    {
+        "choice1": "needed to show affection",
+        "answer1": "F",
+        "choice2": "maintain distance with people",
+        "answer2": "H"
+    },
+    {
+        "choice1": "with new experience, I ask if it would be useful to me",
+        "answer1": "C",
+        "choice2": "with new experience, I ask if it would be enjoyable to me",
+        "answer2": "I"
+    },
+    {
+        "choice1": "focus too much on myself",
         "answer1": "E",
-        "choice2": "ararara?",
+        "choice2": "focus too much on others",
+        "answer2": "A"
+    },
+    {
+        "choice1": "others depended on my insight and knowledge",
+        "answer1": "H",
+        "choice2": "others depended on my strength and decisiveness",
+        "answer2": "G"
+    },
+    {
+        "choice1": "too unsure of myself",
+        "answer1": "B",
+        "choice2": "too sure of myself",
+        "answer2": "D"
+    },
+    {
+        "choice1": "relationship-oriented than goal-oriented",
+        "answer1": "F",
+        "choice2": "goal-oriented than relationship-oriented",
+        "answer2": "C"
+    },
+    {
+        "choice1": "hard time speaking up for myself",
+        "answer1": "E",
+        "choice2": "I've said what others wished they had the nerve to say",
+        "answer2": "I"
+    },
+    {
+        "choice1": "difficult to stop considering alternatives and do something definite",
+        "answer1": "H",
+        "choice2": "difficult to take it easy and be more flexible",
+        "answer2": "D"
+    },
+    {
+        "choice1": "careful and hesitant",
+        "answer1": "B",
+        "choice2": "bold and domineering",
+        "answer2": "G"
+    },
+    {
+        "choice1": "reluctant to get too involved and got me into trouble",
+        "answer1": "A",
+        "choice2": "eagerness to have people depend on me got me into trouble",
+        "answer2": "F"
+    },
+    {
+        "choice1": "put my feelings aside to get the job done",
+        "answer1": "C",
+        "choice2": "needed to work through my feelings before I could act",
+        "answer2": "E"
+    },
+    {
+        "choice1": "methodical and cautious",
+        "answer1": "B",
+        "choice2": "adventerous and taken risks",
+        "answer2": "I"
+    },
+    {
+        "choice1": "supportive person who seeks intimacy",
+        "answer1": "F",
+        "choice2": "serious and reserved who likes discussing issues",
+        "answer2": "D"
+    },
+    {
+        "choice1": "felt the need to be a 'pillar of strength'",
+        "answer1": "G",
+        "choice2": "felt the need to perform perfectly",
+        "answer2": "C"
+    },
+    {
+        "choice1": "interested in asking tough questions and maintaining my independence",
+        "answer1": "H",
+        "choice2": "interested in maintaining my stability and peace of mind",
+        "answer2": "A"
+    },
+    {
+        "choice1": "cynical and skeptical",
+        "answer1": "B",
+        "choice2": "mushy and sentimental",
+        "answer2": "F"
+    },
+    {
+        "choice1": "worried that I'm missing out on something better",
+        "answer1": "I",
+        "choice2": "worried that letting my guard down leads to being taken advantage of",
+        "answer2": "G"
+    },
+    {
+        "choice1": "my 'stand-offish' annoyed people",
+        "answer1": "E",
+        "choice2": "telling people what to do has annoyed people",
+        "answer2": "D"
+    },
+    {
+        "choice1": "anxious from too much excitement and stimulation",
+        "answer1": "A",
+        "choice2": "anxious from lack of excitement and stimulation",
+        "answer2": "I"
+    },
+    {
+        "choice1": "depended on my friends and vice versa",
+        "answer1": "B",
+        "choice2": "depended on myself and not others",
+        "answer2": "C"
+    },
+    {
+        "choice1": "detached and preoccupied",
+        "answer1": "H",
+        "choice2": "moody and self-absorbed",
+        "answer2": "E"
+    },
+    {
+        "choice1": "like to challenge people",
+        "answer1": "G",
+        "choice2": "like to comfort people",
+        "answer2": "F"
+    },
+    {
+        "choice1": "outgoing and socialble",
+        "answer1": "I",
+        "choice2": "earnest and self-disciplined",
+        "answer2": "D"
+    },
+    {
+        "choice1": "uncomfortable when I stand out too much",
+        "answer1": "A",
+        "choice2": "I want to stand out from others",
+        "answer2": "C"
+    },
+    {
+        "choice1": "pursuing personal interests has been more important",
+        "answer1": "H",
+        "choice2": "having stability and security has been more important",
         "answer2": "B"
+    },
+    {
+        "choice1": "I tend to withdraw during conflicts with others",
+        "answer1": "E",
+        "choice2": "I rarely back down during conflicts with others",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I've let others push me around",
+        "answer1": "A",
+        "choice2": "I've been uncompromising and demanding",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I've been appreciated for my spirit and resourcefulness",
+        "answer1": "I",
+        "choice2": "I've been appreciated for my deep caring and personal warmth",
+        "answer2": "F"
+    },
+    {
+        "choice1": "I've wanted to make favorable impression on others",
+        "answer1": "C",
+        "choice2": "cared little about making favorable impression on others",
+        "answer2": "H"
+    },
+    {
+        "choice1": "depend on my perserverance and common sense",
+        "answer1": "B",
+        "choice2": "depend on my imagination and moments of inspiration",
+        "answer2": "E"
+    },
+    {
+        "choice1": "I'm easy-going and agreeable",
+        "answer1": "A",
+        "choice2": "I'm assertive and disagreeable",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I've worked hard to be accepted and well-liked",
+        "answer1": "C",
+        "choice2": "I don't care about being accepted and well-liked",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I've become more withdrawn from pressure from others",
+        "answer1": "H",
+        "choice2": "I've become more assertive from pressure from others",
+        "answer2": "I"
+    },
+    {
+        "choice1": "people have taken interest in me because I'm outgoing, engaging, and interested in them",
+        "answer1": "F",
+        "choice2": "people have taken interest in me because I'm quiet, unusual, and deep",
+        "answer2": "E"
+    },
+    {
+        "choice1": "duty and responsibility are important to me",
+        "answer1": "B",
+        "choice2": "harmony and acceptance is important to me",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I try to motivate others by making big plans and promises",
+        "answer1": "G",
+        "choice2": "I try to motivate people with consequences of not following my advice",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I rarely demostrate my emotion",
+        "answer1": "H",
+        "choice2": "I often demostrate my emotion",
+        "answer2": "F"
+    },
+    {
+        "choice1": "I have trouble dealing with details",
+        "answer1": "I",
+        "choice2": "I excell at dealing with details",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I emphasize how different I am from others",
+        "answer1": "E",
+        "choice2": "I emphasize how much I have in common with others",
+        "answer2": "B"
+    },
+    {
+        "choice1": "I stay on the sideline when things get heated",
+        "answer1": "H",
+        "choice2": "I get right in the middle of things when it gets heated",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I stood by my friends even when they have been wrong",
+        "answer1": "B",
+        "choice2": "I uphold the standard for what is right, even when it comes to my friends",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I've been a well-meaning supporter",
+        "answer1": "F",
+        "choice2": "I've been a highly motivated go-getter",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I tend to brood when I am troubled",
+        "answer1": "E",
+        "choice2": "I tend to find distractions when I am troubled",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I have a strong sense of how things should be",
+        "answer1": "D",
+        "choice2": "I have serious doubts about how things seems to be",
+        "answer2": "H"
+    },
+    {
+        "choice1": "My pessimism and complaints have caused friction with others",
+        "answer1": "B",
+        "choice2": "My bossiness and controlling behavior have caused friction with others",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I tend to act on my feelings and let things unfold as they do",
+        "answer1": "F",
+        "choice2": "I tend to not act on my feelings unless they create more problems",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I feel natural being the center of attention",
+        "answer1": "C",
+        "choice2": "I feel strange being the center of attention",
+        "answer2": "E"
+    },
+    {
+        "choice1": "I prepare for unforseen problems",
+        "answer1": "B",
+        "choice2": "I improvise as problems come up",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I get upset when others don't shown enough appreciation for what I've done for them",
+        "answer1": "F",
+        "choice2": "I get upset when others don't listen to what I told them",
+        "answer2": "D"
+    },
+    {
+        "choice1": "It's important to be independent and self-reliant",
+        "answer1": "G",
+        "choice2": "It's important to be admired and valued",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I tend to press my arguments forcefully during debates with friends",
+        "answer1": "H",
+        "choice2": "I tend to let things go to avoid hard feelings during debates with friends",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I'm often possessive of loved ones",
+        "answer1": "F",
+        "choice2": "I often test loved ones to see if they're really there for me",
+        "answer2": "B"
+    },
+    {
+        "choice1": "Organizing and manifesting has been one of my strengths",
+        "answer1": "G",
+        "choice2": "Getting people excited about new ideas I come up with has been one of my strengths",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I'm usually driven and really hard on myself",
+        "answer1": "D",
+        "choice2": "I tend to be emotional and undisciplined",
+        "answer2": "E"
+    },
+    {
+        "choice1": "I like a fast-paced, intense, and exciting life",
+        "answer1": "I",
+        "choice2": "I like a regular, stable, and peaceful life",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I tend to doubt myself even though I've had successes",
+        "answer1": "B",
+        "choice2": "I have confidence in my abilities even though I had setbacks",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I tend hold on to my feelings and dwell on them for a while",
+        "answer1": "E",
+        "choice2": "I tend to not pay much attention to my feelings",
+        "answer2": "H"
+    },
+    {
+        "choice1": "I've given many people attention and aid",
+        "answer1": "F",
+        "choice2": "I've given many people direciton and motivation",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I'm a bit serious and strict on myself",
+        "answer1": "F",
+        "choice2": "I'm a bit lenient and tolerant with myself",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I am driven to excel",
+        "answer1": "C",
+        "choice2": "I'm happy to go at my own pace",
+        "answer2": "A"
+    },
+    {
+        "choice1": "clarity and objectivity",
+        "answer1": "H",
+        "choice2": "reliability and commitment",
+        "answer2": "B"
+    },
+    {
+        "choice1": "understanding my feelings is important",
+        "answer1": "E",
+        "choice2": "getting things done is important",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I am a bright and casual person",
+        "answer1": "A",
+        "choice2": "I am a serious and dignified person",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I have a quick mind and a lot of energy",
+        "answer1": "I",
+        "choice2": "I have a caring heart and deep dedication",
+        "answer2": "F"
+    },
+    {
+        "choice1": "I do things that yield high reward and recognition",
+        "answer1": "C",
+        "choice2": "I do things that I'm really interested in",
+        "answer2": "H"
+    },
+    {
+        "choice1": "I rarely care about social obligations",
+        "answer1": "E",
+        "choice2": "I'm usually serious about social obligations",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I usually take the lead in most situations",
+        "answer1": "G",
+        "choice2": "I usually let someone take the lead",
+        "answer2": "A"
+    },
+    {
+        "choice1": "My lifestyle and values have changed over the years",
+        "answer1": "C",
+        "choice2": "My lifestyle and values haven't changed over the years",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I don't really have much self-discipline",
+        "answer1": "I",
+        "choice2": "I usually don't really connect much with people",
+        "answer2": "H"
+    },
+    {
+        "choice1": "I usually don't show affection towards others",
+        "answer1": "E",
+        "choice2": "I usually give my affection out freely towards others ",
+        "answer2": "F"
+    },
+    {
+        "choice1": "I think of worst-case senarios",
+        "answer1": "B",
+        "choice2": "I think everything will work out for the best",
+        "answer2": "A"
+    },
+    {
+        "choice1": "People trust me because I'm confident and protective",
+        "answer1": "G",
+        "choice2": "People trust me because I'm fair and do what's right",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I'm usually busy with my own duties which causes isolation from others",
+        "answer1": "H",
+        "choice2": "I'm usually busy with others that I forgot about my own duties",
+        "answer2": "F"
+    },
+    {
+        "choice1": "I'm usually self-contained when meeting others",
+        "answer1": "C",
+        "choice2": "I'm usually chatty when meeting others",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I usually have pessmistic tendencies",
+        "answer1": "E",
+        "choice2": "I usually have optimistic tendencies",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I'm usually in my own world",
+        "answer1": "H",
+        "choice2": "I usually involved in the real world",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I'm often bogged down by nervousness, insecurity, and doubt",
+        "answer1": "B",
+        "choice2": "I'm often bogged down by anger, perfectionism, and impatience",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I often get too personal and intimate",
+        "answer1": "F",
+        "choice2": "I've often been too distant and detached",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I've lost out from not taking up opportunities",
+        "answer1": "E",
+        "choice2": "I've lost out from taking up too many possibilities",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I tend to take a while to take action",
+        "answer1": "H",
+        "choice2": "I tend to be quick to take action",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I'm usually indecisive",
+        "answer1": "B",
+        "choice2": "I'm usually decisive",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I tend to come on too strong with others",
+        "answer1": "F",
+        "choice2": "I tend to be too timid with others",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I'm usually even-tempered",
+        "answer1": "C",
+        "choice2": "I tend to have strong changes of mood",
+        "answer2": "E"
+    },
+    {
+        "choice1": "I seek advice from others when I'm stuck on something",
+        "answer1": "B",
+        "choice2": "I try different approaches when I'm stuck on something",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I've had concerns that I would be left out of others' activities",
+        "answer1": "D",
+        "choice2": "I've had concerns that others' activities would distract me from what I had to do",
+        "answer2": "F"
+    },
+    {
+        "choice1": "When I'm angry, I've told people off",
+        "answer1": "G",
+        "choice2": "When I'm angry, I distance myself",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I have trouble falling asleep",
+        "answer1": "H",
+        "choice2": "I fall alseep easily",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I often try to get closer to others",
+        "answer1": "F",
+        "choice2": "I often wonder what others want from me",
+        "answer2": "B"
+    },
+    {
+        "choice1": "I'm usually deliberate and to-the-point",
+        "answer1": "G",
+        "choice2": "I usually talk fast and witty",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I don't usually speak up when I see others making a mistake",
+        "answer1": "E",
+        "choice2": "I usually help others see the mistake they're making",
+        "answer2": "D"
+    },
+    {
+        "choice1": "Most of my life I've had many volatile feelings",
+        "answer1": "I",
+        "choice2": "Most of my life I've had many steady feelings",
+        "answer2": "A"
+    },
+    {
+        "choice1": "When I dislike somoene, I try hard to stay cordial",
+        "answer1": "C",
+        "choice2": "When I dislike someone, I let them know it",
+        "answer2": "B"
+    },
+    {
+        "choice1": "My difficulty with people came from me taking things personally",
+        "answer1": "E",
+        "choice2": "My difficulty with people came from me not caring much about things",
+        "answer2": "H"
+    },
+    {
+        "choice1": "I usually jump in a help others",
+        "answer1": "F",
+        "choice2": "I usually show others how to help themselves",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I like letting go and pushing limits",
+        "answer1": "I",
+        "choice2": "I don't like losing control of myself",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I'm concerned with doing better than others",
+        "answer1": "C",
+        "choice2": "I'm concerned with making things okay for others",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I usually have speculative, imaginative, and curious thoughts",
+        "answer1": "H",
+        "choice2": "I've usually been practical and tried to keep things going",
+        "answer2": "B"
+    },
+    {
+        "choice1": "Taking charge of a situation has been one of my main traits",
+        "answer1": "G",
+        "choice2": "Describing internal states has been one of my main traits",
+        "answer2": "E"
+    },
+    {
+        "choice1": "I get things done correctly even if it makes others uncomfortable",
+        "answer1": "D",
+        "choice2": "I don't like feeling pressured so I wouldn't pressure others",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I take pride in how important I am in other's lives",
+        "answer1": "F",
+        "choice2": "I take pride in my openness to new experiences",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I often come across as presentable and admirable",
+        "answer1": "C",
+        "choice2": "I often come across as unusual and odd",
+        "answer2": "H"
+    },
+    {
+        "choice1": "I've mostly done what I had to do",
+        "answer1": "B",
+        "choice2": "I've mostly done what I want to do",
+        "answer2": "E"
+    },
+    {
+        "choice1": "I usually enjoyed high-pressure and difficult situations",
+        "answer1": "A",
+        "choice2": "I dislike being in high-pressure and difficult situations",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I'm usually pretty flexible",
+        "answer1": "C",
+        "choice2": "I usually take a stand and stay firm",
+        "answer2": "D"
+    },
+    {
+        "choice1": "My style has leaned toward sterness and spareness",
+        "answer1": "H",
+        "choice2": "My style has leaned toward excess and overdoing things",
+        "answer2": "I"
+    },
+    {
+        "choice1": "My strong desire to help others causes my own health and well-being to suffer",
+        "answer1": "F",
+        "choice2": "My strong desire to tend to my personal needs causes my relationship with others to suffer",
+        "answer2": "E"
+    },
+    {
+        "choice1": "I've been too open and navie",
+        "answer1": "A",
+        "choice2": "I've been too cautious and guarded",
+        "answer2": "B"
+    },
+    {
+        "choice1": "People are off putted by my agressiveness sometime",
+        "answer1": "G",
+        "choice2": "People are off putted by my uptightness sometimes",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I take priority in tending to needs of others",
+        "answer1": "F",
+        "choice2": "I take priority in finding alternative ways of doing things",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I'm persistent in pursuing my goals",
+        "answer1": "C",
+        "choice2": "I like exploring various courses of action to see where they lead",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I'm drawn to situation that bring up intense emotions",
+        "answer1": "E",
+        "choice2": "I'm drawn to situation that make me calm and at ease",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I care more about pursuing my interest than practical results",
+        "answer1": "H",
+        "choice2": "I've been practical and expect solid results",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I feel the need to belong",
+        "answer1": "B",
+        "choice2": "I feel the need to be balanced",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I've pushed for closeness too much in friendships in the past",
+        "answer1": "F",
+        "choice2": "I've kept too much distance in friendships in the past",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I tend to dwell in the past",
+        "answer1": "E",
+        "choice2": "I tend to dwell in the future",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I see others as demanding and intrusive",
+        "answer1": "H",
+        "choice2": "I see others as disorganized and irresponsible",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I don't usually have much confidence in myself",
+        "answer1": "B",
+        "choice2": "I usually only have confidence in myself",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I've probably been too passive and uninvolved",
+        "answer1": "A",
+        "choice2": "I've probably been too controlling and manipulative",
+        "answer2": "F"
+    },
+    {
+        "choice1": "I've frequently been stopped by self-doubt",
+        "answer1": "E",
+        "choice2": "I rarely let self-doubt stand in my way",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I usually choose something new over familiarity",
+        "answer1": "I",
+        "choice2": "I usually choose something familiar rather than new",
+        "answer2": "B"
+    },
+    {
+        "choice1": "I give physical contact to let others know how I feel about them",
+        "answer1": "F",
+        "choice2": "I've felt that love doesn't require physical contact",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I'm often harsh and direct when confronting others",
+        "answer1": "G",
+        "choice2": "I beat around the bush too much when confronting others",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I've been drawn too disturbing and frightening subjects",
+        "answer1": "H",
+        "choice2": "I'd rather not spend time thinking about disturbing and frightening things",
+        "answer2": "A"
+    },
+    {
+        "choice1": "Being too intrusive and interfering have gotten me in trouble with others before",
+        "answer1": "F",
+        "choice2": "Being too uncommunicative and evasive have gotten me in trouble with others before",
+        "answer2": "B"
+    },
+    {
+        "choice1": "I've worried about having enough resources to fulfill my responsibilities",
+        "answer1": "G",
+        "choice2": "I've worried if my self-discipline and focus is enough to fulfill my responsibilities",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I'm an individualistic and intuitive person",
+        "answer1": "E",
+        "choice2": "I'm an organized and responsible person",
+        "answer2": "D"
+    },
+    {
+        "choice1": "overcoming inactiveness has been one of my main challenges",
+        "answer1": "A",
+        "choice2": "Slowing down has been one of my main challenges",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I become dismissive and arrogant when I feel insecure",
+        "answer1": "C",
+        "choice2": "I become defensive and argumentative when I feel insecure",
+        "answer2": "B"
+    },
+    {
+        "choice1": "I'm usually open-minded to try new approaches",
+        "answer1": "H",
+        "choice2": "I'm usually willing to share my feelings with others",
+        "answer2": "E"
+    },
+    {
+        "choice1": "I tend to appear to others that I'm tougher than I actually am",
+        "answer1": "G",
+        "choice2": "I tend to appear caring to others more than I actually do",
+        "answer2": "F"
+    },
+    {
+        "choice1": "I usually trust my conscience and reason",
+        "answer1": "D",
+        "choice2": "I usually trust my feelings and impulses",
+        "answer2": "I"
+    },
+    {
+        "choice1": "Serious adversity made me feel hardened and resolute",
+        "answer1": "C",
+        "choice2": "Serious adversity made me feel discouraged and resigned",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I usually make sure I have some sort of safety net to fall on",
+        "answer1": "B",
+        "choice2": "I usually live on the edge and not depend on others as much",
+        "answer2": "H"
+    },
+    {
+        "choice1": "I'm usually everyone's 'pillar of strength' and had no time to deal with my own feelings and fears",
+        "answer1": "G",
+        "choice2": "It's usually hard for me to deal with my feelings and fears so it's hard to be strong for others",
+        "answer2": "E"
+    },
+    {
+        "choice1": "People focus too much on the negatives, there's tons of positives in life",
+        "answer1": "A",
+        "choice2": "I question why people are so happy when so much in life is messed up",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I try to not come across as a selfish person",
+        "answer1": "F",
+        "choice2": "I try not to come across as a boring person",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I avoid intimacy if I feel overwhelmed by other's needs and demands",
+        "answer1": "H",
+        "choice2": "I avoid intimacy if I feel like I won't live up to people's expectations",
+        "answer2": "C"
     }
 ]
