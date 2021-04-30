@@ -28,7 +28,7 @@ export default function Main() {
       D: 0,
       E: 0,
       F: 0,
-      G: 10,
+      G: 0,
       H: 0,
       I: 0,
     }
@@ -107,31 +107,30 @@ export default function Main() {
               <CardTitle tag="h5">
                 Which one of these best describes you?
               </CardTitle>
-              <CardText>
-                {questions[counter].choice1}
-              </CardText>
-              <CardText>
-                or
-              </CardText>
-              <CardText>
-                {questions[counter].choice2}
-              </CardText>
-              <Row className="mb-4">
+              <Row >
                 <Col sm="6" md={{ size: 6, offset: 3 }}>
                     <Button color="primary" 
                       onClick={() => selectAnswer(questions[counter].answer1, 1)}
                       active={selected === 1}
-                    >1st
-                    </Button>
-                    {' '}
-                    <Button color="primary" 
-                      onClick={() => selectAnswer(questions[counter].answer2, 2)}
-                      active={selected === 2}
-                    >2nd
+                    >{questions[counter].choice1}
                     </Button>
                 </Col>
               </Row>
-              <Row></Row>
+              <Row>
+                <Col sm="6" md={{ size: 6, offset: 3 }}>
+                  or
+                </Col>
+              </Row>
+              <Row >
+                <Col sm="6" md={{ size: 6, offset: 3 }}>
+                    <Button color="primary" 
+                      onClick={() => selectAnswer(questions[counter].answer2, 2)}
+                      active={selected === 2}
+                    >{questions[counter].choice2}
+                    </Button>
+                </Col>
+              </Row>
+              <Row className="mb-4"></Row>
               <Row>
                 <Col sm="12" md={{ size: 6, offset: 3 }}>
                   {/* <Button onClick={() => prev()}>Prev</Button> */}
@@ -152,6 +151,13 @@ export default function Main() {
                     >get Type
                   </Button>
                   }
+                  <Button 
+                    disabled={selected === !1 || !2}
+                    color="success"
+                    block
+                    onClick={() => getType()}
+                    >get Type
+                  </Button>
                 </Col>
               </Row>
             </Card>
