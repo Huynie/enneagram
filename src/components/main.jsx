@@ -151,13 +151,13 @@ export default function Main() {
                     >get Type
                   </Button>
                   }
-                  <Button 
+                  {/* <Button 
                     disabled={selected === !1 || !2}
                     color="success"
                     block
                     onClick={() => getType()}
                     >get Type
-                  </Button>
+                  </Button> */}
                 </Col>
               </Row>
             </Card>
