@@ -1,0 +1,167 @@
+<template>
+    <div class="mx-auto text-center">
+        <h1 class="font-bold text-2xl">
+            Question {{counter + 1}}/{{totalQuestions.length}}
+        </h1>
+        <h2 class="font-medium my-2">
+            Which one of these best describe you?
+        </h2>
+        <div class="my-8 flex flex-row items-center justify-center h-36">
+            <Button
+                tailwindClass="btn-blue"
+                :text="questions1"
+                @click="choice1"
+            />
+            or
+            <Button
+                tailwindClass="btn-blue"
+                :text="questions2"
+                @click="choice2"
+            />
+        </div>
+        <div>
+            <Button
+                v-show="showNext"
+                tailwindClass="btn-next"
+                text="next"
+                @click="next"
+                :isDisabled="disabledBtn"
+            />
+            <Button
+                v-show="showGetType"
+                tailwindClass="btn-next"
+                text="get results"
+                @click="getType"
+                :isDisabled="disabledBtn"
+            />
+        </div>
+        <Results
+            v-show="showResult"
+            :results="results"
+            :finalType="finalType"
+        />
+    </div>
+</template>
+
+<script>
+import Button from './Button'
+import Results from './Results'
+
+export default {
+    name: 'Questions',
+    components: {
+        Button,
+        Results
+    },
+    data() {
+        return {
+            totalQuestions: [],
+            questions1: '',
+            questions2: '',
+            answer1: '',
+            answer2: '',
+            choice: '',
+            counter: 0,
+            tally: {
+                A: 0,
+                B: 0,
+                C: 0,
+                D: 0,
+                E: 0,
+                F: 0,
+                G: 0,
+                H: 0,
+                I: 0,
+            },
+            results: [],
+            showResult: false,
+            showGetType: Boolean,
+            showNext: true,
+            finalType: null,
+            disabledBtn: true
+        }
+    },
+    methods:{
+        choice1() {
+            this.choice = this.answer1
+            this.disabledBtn = false
+        },
+        choice2() {
+            this.choice = this.answer2
+            this.disabledBtn = false
+        },
+        next() {
+            if(this.choice !== '') {
+                this.tally[this.choice] ++
+                this.counter ++
+                this.questions1 = this.totalQuestions[this.counter].choice1
+                this.questions2 = this.totalQuestions[this.counter].choice2
+                this.showNext = this.counter === 143 ? false : true
+                this.showGetType = this.counter === 143 ? true : false
+            }else{
+                confirm('Please choose an answer.')
+                return
+            }
+
+            this.choice = '';
+            this.disabledBtn = true
+        },
+        getType() {
+            if(this.choice !== '') {
+                const result = [
+                    this.tally.D,
+                    this.tally.F,
+                    this.tally.C,
+                    this.tally.E,
+                    this.tally.H,
+                    this.tally.B,
+                    this.tally.I,
+                    this.tally.G,
+                    this.tally.A,
+                ]
+                this.results = result
+                this.finalType = result.indexOf(Math.max(...result))
+                this.showResult = true
+            }else{
+                confirm('Please choose an answer.')
+                return
+            }
+            this.choice = '';
+            this.disabledBtn = true
+        }
+    },
+    created() {
+        this.totalQuestions = require('../../questions.json')
+        this.questions1 = this.totalQuestions[this.counter].choice1
+        this.questions2 = this.totalQuestions[this.counter].choice2
+        this.answer1 = this.totalQuestions[this.counter].answer1
+        this.answer2 = this.totalQuestions[this.counter].answer2
+        this.finalType = 0
+        this.showGetType = false
+    }
+
+}
+</script>
+
+<style>
+.btn-blue{
+    @apply
+        bg-blue-500
+        mx-4
+        w-56
+        min-w-min
+        focus:bg-blue-700
+        focus:outline-none
+    ;
+}
+.btn-next{
+    @apply 
+        bg-green-500
+        disabled:opacity-30
+        my-4
+        uppercase
+        font-bold
+        w-32
+    ;
+}
+</style>
