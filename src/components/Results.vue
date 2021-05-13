@@ -89,7 +89,7 @@ export default {
 }
 .score{
     @apply
-        px-3
+        px-2
         py-2
         bg-yellow-50
         border

@@ -83,10 +83,12 @@ export default {
     },
     methods:{
         choice1() {
+            this.answer1 = this.totalQuestions[this.counter].answer1
             this.choice = this.answer1
             this.disabledBtn = false
         },
         choice2() {
+            this.answer2 = this.totalQuestions[this.counter].answer2
             this.choice = this.answer2
             this.disabledBtn = false
         },
@@ -108,6 +110,7 @@ export default {
         },
         getType() {
             if(this.choice !== '') {
+                this.tally[this.choice] ++
                 const result = [
                     this.tally.D,
                     this.tally.F,
