@@ -63,7 +63,7 @@ export default {
 .resultsContainer{
     @apply
         w-10/12
-        max-w-screen-sm
+        max-w-80
         mx-auto
         my-8
     ;
@@ -78,7 +78,6 @@ export default {
 .type{
     @apply
         w-full
-        max-w-screen-sm
         mx-auto
         my-12
     ;
