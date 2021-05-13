@@ -28,7 +28,7 @@
                 :isDisabled="disabledBtn"
             />
             <Button
-                v-show="true"
+                v-show="showGetType"
                 tailwindClass="btn-next"
                 text="get results"
                 @click="getType"
