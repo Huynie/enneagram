@@ -95,6 +95,7 @@ export default {
         border
         border-yellow-200
         text-yellow-600
+        text-sm
     ;
 }
 </style>
