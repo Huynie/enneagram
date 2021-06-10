@@ -153,7 +153,10 @@ export default {
         mx-4
         w-56
         min-w-min
+        outline-none
         focus:bg-blue-700
+        focus:ring-blue-300
+        focus:ring-8
         focus:outline-none
     ;
 }
