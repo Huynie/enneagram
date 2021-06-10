@@ -4,7 +4,7 @@
             Question {{counter + 1}}/{{totalQuestions.length}}
         </h1>
         <h2 class="font-medium my-2">
-            Select the statement that best describes you?
+            Select the statement that best describes you:
         </h2>
         <div class="my-8 flex flex-col items-center justify-center h-full ">
             <Button
