@@ -18,7 +18,7 @@ export default {
     },
     data() {
         return{
-            btnBaseStyle: 'rounded-md py-3 px-4 tracking-wide text-white focus:outline-none'
+            btnBaseStyle: 'rounded-md py-3 px-4 tracking-wide text-white focus:outline-none my-3'
         }
     },
     methods: {

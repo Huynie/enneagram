@@ -6,7 +6,7 @@
         <h2 class="font-medium my-2">
             Which one of these best describe you?
         </h2>
-        <div class="my-8 flex flex-row items-center justify-center h-36">
+        <div class="my-8 flex flex-col items-center justify-center h-36 ">
             <Button
                 tailwindClass="btn-blue"
                 :text="questions1"
