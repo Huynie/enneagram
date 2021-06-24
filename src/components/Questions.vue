@@ -91,7 +91,7 @@ export default {
             this.disabledBtn = false
         },
         choice2() {
-            document.getElementById("choice1").focus();
+            document.getElementById("choice2").focus();
             this.answer2 = this.totalQuestions[this.counter].answer2
             this.choice = this.answer2
             this.disabledBtn = false
