@@ -18,6 +18,7 @@
                 tailwindClass="btn-blue"
                 :text="questions2"
                 @click="choice2"
+                id="choice2"
             />
         </div>
         <div>
@@ -90,6 +91,7 @@ export default {
             this.disabledBtn = false
         },
         choice2() {
+            document.getElementById("choice1").focus();
             this.answer2 = this.totalQuestions[this.counter].answer2
             this.choice = this.answer2
             this.disabledBtn = false

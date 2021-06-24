@@ -3,7 +3,6 @@
         @click="onClick()"
         :class="[tailwindClass, btnBaseStyle] "
         :disabled="isDisabled"
-        ontouchstart=""
     >
         {{ text }}
     </button>
