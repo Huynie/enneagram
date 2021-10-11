@@ -1,12 +1,12 @@
 <template>
     <div class="mx-auto text-center">
         <h1 class="font-bold text-2xl">
-            Question {{counter + 1}}/{{totalQuestions.length}}
+            Question {{JSON.parse(counter) + 1}}/{{totalQuestions.length}}
         </h1>
         <h2 class="font-medium my-2">
             Select the statement that best describes you:
         </h2>
-        <div class="my-8 flex flex-col items-center justify-center h-full ">
+        <div class="my-8 flex flex-col items-center justify-center h-full transition-opacity ease-in-out opacity-100">
             <Button
                 tailwindClass="btn-blue"
                 :text="questions1"
@@ -29,6 +29,12 @@
                 @click="next"
                 :isDisabled="disabledBtn"
             />
+            <!-- <Button
+                v-show="showSave"
+                tailwindClass="btn-save"
+                text="save"
+                @click="saveProgress"
+            /> -->
             <Button
                 v-show="showGetType"
                 tailwindClass="btn-next"
@@ -79,6 +85,7 @@ export default {
             showResult: false,
             showGetType: Boolean,
             showNext: true,
+            showSave: true,
             finalType: null,
             disabledBtn: true
         }
@@ -100,10 +107,12 @@ export default {
             if(this.choice !== '') {
                 this.tally[this.choice] ++
                 this.counter ++
+                this.questionCounter ++
                 this.questions1 = this.totalQuestions[this.counter].choice1
                 this.questions2 = this.totalQuestions[this.counter].choice2
                 this.showNext = this.counter === 143 ? false : true
                 this.showGetType = this.counter === 143 ? true : false
+                localStorage.progress = this.counter;
             }else{
                 confirm('Please choose an answer.')
                 return
@@ -138,6 +147,8 @@ export default {
         }
     },
     created() {
+        localStorage.progress ??= localStorage.progress = 0 ; // create progress in local storage with value of 0
+        this.counter = localStorage.progress; // LS progress value assigned to counter
         this.totalQuestions = require('../../questions.json')
         this.questions1 = this.totalQuestions[this.counter].choice1
         this.questions2 = this.totalQuestions[this.counter].choice2
@@ -146,7 +157,6 @@ export default {
         this.finalType = 0
         this.showGetType = false
     }
-
 }
 </script>
 
@@ -167,6 +177,16 @@ export default {
 .btn-next{
     @apply 
         bg-green-500
+        disabled:opacity-30
+        my-4
+        uppercase
+        font-bold
+        w-32
+    ;
+}
+.btn-save{
+    @apply 
+        bg-yellow-500
         disabled:opacity-30
         my-4
         uppercase

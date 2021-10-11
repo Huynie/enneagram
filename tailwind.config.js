@@ -18,7 +18,11 @@ module.exports = {
      },
      variants: {
       extend: {
-        backgroundColor: ['active, focus'],
+        backgroundColor: ['active', 'focus', 'focus-visible'],
+        ringWidth: ['focus-visible', 'focus'],
+        ringColor: ['focus-visible', 'focus'],
+        ringOffsetWidth: ['focus-visible', 'focus'],
+        ringOffsetColor: ['focus-visible', 'focus'],
         opacity: ['disabled'],
       }
      },

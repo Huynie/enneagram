@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-800 mx-auto py-10" ontouchstart="">
+  <div class="max-w-800 mx-auto py-10">
     <Questions />
   </div>
 </template>
