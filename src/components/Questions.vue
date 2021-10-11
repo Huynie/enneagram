@@ -29,12 +29,6 @@
                 @click="next"
                 :isDisabled="disabledBtn"
             />
-            <!-- <Button
-                v-show="showSave"
-                tailwindClass="btn-save"
-                text="save"
-                @click="saveProgress"
-            /> -->
             <Button
                 v-show="showGetType"
                 tailwindClass="btn-next"
@@ -106,13 +100,13 @@ export default {
         next() {
             if(this.choice !== '') {
                 this.tally[this.choice] ++
+                localStorage.tally = JSON.stringify(this.tally);
                 this.counter ++
-                this.questionCounter ++
+                localStorage.progress = this.counter;
                 this.questions1 = this.totalQuestions[this.counter].choice1
                 this.questions2 = this.totalQuestions[this.counter].choice2
                 this.showNext = this.counter === 143 ? false : true
                 this.showGetType = this.counter === 143 ? true : false
-                localStorage.progress = this.counter;
             }else{
                 confirm('Please choose an answer.')
                 return
@@ -138,6 +132,8 @@ export default {
                 this.results = result
                 this.finalType = result.indexOf(Math.max(...result))
                 this.showResult = true
+                localStorage.removeItem("progress");
+                localStorage.removeItem("tally");
             }else{
                 confirm('Please choose an answer.')
                 return
@@ -149,6 +145,8 @@ export default {
     created() {
         localStorage.progress ??= localStorage.progress = 0 ; // create progress in local storage with value of 0
         this.counter = localStorage.progress; // LS progress value assigned to counter
+        localStorage.tally ??= localStorage.tally = JSON.stringify(this.tally); // create empty tally in local storage
+        this.tally = JSON.parse(localStorage.tally); // LS tally value assigned to tally
         this.totalQuestions = require('../../questions.json')
         this.questions1 = this.totalQuestions[this.counter].choice1
         this.questions2 = this.totalQuestions[this.counter].choice2
