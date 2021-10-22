@@ -107,20 +107,6 @@ export default {
                 setDoc( userDatabase, userData)
                 this.$router.go({ path: this.$router.path });
                 return;
-                    // .then((userCredential) => {
-                    //     // Signed in 
-                    //     const user = userCredential.user;
-                    //     // console.log(user, userCredential)
-                    //     alert(`account created for ${user.email}`)
-                    //     // ...
-                    // })
-                    // .catch((error) => {
-                    //     const errorCode = error.code;
-                    //     const errorMessage = error.message;
-                    //     console.log(errorCode);
-                    //     alert(errorMessage);
-                    //     // ..
-                    // });
             }
             this.error = true;
             this.errorMsg = "please fill out all the fields";

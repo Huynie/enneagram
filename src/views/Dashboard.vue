@@ -10,19 +10,29 @@
         <h3>{{this.highs}}</h3>
         <h3>{{this.lows}}</h3>
       </div>
+      <div class="w-max mx-auto" v-for="result in results">
+          <!-- <Results
+            v-show="true"
+            :results="results"
+            :finalType="core"
+          /> -->
+          <h2>{{result["date/time"]}}</h2>
+          <h3>{{result.score}}</h3>
+      </div>
   </div>
 </template>
 
 <script>
 import Button from '../components/Button';
+import Results from '../components/Results';
 import db , { auth } from '../firebase/firebaseInit';
 import { getDoc, doc, query, onSnapshot } from 'firebase/firestore/lite';
-import { signOut } from 'firebase/auth'
 
 export default {
     name: 'Dashboard',
     components: {
-        Button
+        Button,
+        Results
     },
     data (){
         return {
@@ -32,10 +42,19 @@ export default {
             core: "",
             highs: "",
             lows: "",
-            results: null,
+            results: [],
+            score: null,
+            date: null,
         }
     },
-    async mounted() {
+    methods: {
+        showTimeAndScore () {
+            this.results.map((res) => {
+              console.log(res[date/time], res.score)
+              return (res[date/time], res.score)
+        })}
+    },
+    async created() {
         if(auth.currentUser) {
             const userDB = doc(db, `users/${auth.currentUser.uid}`);
             const snapshot = await getDoc(userDB);
@@ -48,7 +67,14 @@ export default {
                 this.highs = snapData.highs;
                 this.lows = snapData.lows;
                 this.results = snapData.results;
-            } 
+                // snapData.results.forEach((result) => {
+                    // this.score = [result.score];
+                    // this.date = [result.date];
+                    // this.results = result.score
+                // });
+            }
+            console.log(this.results);
+
         }
     }
 }

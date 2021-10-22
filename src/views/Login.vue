@@ -37,7 +37,7 @@
 <script>
 import Button from '../components/Button';
 import { auth } from '../firebase/firebaseInit';
-import { signInWithEmailAndPassword, getAuth } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default {
     name: 'Login',
@@ -58,7 +58,6 @@ export default {
                 .then(() => {
                     this.error = false;
                     this.errorMsg = "";
-                    // this.$router.push('/dashboard');
                     this.$router.go({ path: this.$router.path});
                 }).catch(err => {
                     this.error = true;

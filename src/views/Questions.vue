@@ -30,11 +30,11 @@
                 :isDisabled="disabledBtn"
             />
             <Button
-                v-show="showGetType"
+                v-show="true"
                 tailwindClass="btn-next"
                 text="get results"
                 @click="getType"
-                :isDisabled="disabledBtn"
+                :isDisabled="false"
             />
         </div>
         <Results
@@ -46,8 +46,10 @@
 </template>
 
 <script>
-import Button from '../components/Button'
-import Results from '../components/Results'
+import Button from '../components/Button';
+import Results from '../components/Results';
+import db, { auth } from '../firebase/firebaseInit';
+import { setDoc, doc, arrayUnion } from 'firebase/firestore/lite';
 
 export default {
     name: 'Questions',
@@ -115,7 +117,7 @@ export default {
             this.choice = '';
             this.disabledBtn = true
         },
-        getType() {
+        async getType() {
             if(this.choice !== '') {
                 this.tally[this.choice] ++
                 const result = [
@@ -130,8 +132,34 @@ export default {
                     this.tally.A,
                 ]
                 this.results = result
-                this.finalType = result.indexOf(Math.max(...result))
-                this.showResult = true
+                this.finalType = result.indexOf(Math.max(...result));
+                this.showResult = true;
+
+                // Save to firebase if logged in
+                if(auth.currentUser) {
+                    const dataBase = doc(db, `users/${auth.currentUser.uid}`);
+                    await setDoc(
+                        dataBase,
+                        {
+                            results: arrayUnion(
+                                {
+                                "date/time": new Date(),
+                                score: result
+                                }
+                            ),
+                            core: this.finalType
+                        },
+                        {
+                            merge: true
+                        }
+                    ).then(() => {
+                        console.log("saved to firebase")
+                    }).catch(err => {
+                        console.log(err.message)
+                    })
+                }
+
+                // Clear local storage
                 localStorage.removeItem("progress");
                 localStorage.removeItem("tally");
             }else{
