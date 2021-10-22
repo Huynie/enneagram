@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-auto text-center">
+    <div class="mx-auto text-center p-10">
         <h1 class="font-bold text-2xl">
             Question {{JSON.parse(counter) + 1}}/{{totalQuestions.length}}
         </h1>
@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import Button from './Button'
-import Results from './Results'
+import Button from '../components/Button'
+import Results from '../components/Results'
 
 export default {
     name: 'Questions',

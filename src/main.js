@@ -1,4 +1,14 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from "./store";
+import { auth } from '@/firebase/firebaseInit';
+import { onAuthStateChanged } from 'firebase/auth';
 
-createApp(App).mount('#app')
+onAuthStateChanged(auth, () => {
+  createApp(App)
+  .use(router)
+  .use(store)
+  .mount('#app');
+});
+
