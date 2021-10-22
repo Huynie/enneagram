@@ -1,7 +1,7 @@
 <template>
-    <div>
-        Register
-        <form>
+    <div class="p-10">
+        <h1 class="w-max mx-auto text-4xl py-5">Register</h1>
+        <form class="w-80 mx-auto space-y-3">
             <div class="flex flex-col ">
                 <label>first name</label>
                 <input 
@@ -47,17 +47,18 @@
                     class="rounded-sm border-2 border-gray-100"
                 />
             </div>
-            <!-- <div @click="register">
-                register
-            </div> -->
-            <Button
-                text="register"
-                type="submit"
-                @click.prevent="register"
-                tailwindClass="btn-register"
-            />
-            <div v-show="error">
-                {{this.errorMsg}}
+            <div>
+                <p v-show="error">
+                    {{this.errorMsg}}
+                </p>
+            </div>
+            <div class="text-center">
+                <Button
+                    text="register"
+                    type="submit"
+                    @click.prevent="register"
+                    tailwindClass="btn-register"
+                />
             </div>
         </form>
     </div>
@@ -129,17 +130,21 @@ export default {
 </script>
 
 <style>
-.btn-register{
-    @apply
-        bg-blue-500
-        mx-4
-        w-56
-        min-w-min
-        outline-none
-        focus:bg-blue-700
-        focus:ring-blue-300
-        focus:ring-8
-        focus:outline-none
-    ;
-}
+    .btn-register{
+        @apply
+            bg-blue-500
+            mx-4
+            w-56
+            min-w-min
+            outline-none
+            focus:bg-blue-700
+            focus:ring-blue-300
+            focus:ring-8
+            focus:outline-none
+        ;
+    }
+    label{
+        @apply
+            text-gray-600;
+    }
 </style>

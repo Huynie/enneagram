@@ -1,18 +1,24 @@
 <template>
-  <div>
-    <Modal/>
-    <Loading/>
-    <form action="">
-      <div class="flex flex-col ">
-        <label>Reset your password</label>
+  <div class="p-10">
+    <!-- <Modal/>
+    <Loading/> -->
+    <form class="w-80 mx-auto" v-show="!reset">
+      <div class="flex flex-col space-y-3">
+        <label class="text-center">Enter your email to reset your password</label>
         <input type="email" v-model="email" placeholder="enter email" class="rounded-sm border-2 border-gray-100"/>
       </div>
-      <Button
-        text="reset"
-        @click.prevent="resetPassword"
-
-      />
+      <div class="text-center">
+        <Button
+          text="reset"
+          @click.prevent="resetPassword"
+          tailwindClass="bg-blue-500 px-5"
+        />
+      </div>
     </form>
+    <div v-show="reset" class="w-max mx-auto">
+      {{modalMessage}}
+    </div>
+    <div v-show="loading" class="w-max mx-auto">loading...</div>
   </div>
 </template>
 
@@ -36,6 +42,7 @@ export default {
       loading: null,
       modalActive: false,
       modalMessage: "",
+      reset: null,
     }
   },
   methods: {
@@ -47,6 +54,7 @@ export default {
           this.modalMessage = "If your accrount exists you will receive an email";
           this.loading = false;
           this.modalActive = true;
+          this.reset = true
         }).catch(err => {
           console.log(err.message, this.email)
           this.modalMessage = err.message;
