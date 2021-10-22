@@ -15,7 +15,7 @@
                 <router-link to="/login">login</router-link>
             </li>
             <li v-show="loggedIn ? !dashboard : dashboard" class="hover:text-green-500" @click="signOut">
-                <a href="#">sign-out</a>
+                <p>sign-out</p>
             </li>
         </ul>
       </div>
