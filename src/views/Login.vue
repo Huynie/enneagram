@@ -58,7 +58,7 @@ export default {
                 .then(() => {
                     this.error = false;
                     this.errorMsg = "";
-                    this.$router.go({ path: this.$router.path});
+                    this.$router.go('/dashboard');
                 }).catch(err => {
                     this.error = true;
                     this.errorMsg = err.message;

@@ -41,7 +41,7 @@ export default {
         async signOut() {
             try{
                 await signOut(auth);
-                this.$router.go({ path: this.$router.path });
+                this.$router.go('/login');
             } catch (err) {
                 console.error(err);
             }
