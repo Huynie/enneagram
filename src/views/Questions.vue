@@ -3,6 +3,7 @@
         <h1 class="font-bold text-2xl">
             Question {{JSON.parse(counter) + 1}}/{{totalQuestions.length}}
         </h1>
+        <ProgressBar :filled="filled"/>
         <h2 class="font-medium my-2">
             Select the statement that best describes you:
         </h2>
@@ -30,16 +31,16 @@
                 :isDisabled="disabledBtn"
             />
             <Button
-                v-show="true"
+                v-show="showGetType"
                 tailwindClass="btn-next"
                 text="get results"
                 @click="getType"
-                :isDisabled="false"
+                :isDisabled="disabledBtn"
             />
         </div>
         <Results
             v-show="showResult"
-            :results="results"
+            :scores="results"
             :finalType="finalType"
         />
     </div>
@@ -48,6 +49,7 @@
 <script>
 import Button from '../components/Button';
 import Results from '../components/Results';
+import ProgressBar from '../components/ProgressBar';
 import db, { auth } from '../firebase/firebaseInit';
 import { setDoc, doc, arrayUnion } from 'firebase/firestore/lite';
 
@@ -55,7 +57,8 @@ export default {
     name: 'Questions',
     components: {
         Button,
-        Results
+        Results,
+        ProgressBar
     },
     data() {
         return {
@@ -83,7 +86,8 @@ export default {
             showNext: true,
             showSave: true,
             finalType: null,
-            disabledBtn: true
+            disabledBtn: true,
+            filled: null
         }
     },
     methods:{
@@ -105,6 +109,8 @@ export default {
                 localStorage.tally = JSON.stringify(this.tally);
                 this.counter ++
                 localStorage.progress = this.counter;
+                this.filled = `${(parseInt(this.counter) + 1) * 0.695}%`;
+                console.log(this.filled)
                 this.questions1 = this.totalQuestions[this.counter].choice1
                 this.questions2 = this.totalQuestions[this.counter].choice2
                 this.showNext = this.counter === 143 ? false : true
@@ -168,13 +174,22 @@ export default {
             }
             this.choice = '';
             this.disabledBtn = true
+        },
+        progressBar() {
+            console.log("width: ", this.counter +1)
         }
     },
     created() {
-        localStorage.progress ??= localStorage.progress = 0 ; // create progress in local storage with value of 0
-        this.counter = localStorage.progress; // LS progress value assigned to counter
-        localStorage.tally ??= localStorage.tally = JSON.stringify(this.tally); // create empty tally in local storage
-        this.tally = JSON.parse(localStorage.tally); // LS tally value assigned to tally
+        // create progress in local storage with value of 0 if not already there
+        localStorage.progress ??= localStorage.progress = 0 ;
+        // LS progress value assigned to counter
+        this.counter = localStorage.progress;
+        this.filled = `${(parseInt(localStorage.progress) + 1) * 0.695}%`
+        console.log(this.filled)
+        // create empty tally in local storage if not already there
+        localStorage.tally ??= localStorage.tally = JSON.stringify(this.tally);
+        // LS tally value assigned to tally
+        this.tally = JSON.parse(localStorage.tally);
         this.totalQuestions = require('../../questions.json')
         this.questions1 = this.totalQuestions[this.counter].choice1
         this.questions2 = this.totalQuestions[this.counter].choice2

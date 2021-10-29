@@ -1,7 +1,7 @@
 <template>
   <div class="p-10">
       <h1 class="mx-auto w-max text-5xl">Dashboard</h1>
-      <div class="w-52 h-52 bg-purple-500 rounded-3xl mx-auto my-5 justify-center items-center flex text-white text-2xl">image</div>
+        <Avatar @click="avatarModal"/>
       <div class="w-max mx-auto text-xl space-y-2">
         <h1>{{this.name}}</h1>
         <h2>{{this.userName}}</h2>
@@ -10,21 +10,24 @@
         <h3>{{this.highs}}</h3>
         <h3>{{this.lows}}</h3>
       </div>
-      <div class="w-max mx-auto" v-for="result in results">
-          <!-- <Results
-            v-show="true"
-            :results="results"
-            :finalType="core"
-          /> -->
-          <h2>{{result["date/time"]}}</h2>
-          <h3>{{result.score}}</h3>
+      <div>
+        <h1 class="text-xl uppercase my-5 w-max mx-auto">result history</h1>
+        <div
+            class="w-max mx-auto"
+            v-for="(result, index) in results"
+            :key="index"
+            >
+            <h2>{{result["date/time"].toDate().toDateString()}}  {{result["date/time"].toDate().toLocaleTimeString('en-US')}}</h2>
+            <Score :scores="result.score"/>
+        </div>
       </div>
   </div>
 </template>
 
 <script>
 import Button from '../components/Button';
-import Results from '../components/Results';
+import Score from '../components/Score';
+import Avatar from '../components/Avatar';
 import db , { auth } from '../firebase/firebaseInit';
 import { getDoc, doc, query, onSnapshot } from 'firebase/firestore/lite';
 
@@ -32,7 +35,8 @@ export default {
     name: 'Dashboard',
     components: {
         Button,
-        Results
+        Score,
+        Avatar
     },
     data (){
         return {
@@ -67,14 +71,7 @@ export default {
                 this.highs = snapData.highs;
                 this.lows = snapData.lows;
                 this.results = snapData.results;
-                // snapData.results.forEach((result) => {
-                    // this.score = [result.score];
-                    // this.date = [result.date];
-                    // this.results = result.score
-                // });
             }
-            console.log(this.results);
-
         }
     }
 }
