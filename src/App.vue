@@ -3,18 +3,21 @@
     <!-- :key is to re-render Nav everytime route changes -->
     <Nav :key="$route.fullPath"/>
     <router-view />
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import { auth } from './firebase/firebaseInit';
 import { onAuthStateChanged } from 'firebase/auth';
 
 export default {
   name: 'App',
   components: {
-    Nav
+    Nav,
+    Footer
   },
   // created() {
     // console.log(auth.currentUser.uid);

@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-gray-200 uppercase">
+  <nav class="bg-green-300 uppercase">
       <div class="nav--desktop flex p-5">
         <div class="flex-1 hover:text-green-500">
             <router-link to="/">EN-GRAM</router-link>
