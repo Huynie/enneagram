@@ -6,7 +6,7 @@ import { auth } from '@/firebase/firebaseInit';
 import { onAuthStateChanged } from 'firebase/auth';
 
 onAuthStateChanged(auth, () => {
-  createApp(App).use(router)
+  createApp(App)
   .use(router)
   .use(store)
   .mount('#app');
