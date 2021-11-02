@@ -1,21 +1,21 @@
 <template>
-  <nav class="bg-green-300 uppercase">
+  <nav class="bg-primary uppercase text-white font-bold text-xl">
       <div class="nav--desktop flex p-5">
-        <div class="flex-1 hover:text-green-500">
+        <div class="flex-1 ">
             <router-link to="/">EN-GRAM</router-link>
         </div>
         <ul class="flex flex-1 justify-end space-x-5 mr-5">
-            <li class="hover:text-green-500">
-                <router-link to="/questions">test</router-link>
+            <li class="">
+                <router-link to="/questions" class="filter hover:drop-shadow-nav">test</router-link>
             </li>
-            <li v-show="dashboard" class="hover:text-green-500">
-                <router-link to="/dashboard">dashboard</router-link>
+            <li v-show="dashboard" class="">
+                <router-link to="/dashboard" class="filter hover:drop-shadow-nav">dashboard</router-link>
             </li>
-            <li v-show="!loggedIn" class="hover:text-green-500">
-                <router-link to="/login">login</router-link>
+            <li v-show="!loggedIn" class="">
+                <router-link to="/login" class="filter hover:drop-shadow-nav">login</router-link>
             </li>
-            <li v-show="loggedIn ? !dashboard : dashboard" class="hover:text-green-500" @click="signOut">
-                <p>sign-out</p>
+            <li v-show="loggedIn ? !dashboard : dashboard" class="" @click="signOut">
+                <p class="filter hover:drop-shadow-nav">sign-out</p>
             </li>
         </ul>
       </div>

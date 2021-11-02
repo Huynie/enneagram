@@ -1,8 +1,8 @@
 <template>
     <div class="mx-auto text-center p-10">
-        <h1 class="font-bold text-2xl">
+        <!-- <h1 class="font-bold text-2xl">
             Question {{JSON.parse(counter) + 1}}/{{totalQuestions.length}}
-        </h1>
+        </h1> -->
         <ProgressBar :filled="filled"/>
         <h2 class="font-medium my-2">
             Select the statement that best describes you:

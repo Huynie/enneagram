@@ -33,3 +33,10 @@ export default {
 </script>
 
 <style src="./assets/tailwind.css"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+  html, body {
+    font-family: 'Work Sans', sans-serif;
+  }
+</style>
