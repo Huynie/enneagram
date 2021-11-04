@@ -4,7 +4,7 @@ import Login from '@/views/Login';
 import Register from '@/views/Register';
 import ForgotPassword from '@/views/ForgotPassword';
 import Dashboard from '@/views/Dashboard';
-import Questions from '@/views/Questions';
+import Test from '@/views/Test';
 import { auth } from '../firebase/firebaseInit';
 
 
@@ -35,7 +35,10 @@ const router = createRouter({
         {
             path: '/forgotpassword',
             name: 'ForgotPassword',
-            component: ForgotPassword
+            component: ForgotPassword,
+            meta: {
+                guest: true
+            }
         },
         {
             path: '/dashboard',
@@ -47,9 +50,9 @@ const router = createRouter({
             }
         },
         {
-            path: '/questions',
-            name: 'Questions',
-            component: Questions
+            path: '/test',
+            name: 'Test',
+            component: Test
         }
     ]
     

@@ -1,6 +1,6 @@
 <template>
-    <div class="p-10">
-        <h1 class="w-max mx-auto text-4xl py-5">Register</h1>
+    <div class="p-10 h-screen">
+        <h1 class="w-max mx-auto text-4xl py-5 font-medium text-transparent bg-gradient-to-b from-green-500 to-blue-300 bg-clip-text">Register</h1>
         <form class="w-80 mx-auto space-y-3">
             <div class="flex flex-col ">
                 <label>first name</label>
@@ -48,7 +48,7 @@
                 />
             </div>
             <div>
-                <p v-show="error">
+                <p v-show="error" class="text-pink-500">
                     {{this.errorMsg}}
                 </p>
             </div>
@@ -118,14 +118,15 @@ export default {
 <style>
     .btn-register{
         @apply
-            bg-blue-500
+            bg-primary
             mx-4
             w-56
             min-w-min
             outline-none
-            focus:bg-blue-700
-            focus:ring-blue-300
-            focus:ring-8
+            focus:bg-pressed
+            focus:ring-pink-300
+            hover:bg-questions
+            focus:ring-2
             focus:outline-none
         ;
     }

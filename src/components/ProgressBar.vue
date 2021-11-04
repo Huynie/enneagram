@@ -1,5 +1,5 @@
 <template>
-    <div div class="w-80 mx-auto h-3 bg-gray-200 rounded-full">
+    <div div class="md:w-2/5 w-4/5 mx-auto h-1 bg-gray-200 rounded-full">
         <div
         class="bg-pink-500 h-full rounded-l-full"
         v-bind:style="{'width': filled }"

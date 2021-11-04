@@ -1,5 +1,5 @@
 <template>
-  <div class="p-10">
+  <div class="p-10 h-screen">
     <!-- <Modal/>
     <Loading/> -->
     <form class="w-80 mx-auto" v-show="!reset">
@@ -9,9 +9,9 @@
       </div>
       <div class="text-center">
         <Button
-          text="reset"
+          text="Reset"
           @click.prevent="resetPassword"
-          tailwindClass="bg-blue-500 px-5"
+          tailwindClass="bg-primary hover:bg-questions px-5"
         />
       </div>
     </form>

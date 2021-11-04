@@ -9,7 +9,9 @@ module.exports = {
        backgroundColor: theme => ({
         ...theme('colors'),
         'primary': '#89E5CF',
-        'secondary': '#EEFBF8'
+        'secondary': '#EEFBF8',
+        'questions': '#5CDCBD',
+        'pressed': '#67D2D2'
        }),
       //  borderRadius: {
       //   'divider': '10rem'

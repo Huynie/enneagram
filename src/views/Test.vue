@@ -1,5 +1,6 @@
 <template>
-    <div class="mx-auto text-center p-10">
+    <div class="mx-auto p-10 h-screen text-center">
+        <!-- QUESTION NUMBER COUNTER -->
         <!-- <h1 class="font-bold text-2xl">
             Question {{JSON.parse(counter) + 1}}/{{totalQuestions.length}}
         </h1> -->
@@ -7,20 +8,24 @@
         <h2 class="font-medium my-2">
             Select the statement that best describes you:
         </h2>
-        <div class="my-8 flex flex-col items-center justify-center h-full transition-opacity ease-in-out opacity-100">
-            <Button
-                tailwindClass="btn-blue"
-                :text="questions1"
-                @click="choice1"
-                id="choice1"
-            />
-            or
-            <Button
-                tailwindClass="btn-blue"
-                :text="questions2"
-                @click="choice2"
-                id="choice2"
-            />
+        <div class="my-8 w-max mx-auto md:flex justify-center items-center transition-opacity ease-in-out opacity-100">
+            <div>
+                <Button
+                    tailwindClass="test__btn"
+                    :text="questions1"
+                    @click="choice1"
+                    id="choice1"
+                />
+            </div>
+            <h2 class="uppercase text-pink-700">or</h2>
+            <div>
+                <Button
+                    tailwindClass="test__btn"
+                    :text="questions2"
+                    @click="choice2"
+                    id="choice2"
+                />
+            </div>
         </div>
         <div>
             <Button
@@ -54,7 +59,7 @@ import db, { auth } from '../firebase/firebaseInit';
 import { setDoc, doc, arrayUnion } from 'firebase/firestore/lite';
 
 export default {
-    name: 'Questions',
+    name: 'Test',
     components: {
         Button,
         Results,
@@ -201,33 +206,26 @@ export default {
 }
 </script>
 
-<style>
-.btn-blue{
+<style >
+.test__btn{
     @apply
-        bg-blue-500
+        bg-questions
         mx-4
         w-56
+        h-44
+        px-8
         min-w-min
         outline-none
-        focus:bg-blue-700
-        focus:ring-blue-300
-        focus:ring-8
+        text-left
+        focus:bg-pressed
+        focus:ring-pink-500
+        focus:ring-2
         focus:outline-none
     ;
 }
 .btn-next{
     @apply 
-        bg-green-500
-        disabled:opacity-30
-        my-4
-        uppercase
-        font-bold
-        w-32
-    ;
-}
-.btn-save{
-    @apply 
-        bg-yellow-500
+        bg-pink-500
         disabled:opacity-30
         my-4
         uppercase

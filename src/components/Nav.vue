@@ -6,7 +6,7 @@
         </div>
         <ul class="flex flex-1 justify-end space-x-5 mr-5">
             <li class="">
-                <router-link to="/questions" class="filter hover:drop-shadow-nav">test</router-link>
+                <router-link to="/test" class="filter hover:drop-shadow-nav">test</router-link>
             </li>
             <li v-show="dashboard" class="">
                 <router-link to="/dashboard" class="filter hover:drop-shadow-nav">dashboard</router-link>
@@ -15,7 +15,7 @@
                 <router-link to="/login" class="filter hover:drop-shadow-nav">login</router-link>
             </li>
             <li v-show="loggedIn ? !dashboard : dashboard" class="" @click="signOut">
-                <p class="filter hover:drop-shadow-nav">sign-out</p>
+                <p class="filter hover:drop-shadow-nav cursor-pointer">sign-out</p>
             </li>
         </ul>
       </div>
