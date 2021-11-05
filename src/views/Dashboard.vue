@@ -101,7 +101,7 @@ export default {
         ,
 
     },
-    async created() {
+    async beforeMount() {
         if(auth.currentUser) {
             const userDB = doc(db, `users/${auth.currentUser.uid}`);
             const snapshot = await getDoc(userDB);

@@ -117,11 +117,11 @@ export default {
                         localStorage.removeItem("results");
                         localStorage.removeItem("core");
                         console.log('Saved to DB & Results Reset');
-                        this.$router.go({ path: "/dashboard" });
+                        // this.$router.go({ path: "/dashboard" });
+                        this.$router.go({ path: this.$router.path });
                     }).catch(err => {
                         console.log(err.message)
                     })
-                // this.$router.go({ path: this.$router.path });
                 return;
             }
             this.error = true;

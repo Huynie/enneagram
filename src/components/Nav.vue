@@ -5,16 +5,16 @@
             <router-link to="/">EN-GRAM</router-link>
         </div>
         <ul class="flex flex-1 justify-end space-x-5 mr-5">
-            <li class="">
+            <li >
                 <router-link to="/test" class="filter hover:drop-shadow-nav">test</router-link>
             </li>
-            <li v-show="dashboard" class="">
+            <li v-show="dashboard" >
                 <router-link to="/dashboard" class="filter hover:drop-shadow-nav">dashboard</router-link>
             </li>
-            <li v-show="!loggedIn" class="">
+            <li v-show="!loggedIn" >
                 <router-link to="/login" class="filter hover:drop-shadow-nav">login</router-link>
             </li>
-            <li v-show="loggedIn ? !dashboard : dashboard" class="" @click="signOut">
+            <li v-show="loggedIn ? !dashboard : dashboard"  @click="signOut">
                 <p class="filter hover:drop-shadow-nav cursor-pointer">sign-out</p>
             </li>
         </ul>
