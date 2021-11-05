@@ -68,7 +68,7 @@
 import Button from '../components/Button';
 import db, { auth } from '../firebase/firebaseInit';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { collection, getDoc, getDocs, setDoc, doc, query, limit } from 'firebase/firestore/lite';
+import { collection, getDoc, getDocs, setDoc, doc, arrayUnion, query, limit } from 'firebase/firestore/lite';
 
 export default {
     name: 'Register',
@@ -77,10 +77,10 @@ export default {
     },
     data () {
         return {
-            firstName: "Bob",
-            lastName: "Smith",
-            username: "",
-            email: 'test@test.com',
+            firstName: "Mike",
+            lastName: "Jonez",
+            username: "MkJnz",
+            email: 'test2@test.com',
             password: 'test123',
             error: null,
             errorMsg: ""
@@ -96,21 +96,40 @@ export default {
                 this.email !== "" &&
                 this.password !== ""
             ) {
+                // Create new account in Firebase Authentication database
                 const createUser = await createUserWithEmailAndPassword(auth, this.email, this.password)
                 const userDatabase = doc(db, `users/${createUser.user.uid}`);
+                const resultExist = localStorage.results ? arrayUnion({
+                    "date/time": new Date(),
+                    score: JSON.parse(localStorage.results)
+                    }) : [];
                 const userData = {
                     firstName: this.firstName,
                     lastName: this.lastName,
                     userName: this.username,
                     email: this.email,
+                    results: resultExist,
+                    core: parseInt(localStorage.core) ?? 0
                 };
-                setDoc( userDatabase, userData)
-                this.$router.go({ path: this.$router.path });
+                // create new doc in Firebase Firestore database
+                setDoc( userDatabase, userData )
+                    .then(() => {
+                        localStorage.removeItem("results");
+                        localStorage.removeItem("core");
+                        console.log('Saved to DB & Results Reset');
+                        this.$router.go({ path: "/dashboard" });
+                    }).catch(err => {
+                        console.log(err.message)
+                    })
+                // this.$router.go({ path: this.$router.path });
                 return;
             }
             this.error = true;
             this.errorMsg = "please fill out all the fields";
         }
+    },
+    created() {
+        console.log(JSON.parse(localStorage.results), 4)
     }
 }
 </script>

@@ -17,7 +17,7 @@
             </div>
             <div class="section rounded-tl-3xl relative row-start-1 row-end-2">
                 <div class="font-bold z-50">
-                    <h4 class="capitalize text-pink-500 text-3xl">{{types[(this.core - 1)].type}}</h4>
+                    <h4 class="capitalize text-pink-500 text-3xl">{{types[this.core - 1].type}}</h4>
                     <h3 class="text-center text-pink-300 text-xl mt-2">Type {{this.core}}</h3>
                 </div>
                 <div class="flex mt-5 mb-10 z-50">
@@ -38,11 +38,11 @@
                 </div>
                 <div class="mx-auto w-80">
                     <p class="my-2">
-                        {{ types[(this.core-1)].description }}
+                        {{ types[this.core - 1].description }}
                     </p>
-                    <p class="my-2"><b class="text-red-800">Fear:</b> {{ types[(this.core-1)].fear }}</p>
-                    <p class="my-2"><b class="text-yellow-600">Desire:</b> {{ types[(this.core-1)].desire }}</p>
-                    <p class="my-2"><b class="text-blue-700">Motivations:</b> {{ types[(this.core-1)].motivations }}</p>
+                    <p class="my-2"><b class="text-red-400">Fear:</b> {{ types[this.core - 1].fear }}</p>
+                    <p class="my-2"><b class="text-yellow-400">Desire:</b> {{ types[this.core - 1].desire }}</p>
+                    <p class="my-2"><b class="text-blue-400">Motivations:</b> {{ types[this.core - 1].motivations }}</p>
                 </div>
             </div>
             <div class="section bg-white">
@@ -83,7 +83,7 @@ export default {
             name: "",
             userName: "",
             email: "",
-            core: "",
+            core: null,
             highs: [],
             lows: [],
             results: [],
@@ -113,15 +113,14 @@ export default {
                 this.core = snapData.core;
                 this.results = snapData.results;
 
-                const latestScore = [...this.results[this.results.length - 1].score];
+                const latestScore = this.results.length > 1 ? [...this.results[this.results.length - 1].score] : [...this.results[0].score];
                 //GET TOP 2 HIGHEST TYPE EXCLUDING CORE TYPE
                 const highNums = latestScore.sort((a,b) => b-a).slice(1,3);
-                console.log(this.results[2].score)
                 highNums.forEach((num) => {
                     this.highs.push(this.results[this.results.length - 1].score.indexOf(num))
                 });
+                //GET 2 LOWEST TYPE
                 const LowNums = latestScore.sort((a,b) => a-b).slice(0,2);
-                console.log(LowNums)
                 LowNums.forEach((num) => {
                     this.lows.push(this.results[this.results.length - 1].score.indexOf(num))
                 });

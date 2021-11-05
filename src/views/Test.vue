@@ -1,47 +1,50 @@
 <template>
-    <div class="mx-auto p-10 h-screen text-center">
+    <div class="mx-auto p-10 text-center h-screen">
         <!-- QUESTION NUMBER COUNTER -->
         <!-- <h1 class="font-bold text-2xl">
             Question {{JSON.parse(counter) + 1}}/{{totalQuestions.length}}
         </h1> -->
-        <ProgressBar :filled="filled"/>
-        <h2 class="font-medium my-2">
-            Select the statement that best describes you:
-        </h2>
-        <div class="my-8 w-max mx-auto md:flex justify-center items-center transition-opacity ease-in-out opacity-100">
+        <div v-show="!showResult">
+            <ProgressBar :filled="filled"/>
+            <h2 class="font-medium my-2">
+                Select the statement that best describes you:
+            </h2>
+            <div class="my-8 w-max mx-auto md:flex justify-center items-center transition-opacity ease-in-out opacity-100">
+                <div>
+                    <Button
+                        tailwindClass="test__btn"
+                        :text="questions1"
+                        @click="choice1"
+                        id="choice1"
+                    />
+                </div>
+                <h2 class="uppercase text-pink-700">or</h2>
+                <div>
+                    <Button
+                        tailwindClass="test__btn"
+                        :text="questions2"
+                        @click="choice2"
+                        id="choice2"
+                    />
+                </div>
+            </div>
             <div>
                 <Button
-                    tailwindClass="test__btn"
-                    :text="questions1"
-                    @click="choice1"
-                    id="choice1"
+                    v-show="showNext"
+                    tailwindClass="btn-next"
+                    text="next"
+                    @click="next"
+                    :isDisabled="disabledBtn"
                 />
-            </div>
-            <h2 class="uppercase text-pink-700">or</h2>
-            <div>
                 <Button
-                    tailwindClass="test__btn"
-                    :text="questions2"
-                    @click="choice2"
-                    id="choice2"
+                    v-show="showGetType"
+                    tailwindClass="btn-next"
+                    text="get results"
+                    @click="getType"
+                    :isDisabled="disabledBtn"
                 />
             </div>
-        </div>
-        <div>
-            <Button
-                v-show="showNext"
-                tailwindClass="btn-next"
-                text="next"
-                @click="next"
-                :isDisabled="disabledBtn"
-            />
-            <Button
-                v-show="showGetType"
-                tailwindClass="btn-next"
-                text="get results"
-                @click="getType"
-                :isDisabled="disabledBtn"
-            />
+
         </div>
         <Results
             v-show="showResult"
@@ -73,7 +76,7 @@ export default {
             answer1: '',
             answer2: '',
             choice: '',
-            counter: 0,
+            counter: null,
             tally: {
                 A: 0,
                 B: 0,
@@ -87,26 +90,25 @@ export default {
             },
             results: [],
             showResult: false,
-            showGetType: Boolean,
+            showGetType: false,
             showNext: true,
-            showSave: true,
-            finalType: null,
+            finalType: 0,
             disabledBtn: true,
-            filled: null
+            filled: null,
         }
     },
     methods:{
         choice1() {
             document.getElementById("choice1").focus();
-            this.answer1 = this.totalQuestions[this.counter].answer1
-            this.choice = this.answer1
-            this.disabledBtn = false
+            this.answer1 = this.totalQuestions[this.counter].answer1;
+            this.choice = this.answer1;
+            this.disabledBtn = false;
         },
         choice2() {
             document.getElementById("choice2").focus();
-            this.answer2 = this.totalQuestions[this.counter].answer2
-            this.choice = this.answer2
-            this.disabledBtn = false
+            this.answer2 = this.totalQuestions[this.counter].answer2;
+            this.choice = this.answer2;
+            this.disabledBtn = false;
         },
         next() {
             if(this.choice !== '') {
@@ -115,11 +117,10 @@ export default {
                 this.counter ++
                 localStorage.progress = this.counter;
                 this.filled = `${(parseInt(this.counter) + 1) * 0.695}%`;
-                console.log(this.filled)
                 this.questions1 = this.totalQuestions[this.counter].choice1
                 this.questions2 = this.totalQuestions[this.counter].choice2
-                this.showNext = this.counter === 143 ? false : true
-                this.showGetType = this.counter === 143 ? true : false
+                // this.showNext = this.counter === 143 ? false : true
+                // this.showGetType = this.counter === 143 ? true : false
             }else{
                 confirm('Please choose an answer.')
                 return
@@ -131,6 +132,9 @@ export default {
         async getType() {
             if(this.choice !== '') {
                 this.tally[this.choice] ++
+                // localStorage.tally = JSON.stringify(this.tally);
+                // this.counter ++
+                // localStorage.progress = this.counter;
                 const result = [
                     this.tally.D,
                     this.tally.F,
@@ -142,9 +146,13 @@ export default {
                     this.tally.G,
                     this.tally.A,
                 ]
-                this.results = result
-                this.finalType = result.indexOf(Math.max(...result));
+                this.results = result;
+                this.finalType = result.indexOf(Math.max(...result)) + 1;
                 this.showResult = true;
+
+                //Remove from local storage
+                localStorage.removeItem("progress");
+                localStorage.removeItem("tally");
 
                 // Save to firebase if logged in
                 if(auth.currentUser) {
@@ -168,40 +176,37 @@ export default {
                     }).catch(err => {
                         console.log(err.message)
                     })
+                    return;
                 }
-
-                // Clear local storage
-                localStorage.removeItem("progress");
-                localStorage.removeItem("tally");
+                localStorage.results = JSON.stringify(result);
+                localStorage.core = this.finalType;
             }else{
                 confirm('Please choose an answer.')
                 return
             }
-            this.choice = '';
-            this.disabledBtn = true
-        },
-        progressBar() {
-            console.log("width: ", this.counter +1)
         }
     },
     created() {
         // create progress in local storage with value of 0 if not already there
-        localStorage.progress ??= localStorage.progress = 0 ;
+        localStorage.progress ??= localStorage.progress = 0;
         // LS progress value assigned to counter
-        this.counter = localStorage.progress;
-        this.filled = `${(parseInt(localStorage.progress) + 1) * 0.695}%`
-        console.log(this.filled)
+        this.counter = parseInt(localStorage.progress);
+        this.filled = `${(parseInt(localStorage.progress) + 1) * 0.695}%`;
         // create empty tally in local storage if not already there
         localStorage.tally ??= localStorage.tally = JSON.stringify(this.tally);
         // LS tally value assigned to tally
         this.tally = JSON.parse(localStorage.tally);
         this.totalQuestions = require('../../questions.json')
-        this.questions1 = this.totalQuestions[this.counter].choice1
-        this.questions2 = this.totalQuestions[this.counter].choice2
-        this.answer1 = this.totalQuestions[this.counter].answer1
-        this.answer2 = this.totalQuestions[this.counter].answer2
-        this.finalType = 0
-        this.showGetType = false
+        this.questions1 = this.totalQuestions[this.counter].choice1;
+        this.questions2 = this.totalQuestions[this.counter].choice2;
+        this.answer1 = this.totalQuestions[this.counter].answer1;
+        this.answer2 = this.totalQuestions[this.counter].answer2;
+        this.showNext = this.counter === 143 ? false : true;
+        this.showGetType = this.counter === 143 ? true : false;
+    },
+    updated() {
+        this.showNext = this.counter === 143 ? false : true;
+        this.showGetType = this.counter === 143 ? true : false;
     }
 }
 </script>
@@ -211,8 +216,8 @@ export default {
     @apply
         bg-questions
         mx-4
-        w-56
-        h-44
+        w-60
+        h-48
         px-8
         min-w-min
         outline-none
