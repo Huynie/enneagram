@@ -147,7 +147,7 @@ export default {
                     this.tally.A,
                 ]
                 this.results = result;
-                this.finalType = result.indexOf(Math.max(...result)) + 1;
+                this.finalType = result.indexOf(Math.max(...result));
                 this.showResult = true;
 
                 //Remove from local storage
@@ -165,8 +165,7 @@ export default {
                                 "date/time": new Date(),
                                 score: result
                                 }
-                            ),
-                            core: this.finalType
+                            )
                         },
                         {
                             merge: true
@@ -178,8 +177,7 @@ export default {
                     })
                     return;
                 }
-                localStorage.results = JSON.stringify(result);
-                localStorage.core = this.finalType;
+                localStorage.score = JSON.stringify(result);
             }else{
                 confirm('Please choose an answer.')
                 return

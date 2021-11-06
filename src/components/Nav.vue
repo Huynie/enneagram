@@ -19,9 +19,32 @@
             </li>
         </ul>
       </div>
-      <div class="nav--mobile">
-
-      </div>
+      <!-- <div class="nav--mobile" :mq="600">
+        <div class="flex-grow">
+            <router-link to="/">EN-GRAM</router-link>
+        </div>
+        <button @click="toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+        <div v-show="showMenu" class="nav__menu-mobile flex flex-col items-center">
+            <ul class=" justify-end space-y-5 ">
+                <li >
+                    <router-link to="/test" class="filter hover:drop-shadow-nav">test</router-link>
+                </li>
+                <li v-show="dashboard" >
+                    <router-link to="/dashboard" class="filter hover:drop-shadow-nav">dashboard</router-link>
+                </li>
+                <li v-show="!loggedIn" >
+                    <router-link to="/login" class="filter hover:drop-shadow-nav">login</router-link>
+                </li>
+                <li v-show="loggedIn ? !dashboard : dashboard"  @click="signOut">
+                    <p class="filter hover:drop-shadow-nav cursor-pointer">sign-out</p>
+                </li>
+            </ul>
+        </div>
+      </div> -->
   </nav>
 </template>
 
@@ -35,6 +58,7 @@ export default {
         return {
             dashboard: null,
             loggedIn: null,
+            showMenu: false
         }
     },
     methods:{
@@ -45,6 +69,9 @@ export default {
             } catch (err) {
                 console.error(err);
             }
+        },
+        toggle() {
+            this.showMenu = !this.showMenu;
         }
     },
     created() {
@@ -65,5 +92,17 @@ export default {
 </script>
 
 <style>
+    .nav--mobile{
+        display: hidden;
+    }
+    .nav__menu-mobile{
+        height: 100vh;
+        width: 100vw;
+    }
+    @media only screen and (max-width: 600px) {
+        .nav--mobile{
+            display: block;
+        }
+    }
 
 </style>

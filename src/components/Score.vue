@@ -26,12 +26,15 @@
 </template>
 
 <script>
-export default {
-    name: "Score",
-    props: {
-        scores: Array
+    export default {
+        name: "Score",
+        props: {
+            scores: Array,
+        },
+        methods: {
+             
+        }
     }
-}
 </script>
 
 <style scoped>

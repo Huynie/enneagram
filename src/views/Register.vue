@@ -99,9 +99,9 @@ export default {
                 // Create new account in Firebase Authentication database
                 const createUser = await createUserWithEmailAndPassword(auth, this.email, this.password)
                 const userDatabase = doc(db, `users/${createUser.user.uid}`);
-                const resultExist = localStorage.results ? arrayUnion({
+                const resultExist = localStorage.score ? arrayUnion({
                     "date/time": new Date(),
-                    score: JSON.parse(localStorage.results)
+                    score: JSON.parse(localStorage.score)
                     }) : [];
                 const userData = {
                     firstName: this.firstName,
@@ -109,27 +109,31 @@ export default {
                     userName: this.username,
                     email: this.email,
                     results: resultExist,
-                    core: parseInt(localStorage.core) ?? 0
                 };
                 // create new doc in Firebase Firestore database
-                setDoc( userDatabase, userData )
-                    .then(() => {
-                        localStorage.removeItem("results");
-                        localStorage.removeItem("core");
-                        console.log('Saved to DB & Results Reset');
-                        // this.$router.go({ path: "/dashboard" });
-                        this.$router.go({ path: this.$router.path });
-                    }).catch(err => {
-                        console.log(err.message)
-                    })
+                try{
+                    await setDoc( userDatabase, userData );
+                    localStorage.removeItem("score");
+                    console.log('Saved to DB & score deleted');
+                    // this.$router.go({ path: "/dashboard" });
+                    this.$router.go({ path: this.$router.path });
+                } catch (err) {
+                    console.log(err)
+                }
+                // setDoc( userDatabase, userData )
+                //     .then(() => {
+                //         localStorage.removeItem("score");
+                //         console.log('Saved to DB & score deleted');
+                //         // this.$router.go({ path: "/dashboard" });
+                //         this.$router.go({ path: this.$router.path });
+                //     }).catch(err => {
+                //         console.log(err.message)
+                //     })
                 return;
             }
             this.error = true;
             this.errorMsg = "please fill out all the fields";
         }
-    },
-    created() {
-        console.log(JSON.parse(localStorage.results), 4)
     }
 }
 </script>

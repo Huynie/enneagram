@@ -7,7 +7,7 @@
         <Score :scores="scores"/>
         <div class="type">
             <h2 class=" font-bold text-2xl text-pink-600">{{ types[finalType].type }}</h2>
-            <h1 class="capitalize font-medium text-xl text-pink-500">type {{finalType-1}}</h1>
+            <h1 class="capitalize font-medium text-xl text-pink-500">type {{finalType + 1}}</h1>
             <div class="description">
                 <p class="my-2">
                     {{ types[finalType].description }}
@@ -43,13 +43,7 @@ export default {
     },
     created() {
         this.showRegister = auth.currentUser ? false : true;
-    },
-    // unmounted(){
-    //     if(this.$route.fullPath != "/register" && localStorage.results) {
-    //         localStorage.removeItem("results");
-    //         localStorage.removeItem("core");
-    //     }
-    // }
+    }
 }
 </script>
 

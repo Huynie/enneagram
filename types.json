@@ -61,5 +61,12 @@
         "fear": "Of loss and separation",
         "desire": "To have inner stability 'peace of mind'",
         "motivations": "Want to create harmony in their environment, to avoid conflicts and tension, to preserve things as they are, to resist whatever would upset or disturb them."
+    },
+    {
+        "type": "Loading...",
+        "description": "Loading...",
+        "fear": "Loading...",
+        "desire": "Loading...", 
+        "motivation": "Loading..."
     }
 ]
