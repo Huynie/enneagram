@@ -20,7 +20,7 @@
                     class="rounded-sm border-2 border-gray-100"
                 />
             </div>
-            <div class="flex flex-col ">
+            <!-- <div class="flex flex-col ">
                 <label>username</label>
                 <input 
                     type="text"
@@ -28,7 +28,7 @@
                     placeholder="enter username"
                     class="rounded-sm border-2 border-gray-100"
                 />
-            </div>
+            </div> -->
             <div class="flex flex-col ">
                 <label>email</label>
                 <input 
@@ -68,7 +68,7 @@
 import Button from '../components/Button';
 import db, { auth } from '../firebase/firebaseInit';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { collection, getDoc, getDocs, setDoc, doc, arrayUnion, query, limit } from 'firebase/firestore/lite';
+import { setDoc, doc, arrayUnion } from 'firebase/firestore/lite';
 
 export default {
     name: 'Register',
@@ -79,7 +79,7 @@ export default {
         return {
             firstName: "Mike",
             lastName: "Jonez",
-            username: "MkJnz",
+            // username: "MkJnz",
             email: 'test2@test.com',
             password: 'test123',
             error: null,

@@ -48,7 +48,7 @@
         </div>
         <Results
             v-show="showResult"
-            :scores="results"
+            :scores="score"
             :finalType="finalType"
         />
     </div>
@@ -59,7 +59,6 @@ import Button from '../components/Button';
 import Results from '../components/Results';
 import ProgressBar from '../components/ProgressBar';
 import db, { auth } from '../firebase/firebaseInit';
-import { setDoc, doc, arrayUnion } from 'firebase/firestore/lite';
 
 export default {
     name: 'Test',
@@ -88,7 +87,18 @@ export default {
                 H: 0,
                 I: 0,
             },
-            results: [],
+            score: [],
+            scores: {
+                D:0,
+                F:0,
+                C:0,
+                E:0,
+                H:0,
+                B:0,
+                I:0,
+                G:0,
+                A:0,
+            },
             showResult: false,
             showGetType: false,
             showNext: true,
@@ -112,7 +122,8 @@ export default {
         },
         next() {
             if(this.choice !== '') {
-                this.tally[this.choice] ++
+                this.tally[this.choice] ++;
+                this.scores[this.choice]++;
                 localStorage.tally = JSON.stringify(this.tally);
                 this.counter ++
                 localStorage.progress = this.counter;
@@ -135,7 +146,7 @@ export default {
                 // localStorage.tally = JSON.stringify(this.tally);
                 // this.counter ++
                 // localStorage.progress = this.counter;
-                const result = [
+                const score = [
                     this.tally.D,
                     this.tally.F,
                     this.tally.C,
@@ -146,8 +157,8 @@ export default {
                     this.tally.G,
                     this.tally.A,
                 ]
-                this.results = result;
-                this.finalType = result.indexOf(Math.max(...result));
+                this.score = score;
+                this.finalType = score.indexOf(Math.max(...score));
                 this.showResult = true;
 
                 //Remove from local storage
@@ -156,28 +167,11 @@ export default {
 
                 // Save to firebase if logged in
                 if(auth.currentUser) {
-                    const dataBase = doc(db, `users/${auth.currentUser.uid}`);
-                    await setDoc(
-                        dataBase,
-                        {
-                            results: arrayUnion(
-                                {
-                                "date/time": new Date(),
-                                score: result
-                                }
-                            )
-                        },
-                        {
-                            merge: true
-                        }
-                    ).then(() => {
-                        console.log("saved to firebase")
-                    }).catch(err => {
-                        console.log(err.message)
-                    })
+                    this.$store.dispatch("saveResults", score);
                     return;
                 }
-                localStorage.score = JSON.stringify(result);
+                localStorage.score = JSON.stringify(score);
+                // localStorage.testScore = JSON.stringify(this.scores);
             }else{
                 confirm('Please choose an answer.')
                 return

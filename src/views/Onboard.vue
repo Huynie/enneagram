@@ -29,7 +29,7 @@
           <div>
             <img :src="require('@/assets/track-graphic.png')" class="w-3/5 md:w-full mx-auto"/>
         </div>
-        <router-link to="/register" class="capitalize text-2xl md:text-4xl font-medium text-transparent bg-gradient-to-b from-green-500 to-blue-300 bg-clip-text filter hover:drop-shadow-md transition-all">register</router-link>
+        <router-link to="/register" class="p-2 capitalize text-2xl md:text-4xl font-medium text-transparent bg-gradient-to-b from-green-500 to-blue-300 bg-clip-text filter hover:drop-shadow-md transition-all">register</router-link>
       </div>
     </div>
   </div>

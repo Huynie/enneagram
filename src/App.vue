@@ -10,8 +10,8 @@
 <script>
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import { auth } from './firebase/firebaseInit';
-import { onAuthStateChanged } from 'firebase/auth';
+// import { auth } from './firebase/firebaseInit';
+// import { onAuthStateChanged } from 'firebase/auth';
 
 export default {
   name: 'App',
@@ -20,20 +20,17 @@ export default {
     Footer
   },
   // created() {
-    // console.log(auth.currentUser.uid);
-    // onAuthStateChanged(auth, (user) => {
-    //   this.$store.commit("updateUser", user);
-    //   if(user) {
-    //     this.$store.dispatch("getCurrentUser");
-    //   }
-    // })
-    // this.checkRoute();
+  //   onAuthStateChanged(auth, (user) => {
+  //     // this.$store.commit("updateUser", user);
+  //     if(user) {
+  //       this.$store.dispatch("getCurrentUser");
+  //     }
+  //   });
   // }
 }
 </script>
 
-<style src="./assets/tailwind.css"/>
-<style>
+<style src="./assets/tailwind.css">
   @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
   html, body {

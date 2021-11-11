@@ -51,16 +51,16 @@ export default {
         }
     },
     methods: {
-        login() {
-            signInWithEmailAndPassword(auth, this.email, this.password)
-                .then(() => {
-                    this.error = false;
-                    this.errorMsg = "";
-                    this.$router.go('/dashboard');
-                }).catch(err => {
-                    this.error = true;
-                    this.errorMsg = err.message;
-                })
+        async login() {
+            try{
+                await signInWithEmailAndPassword(auth, this.email, this.password);
+                this.error = false;
+                this.errorMsg = "";
+                this.$router.go('/dashboard');
+            } catch (error) {
+                this.error = true;
+                this.errorMsg = error;
+            }
         }
     }
 }
