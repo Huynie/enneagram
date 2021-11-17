@@ -1,7 +1,7 @@
 <template>
     <div class="p-10 h-screen">
         <h1 class="w-max mx-auto text-4xl py-5 font-medium text-transparent bg-gradient-to-b from-green-500 to-blue-300 bg-clip-text">Register</h1>
-        <form class="w-80 mx-auto space-y-3">
+        <form class="w-80 mx-auto space-y-3" id="register" @submit="checkForm">
             <div class="flex flex-col ">
                 <label>first name</label>
                 <input 
@@ -30,12 +30,14 @@
                 />
             </div> -->
             <div class="flex flex-col ">
-                <label>email</label>
-                <input 
+                <label for="email">email</label>
+                <input
                     type="email"
+                    name="email"
                     v-model="email"
                     placeholder="enter email"
                     class="rounded-sm border-2 border-gray-100"
+                    required
                 />
             </div>
             <div class="flex flex-col ">
@@ -94,41 +96,36 @@ export default {
                 this.lastName !== "" &&
                 this.username !== "" &&
                 this.email !== "" &&
-                this.password !== ""
+                this.password !== "" 
             ) {
-                // Create new account in Firebase Authentication database
-                const createUser = await createUserWithEmailAndPassword(auth, this.email, this.password)
-                const userDatabase = doc(db, `users/${createUser.user.uid}`);
-                const resultExist = localStorage.score ? arrayUnion({
-                    "date/time": new Date(),
-                    score: JSON.parse(localStorage.score)
-                    }) : [];
-                const userData = {
-                    firstName: this.firstName,
-                    lastName: this.lastName,
-                    userName: this.username,
-                    email: this.email,
-                    results: resultExist,
-                };
-                // create new doc in Firebase Firestore database
                 try{
+                    // Create new account in Firebase Authentication database
+                    const createUser = await createUserWithEmailAndPassword(auth, this.email, this.password);
+
+                    const userDatabase = doc(db, `users/${createUser.user.uid}`);
+                    const resultExist = localStorage.score ? arrayUnion({
+                        "date/time": new Date(),
+                        score: JSON.parse(localStorage.score)
+                        }) : [];
+                    const userData = {
+                        firstName: this.firstName,
+                        lastName: this.lastName,
+                        userName: this.username,
+                        email: this.email,
+                        results: resultExist,
+                    };
+
+                    // create new doc in Firebase Firestore database
                     await setDoc( userDatabase, userData );
                     localStorage.removeItem("score");
                     console.log('Saved to DB & score deleted');
                     // this.$router.go({ path: "/dashboard" });
                     this.$router.go({ path: this.$router.path });
+                    
                 } catch (err) {
-                    console.log(err)
+                    this.error = true;
+                    this.errorMsg = err.message.slice(10);
                 }
-                // setDoc( userDatabase, userData )
-                //     .then(() => {
-                //         localStorage.removeItem("score");
-                //         console.log('Saved to DB & score deleted');
-                //         // this.$router.go({ path: "/dashboard" });
-                //         this.$router.go({ path: this.$router.path });
-                //     }).catch(err => {
-                //         console.log(err.message)
-                //     })
                 return;
             }
             this.error = true;
