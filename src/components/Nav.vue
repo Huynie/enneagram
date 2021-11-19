@@ -20,7 +20,7 @@
         </ul>
       </div>
       <div class="nav-mobile p-5" :mq="600">
-        <div class="relative text-center">
+        <div class="text-center">
             <router-link to="/">EN-GRAM</router-link>
             <button @click="toggle" class="absolute right-0">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -29,7 +29,12 @@
             </button>
         </div>
         <div v-show="showMenu" class="nav__menu-mobile flex flex-col items-center">
-            <ul class=" space-y-5 text-center">
+            <button @click="toggle" class="absolute right-0 top-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <ul class=" space-y-5 text-center mt-20">
                 <li >
                     <router-link to="/test" class="filter hover:drop-shadow-nav">test</router-link>
                 </li>
@@ -98,12 +103,13 @@ export default {
     .nav__menu-mobile{
         height: 100vh;
         width: 100%;
-        position: absolute;
-        top: 4rem;
+        position: fixed;
+        top: 0;
         left: 0;
-        z-index: 100;
+        z-index: 51;
         @apply
-            bg-primary;
+            bg-primary
+            ;
     }
     @media only screen and (max-width: 600px) {
         .nav-desktop{
