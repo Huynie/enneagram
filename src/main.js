@@ -11,6 +11,8 @@ onAuthStateChanged(auth, (user) => {
   .use(router)
   .use(store)
   .mount('#app');
+
+  //get user profile info when logged in
   if(user) {
     store.dispatch("getCurrentUser");
   };

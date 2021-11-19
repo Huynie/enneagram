@@ -1,6 +1,6 @@
 <template>
   <nav class="bg-primary uppercase text-white font-bold text-xl">
-      <div class="nav--desktop flex p-5">
+      <div class="nav-desktop flex p-5">
         <div class="flex-1 ">
             <router-link to="/">EN-GRAM</router-link>
         </div>
@@ -19,17 +19,17 @@
             </li>
         </ul>
       </div>
-      <!-- <div class="nav--mobile" :mq="600">
-        <div class="flex-grow">
+      <div class="nav-mobile p-5" :mq="600">
+        <div class="relative text-center">
             <router-link to="/">EN-GRAM</router-link>
+            <button @click="toggle" class="absolute right-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
-        <button @click="toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
         <div v-show="showMenu" class="nav__menu-mobile flex flex-col items-center">
-            <ul class=" justify-end space-y-5 ">
+            <ul class=" space-y-5 text-center">
                 <li >
                     <router-link to="/test" class="filter hover:drop-shadow-nav">test</router-link>
                 </li>
@@ -44,7 +44,7 @@
                 </li>
             </ul>
         </div>
-      </div> -->
+      </div>
   </nav>
 </template>
 
@@ -91,16 +91,25 @@ export default {
 }
 </script>
 
-<style>
-    .nav--mobile{
-        display: hidden;
+<style scoped>
+    .nav-mobile{
+        display: none;
     }
     .nav__menu-mobile{
         height: 100vh;
-        width: 100vw;
+        width: 100%;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        z-index: 100;
+        @apply
+            bg-primary;
     }
     @media only screen and (max-width: 600px) {
-        .nav--mobile{
+        .nav-desktop{
+            display: none;
+        }
+        .nav-mobile{
             display: block;
         }
     }
