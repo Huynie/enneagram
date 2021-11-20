@@ -1,6 +1,6 @@
 <template>
-    <div class="p-10 h-screen">
-        <h1 class="w-max mx-auto text-4xl py-5 font-medium text-transparent bg-gradient-to-b from-green-500 to-blue-300 bg-clip-text">Register</h1>
+    <div class="p-10 h-screen min-h-700">
+        <h1 class="title">Register</h1>
         <form class="w-80 mx-auto space-y-3" id="register" @submit="checkForm">
             <div class="flex flex-col ">
                 <label>first name</label>
@@ -8,7 +8,6 @@
                     type="text"
                     v-model="firstName"
                     placeholder="enter first name"
-                    class="rounded-sm border-2 border-gray-100"
                 />
             </div>
             <div class="flex flex-col ">
@@ -17,7 +16,6 @@
                     type="text"
                     v-model="lastName"
                     placeholder="enter last name"
-                    class="rounded-sm border-2 border-gray-100"
                 />
             </div>
             <!-- <div class="flex flex-col ">
@@ -26,7 +24,6 @@
                     type="text"
                     v-model="username"
                     placeholder="enter username"
-                    class="rounded-sm border-2 border-gray-100"
                 />
             </div> -->
             <div class="flex flex-col ">
@@ -36,7 +33,6 @@
                     name="email"
                     v-model="email"
                     placeholder="enter email"
-                    class="rounded-sm border-2 border-gray-100"
                     required
                 />
             </div>
@@ -46,7 +42,6 @@
                     type="password"
                     v-model="password"
                     placeholder="enter password"
-                    class="rounded-sm border-2 border-gray-100"
                 />
             </div>
             <div>
@@ -150,8 +145,24 @@ export default {
             focus:outline-none
         ;
     }
+    .title{
+        @apply
+            w-max
+            mx-auto
+            text-4xl
+            py-5 font-medium
+            text-transparent
+            bg-gradient-to-b
+            from-green-500
+            to-blue-300
+            bg-clip-text
+        ;
+    }
     label{
         @apply
             text-gray-600;
+    }
+    input{
+        @apply rounded-sm border-2 border-gray-100;
     }
 </style>
