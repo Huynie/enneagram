@@ -27,11 +27,12 @@ module.exports = {
           '600': '600px',
           '800': '800px'
         },
-          maxHeight:{
+        maxHeight:{
           '800': '800px',
         },
         minHeight: {
-          '1/2' : '50%'
+          '1/2' : '50%',
+          '700' : '700px'
         },
         extend: {
           dropShadow: {
