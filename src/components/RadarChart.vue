@@ -26,7 +26,7 @@ export default {
         '3 Achiever',
         '4 Individualist',
         '5 Investigator',
-        '6 Loyalist',
+        '6 Loyalist', 
         '7 Enthusiast',
         '8 Challenger',
         '9 Peacemaker'
