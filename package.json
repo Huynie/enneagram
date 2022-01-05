@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9.8.6",
+    "chart.js": "^3.7.0",
     "core-js": "^3.6.5",
     "firebase": "^9.1.3",
     "firebaseui": "^6.0.0",

@@ -13,7 +13,7 @@
             <div class="grid grid-row-3 lg:flex h-auto lg:h-screen">
                 <div class="section relative row-start-2 row-end-3 z-50">
                     <h1 class="section__title z-50">attributes</h1>
-                    coming soon!
+                    <RadarChart :results="$store.state.results" />
                 </div>
                 <div class="section rounded-tl-3xl relative row-start-1 row-end-2">
                     <div class="font-bold z-50">
@@ -75,6 +75,7 @@
 import Button from '../components/Button';
 import Score from '../components/Score';
 import Avatar from '../components/Avatar';
+import RadarChart from '../components/RadarChart';
 // import db , { auth } from '../firebase/firebaseInit';
 // import { getDoc, doc, updateDoc, arrayRemove } from 'firebase/firestore/lite';
 import { mapActions } from 'vuex';
@@ -84,7 +85,8 @@ export default {
     components: {
         Button,
         Score,
-        Avatar
+        Avatar,
+        RadarChart
     },
     data (){
         return {
@@ -108,7 +110,7 @@ export default {
         ...mapActions([
             'deleteResult'
         ])
-    },
+    }
 }
 </script>
 
