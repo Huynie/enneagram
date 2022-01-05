@@ -38,7 +38,7 @@ export default {
     // Sets 3 most recent results
     this.$store.state.results.slice(0,3).forEach((result, idx) => {
       const set = {
-        label: result["date/time"].toDate().toUTCString(),
+        label: `${result["date/time"].toDate().toDateString()} ${result["date/time"].toDate().toLocaleTimeString()}`,
         data: result.score,
         fill: true,
         backgroundColor: idx === 0 ? '#F472B61A' : idx === 1 ? '#93C5FD1A' : '#5CDCBD1A',
