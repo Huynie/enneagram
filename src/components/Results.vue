@@ -5,7 +5,7 @@
              for an account to save your result.  Result will reset otherwise.</p>
         <h3 class="font-bold text-2xl my-3 capitalize text-transparent bg-gradient-to-b from-green-500 to-blue-300 bg-clip-text">score</h3>
         <Score :scores="scores"/>
-        <div class="type">
+        <div class="result__type">
             <h2 class=" font-bold text-2xl text-pink-600">{{ types[finalType].type }}</h2>
             <h1 class="capitalize font-medium text-xl text-pink-500">type {{finalType + 1}}</h1>
             <div class="description">
@@ -56,7 +56,7 @@ export default {
         mx-auto
     ;
 }
-.type{
+.result__type{
     @apply
         mx-auto
         my-12

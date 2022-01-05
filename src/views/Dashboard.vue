@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
 /*     .profile{
         box-shadow: inset 0 5px 2px rgba(0, 0, 0, 0.25);
         border-radius: 10rem 0 0 0;
