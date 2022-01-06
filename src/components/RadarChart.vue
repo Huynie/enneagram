@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-4/5 mx-auto">
     <canvas id="myChart" width="400" height="400"></canvas>
   </div>
 </template>
