@@ -127,7 +127,8 @@ export default {
             flex flex-col
             items-center
             relative
-            h-80
+            h-72
+            md:h-80
             z-40
         ;
     }

@@ -1,8 +1,8 @@
 <template>
   <div @click="modal">
-      <div class="w-52 h-52 bg-pink-500 rounded-full mx-auto my-5 justify-center items-center flex text-white text-2xl overflow-hidden">
-          <div class="rounded-full bg-green-500 overflow-hidden w-48 h-48 flex justify-center items-center">
-            <h1 class="font-medium text-8xl">
+      <div class="md:w-52 md:h-52 w-36 h-36 bg-pink-500 rounded-full mx-auto my-5 justify-center items-center flex text-white text-2xl overflow-hidden">
+          <div class="rounded-full bg-green-500 overflow-hidden md:w-48 md:h-48 w-32 h-32 flex justify-center items-center">
+            <h1 class="font-medium text-6xl md:text-8xl">
               {{$store.state.initials}}
             </h1>
           </div>
