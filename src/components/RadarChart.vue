@@ -1,5 +1,5 @@
 <template>
-  <div class="w-4/5 mx-auto">
+  <div class="w-4/5 mx-auto" :results="$store.state.results">
     <canvas id="myChart" width="400" height="400"></canvas>
   </div>
 </template>
@@ -32,6 +32,8 @@ export default {
     }
   },
   updated() {
+    console.log(this.$store.state.results);
+
     // Sets 3 most recent results
     this.$store.state.results.slice(0,3).forEach((result, idx) => {
       const set = {
@@ -61,9 +63,7 @@ export default {
         }
       },
     })
-  },
-  // mounted() {
-  // }
+  }
 }
 </script>
 

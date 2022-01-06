@@ -98,7 +98,18 @@ const store = createStore({
       } catch (err) {
           console.log(err);
       }
-    }
+    },
+    // async login() {
+    //   try{
+    //     await signInWithEmailAndPassword(auth, this.email, this.password);
+    //     this.error = false;
+    //     this.errorMsg = "";
+    //     this.$router.go('/dashboard');
+    //   } catch (error) {
+    //     this.error = true;
+    //     this.errorMsg = error;
+    //   }
+    // }
   },
   // Breaks the store out to multiple modules
   modules: {},

@@ -13,7 +13,7 @@
             <div class="grid grid-row-3 lg:flex h-auto lg:h-screen">
                 <div class="section relative row-start-2 row-end-3 z-50">
                     <h1 class="section__title z-50">attributes</h1>
-                    <RadarChart/>
+                    <RadarChart />
                 </div>
                 <div class="section rounded-tl-3xl relative row-start-1 row-end-2">
                     <div class="font-bold z-50">

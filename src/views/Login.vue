@@ -51,6 +51,7 @@ export default {
         }
     },
     methods: {
+        // Maybe move to VueX store?
         async login() {
             try{
                 await signInWithEmailAndPassword(auth, this.email, this.password);
