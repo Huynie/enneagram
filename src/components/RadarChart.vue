@@ -9,9 +9,6 @@ import Chart  from 'chart.js/auto';
 
 export default {
   name: "RadarChart",
-  components: {
-      
-  },
   // props: {
   //   results:{
   //     type: Array,
