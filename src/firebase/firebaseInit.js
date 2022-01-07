@@ -1,8 +1,8 @@
 import {initializeApp} from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore, collection, getDoc, getDocs, doc, query, limit, onSnapshot } from 'firebase/firestore/lite';
+import { getFirestore } from 'firebase/firestore/lite';
 
-const firebaseApp = initializeApp({
+export const firebaseApp = initializeApp({
   apiKey: "AIzaSyCULs8RNL-aOMXhpBUrX7Mn7fyIov9h6Tc",
   authDomain: "en-gram.firebaseapp.com",
   projectId: "en-gram",
@@ -12,10 +12,8 @@ const firebaseApp = initializeApp({
   measurementId: "G-K9KVYT5P2M"
 });
 
-
 const db = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);
-
 
 // const user1 = doc(db, 'users/e9wd518aJIco6nGTqtGa')
 // console.log(getDoc(user1))

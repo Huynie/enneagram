@@ -32,8 +32,6 @@ export default {
     }
   },
   updated() {
-    console.log(this.$store.state.results);
-
     // Sets 3 most recent results
     this.$store.state.results.slice(0,3).forEach((result, idx) => {
       const set = {

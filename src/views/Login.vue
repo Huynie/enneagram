@@ -29,6 +29,9 @@
     <div v-show="error">
         {{this.errorMsg}}
     </div>
+    <div>
+        <section id="firebaseui-auth-container"></section>
+    </div>
   </div>
 </template>
 
@@ -36,6 +39,10 @@
 import Button from '../components/Button';
 import { auth } from '../firebase/firebaseInit';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import * as firebaseui from 'firebaseui';
+import 'firebaseui/dist/firebaseui.css'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 export default {
     name: 'Login',
@@ -63,7 +70,21 @@ export default {
                 this.errorMsg = error;
             }
         }
+    },
+    mounted() {
+        // console.log(firebase.auth)
+        const uiConfig = {
+            signInSuccessUrl: "/profile",
+            signInOptions: [
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            ]
+        };
+        const ui = new firebaseui.auth.AuthUI(auth);
+        // new firebaseui.auth.AuthUI(auth).start("#firebaseui-auth-container", uiConfig);
+        ui.start("#firebaseui-auth-container", uiConfig);
     }
+
 }
 </script>
 
