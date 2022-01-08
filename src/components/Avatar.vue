@@ -6,31 +6,31 @@
               {{$store.state.initials}}
             </h1>
           </div>
-          <Modal
+          <!-- <Modal
             v-show="modalActive"
             text="avatar"
-          />
+          /> -->
         </div>
   </div>
 </template>
 
 <script>
-    import Modal from './Modal';
+    // import Modal from './Modal';
 export default {
     name: "Avatar",
-    components: {
-        Modal
-    },
-    data() {
-        return {
-            modalActive: false,
-        }
-    },
-    methods: {
-        modal() {
-           this.modalActive = !this.modalActive;
-        }
-    }
+    // components: {
+    //     Modal
+    // },
+    // data() {
+    //     return {
+    //         modalActive: false,
+    //     }
+    // },
+    // methods: {
+    //     modal() {
+    //        this.modalActive = !this.modalActive;
+    //     }
+    // }
 }
 </script>
 

@@ -43,7 +43,8 @@ export default {
         pointBackgroundColor: idx === 0 ? '#F472B6' : idx === 1 ? '#93C5FD' : '#5CDCBD',
         pointBorderColor: idx === 0 ? '#F472B61A' : idx === 1 ? '#93C5FD1A' : '#5CDCBD1A',
         pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgb(54, 162, 235)'
+        pointHoverBorderColor: 'rgb(54, 162, 235)',
+        tension: 0.3
       }
 
       this.datasets.push(set);

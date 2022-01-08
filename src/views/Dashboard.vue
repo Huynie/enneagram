@@ -12,7 +12,7 @@
         <div class="mainInfoContainer h-5/12">
             <div class="grid grid-row-3 lg:flex h-auto lg:h-screen">
                 <div class="section relative row-start-2 row-end-3 z-50">
-                    <h1 class="section__title z-50">attributes</h1>
+                    <h1 class="section__title z-50">Health State</h1>
                     <RadarChart />
                 </div>
                 <div class="section rounded-tl-3xl relative row-start-1 row-end-2">
