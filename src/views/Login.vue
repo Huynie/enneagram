@@ -33,7 +33,7 @@
             text="Sign In With Google"
             @click.prevent="signInWithGoogle"
         />
-        <!-- <Button
+        <Button
             tailwindClass="w-full bg-blue-500 font-semibold"
             text="Sign In With Facebook"
             @click.prevent="signInWithFacebook"
@@ -42,7 +42,7 @@
             tailwindClass="bg-black font-semibold w-full"
             text="Sign In With Github"
             @click.prevent="signInWithGithub"
-        /> -->
+        />
     </div>
     <!-- <div>
         <section id="firebaseui-auth-container"></section>
