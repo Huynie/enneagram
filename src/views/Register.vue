@@ -1,7 +1,7 @@
 <template>
-    <div class="p-10 h-screen min-h-700">
+    <div class="mt-10 h-screen min-h-700 w-80 mx-auto">
         <h1 class="title">Register</h1>
-        <form class="w-80 mx-auto space-y-3" id="register" @submit="checkForm">
+        <form class="w-72 md:w-80 mx-auto space-y-3" id="register" @submit="checkForm">
             <div class="flex flex-col ">
                 <label>first name</label>
                 <input 
@@ -49,7 +49,7 @@
                     {{this.errorMsg}}
                 </p>
             </div>
-            <div class="text-center">
+            <div>
                 <Button
                     text="register"
                     type="submit"
@@ -58,11 +58,13 @@
                 />
             </div>
         </form>
+        <OauthButtons/>
     </div>
 </template>
 
 <script>
 import Button from '../components/Button';
+import OauthButtons from '../components/OauthButtons';
 import db, { auth } from '../firebase/firebaseInit';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc, arrayUnion } from 'firebase/firestore/lite';
@@ -70,15 +72,16 @@ import { setDoc, doc, arrayUnion } from 'firebase/firestore/lite';
 export default {
     name: 'Register',
     components: {
-        Button
+        Button,
+        OauthButtons
     },
     data () {
         return {
-            firstName: "Mike",
-            lastName: "Jonez",
-            // username: "MkJnz",
-            email: 'test2@test.com',
-            password: 'test123',
+            firstName: "",
+            lastName: "",
+            // username: "",
+            email: '',
+            password: '',
             error: null,
             errorMsg: ""
         }
@@ -130,12 +133,11 @@ export default {
 }
 </script>
 
-<style>
+<style scope>
     .btn-register{
         @apply
             bg-primary
-            mx-4
-            w-56
+            w-full
             min-w-min
             outline-none
             focus:bg-pressed
@@ -143,6 +145,8 @@ export default {
             hover:bg-questions
             focus:ring-2
             focus:outline-none
+            capitalize
+            font-semibold
         ;
     }
     .title{

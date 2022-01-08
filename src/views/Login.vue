@@ -22,54 +22,28 @@
     <div v-show="error">
         {{this.errorMsg}}
     </div>
-    <div class="px-8">
+    <div>
         <Button
             tailwindClass="btn-login"
-            text="Sign In"
+            text="Log In"
             @click.prevent="login"
         />
-        <Button
-            tailwindClass=" bg-red-500 w-full font-semibold"
-            text="Sign In With Google"
-            @click.prevent="signInWithGoogle"
-        />
-        <Button
-            tailwindClass="w-full bg-blue-500 font-semibold"
-            text="Sign In With Facebook"
-            @click.prevent="signInWithFacebook"
-        />
-        <Button
-            tailwindClass="bg-black font-semibold w-full"
-            text="Sign In With Github"
-            @click.prevent="signInWithGithub"
-        />
     </div>
-    <!-- <div>
-        <section id="firebaseui-auth-container"></section>
-    </div> -->
+   <OauthButtons/>
   </div>
 </template>
 
 <script>
 import Button from '../components/Button';
+import OauthButtons from '../components/OauthButtons';
 import { auth } from '../firebase/firebaseInit';
-import {
-    signInWithEmailAndPassword,
-    signInWithPopup,
-    GoogleAuthProvider,
-    GithubAuthProvider,
-    FacebookAuthProvider,
-    // TwitterAuthProvider
-} from 'firebase/auth';
-// import * as firebaseui from 'firebaseui';
-// import 'firebaseui/dist/firebaseui.css'
-// import firebase from 'firebase/compat/app';
-// import 'firebase/compat/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default {
     name: 'Login',
     components: {
-        Button
+        Button,
+        OauthButtons
     },
     data () {
         return {
@@ -92,69 +66,11 @@ export default {
                 this.errorMsg = error;
             }
         },
-        async signInWithGoogle() {
-
-            await signInWithPopup(auth, new GoogleAuthProvider())
-                .then((res) => {
-                    console.log(res);
-                    this.$router.go('/dashboard');
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
-            // try {
-            //     signInWithPopup(auth, new GoogleAuthProvider());
-            //     this.error = false;
-            //     this.errorMsg = "";
-            //     this.$router.go('/dashboard');
-            // } catch (error) {
-            //     this.error = true;
-            //     this.errorMsg = error;
-            // }
-        },
-        async signInWithFacebook() {
-            try {
-                const res = await signInWithPopup(auth, new FacebookAuthProvider())
-                ;
-                console.log(res);
-                this.error = false;
-                this.errorMsg = "";
-                this.$router.go('/dashboard');
-            } catch (error) {
-                this.error = true;
-                this.errorMsg = error;
-            }
-        },
-        async signInWithGithub() {
-            try {
-                await signInWithPopup(auth, new GithubAuthProvider());
-                this.error = false;
-                this.errorMsg = "";
-                this.$router.go('/dashboard');
-            } catch (error) {
-                this.error = true;
-                this.errorMsg = error;
-            }
-        },
     },
-    // mounted() {
-    //     console.log(firebase.auth)
-    //     const uiConfig = {
-    //         signInSuccessUrl: "/profile",
-    //         signInOptions: [
-    //             firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    //             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    //             firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    //         ]
-    //     };
-    //     const ui = new firebaseui.auth.AuthUI(auth);
-    //     ui.start("#firebaseui-auth-container", uiConfig);
-    // }
-
 }
 </script>
 
-<style>
+<style scope>
 .btn-login{
     @apply
         bg-primary
