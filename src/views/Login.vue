@@ -93,19 +93,30 @@ export default {
             }
         },
         async signInWithGoogle() {
-            try {
-                await signInWithPopup(auth, new GoogleAuthProvider());
-                this.error = false;
-                this.errorMsg = "";
-                this.$router.go('/dashboard');
-            } catch (error) {
-                this.error = true;
-                this.errorMsg = error;
-            }
+
+            await signInWithPopup(auth, new GoogleAuthProvider())
+                .then((res) => {
+                    console.log(res);
+                    this.$router.go('/dashboard');
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+            // try {
+            //     signInWithPopup(auth, new GoogleAuthProvider());
+            //     this.error = false;
+            //     this.errorMsg = "";
+            //     this.$router.go('/dashboard');
+            // } catch (error) {
+            //     this.error = true;
+            //     this.errorMsg = error;
+            // }
         },
         async signInWithFacebook() {
             try {
-                await signInWithPopup(auth, new FacebookAuthProvider());
+                const res = await signInWithPopup(auth, new FacebookAuthProvider())
+                ;
+                console.log(res);
                 this.error = false;
                 this.errorMsg = "";
                 this.$router.go('/dashboard');
