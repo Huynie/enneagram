@@ -10,62 +10,72 @@
             </div>
         </div>
         <div class="mainInfoContainer h-5/12">
+            <!-- HEALTH STATE -->
             <div class="grid grid-row-3 lg:flex h-auto lg:h-screen">
-                <div class="section relative row-start-2 row-end-3 z-50">
+                <section class="section relative row-start-2 row-end-3 z-50">
                     <h1 class="section__title z-50">Health State</h1>
-                    <RadarChart />
-                </div>
-                <div class="section rounded-tl-3xl relative row-start-1 row-end-2">
-                    <div class="font-bold z-50">
-                        <h4 class="capitalize text-pink-500 text-3xl">{{$store.state.descriptions[$store.state.core].type}}</h4>
-                        <h3 class="text-center text-pink-300 text-xl mt-2">Type {{$store.state.core + 1}}</h3>
-                    </div>
-                    <div class="type">
-                        <div>
-                            <h2 class="type__title">highs</h2>
-                            <div class="type__score">
-                                <h3 class="type__score--text">T {{$store.state.highs[1]}}</h3>
-                                <h3 class="type__score--text">T {{$store.state.highs[2]}}</h3>
+                    <p v-if="$store.state.results.length === 0">No result history yet.  Please take the test.</p>
+                    <RadarChart v-else/>
+                </section>
+                <!-- TYPE DESCRIPTION -->
+                <section class="section rounded-tl-3xl relative row-start-1 row-end-2">
+                    <p v-if="$store.state.results.length === 0">No results yet.  Please take the test.</p>
+                    <div v-else>
+                        <div class="font-bold z-50 text-center">
+                            <h4 class="capitalize text-pink-500 text-3xl">{{$store.state.descriptions[$store.state.core].type}}</h4>
+                            <h3 class="text-pink-300 text-xl mt-2">Type {{$store.state.core + 1}}</h3>
+                        </div>
+                        <div class="type">
+                            <div class="mx-auto">
+                                <h2 class="type__title">highs</h2>
+                                <div class="type__score">
+                                    <h3 class="type__score--text">T {{$store.state.highs[1]}}</h3>
+                                    <h3 class="type__score--text">T {{$store.state.highs[2]}}</h3>
+                                </div>
+                            </div>
+                            <div class="mx-auto">
+                                <h2 class="type__title">lows</h2>
+                                <div class="type__score">
+                                    <h3 class="type__score--text">T {{$store.state.lows[0]}}</h3>
+                                    <h3 class="type__score--text">T {{$store.state.lows[1]}}</h3>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <h2 class="type__title">lows</h2>
-                            <div class="type__score">
-                                <h3 class="type__score--text">T {{$store.state.lows[0]}}</h3>
-                                <h3 class="type__score--text">T {{$store.state.lows[1]}}</h3>
-                            </div>
+                        <div class="mx-auto w-80">
+                            <p class="my-2">
+                                {{ $store.state.descriptions[$store.state.core].description }}
+                            </p>
+                            <p class="my-2"><b class="text-red-400">Fear:</b> {{ $store.state.descriptions[$store.state.core].fear }}</p>
+                            <p class="my-2"><b class="text-yellow-400">Desire:</b> {{ $store.state.descriptions[$store.state.core].desire }}</p>
+                            <p class="my-2"><b class="text-blue-400">Motivations:</b> {{ $store.state.descriptions[$store.state.core].motivations }}</p>
                         </div>
                     </div>
-                    <div class="mx-auto w-80">
-                        <p class="my-2">
-                            {{ $store.state.descriptions[$store.state.core].description }}
-                        </p>
-                        <p class="my-2"><b class="text-red-400">Fear:</b> {{ $store.state.descriptions[$store.state.core].fear }}</p>
-                        <p class="my-2"><b class="text-yellow-400">Desire:</b> {{ $store.state.descriptions[$store.state.core].desire }}</p>
-                        <p class="my-2"><b class="text-blue-400">Motivations:</b> {{ $store.state.descriptions[$store.state.core].motivations }}</p>
-                    </div>
-                </div>
-                <div class="section bg-white">
+                </section>
+                <!-- RESULT HISTORY -->
+                <section class="section bg-white">
                     <div>
                         <h1 class="section__title">result history</h1>
-                        <div
-                            class="w-max mx-auto my-10"
-                            v-for="(result, index) in $store.state.results"
-                            :key="index"
-                            >
-                            <div class="flex w-full">
-                                <h2 class="text-green-600 flex-1 font-medium">{{result["date/time"].toDate().toDateString()}}</h2>
-                                <h2 class="text-green-600 flex-1 font-light">{{result["date/time"].toDate().toLocaleTimeString('en-US')}}</h2>
-                                <button @click="deleteResult(index)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-300 hover:text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
+                        <p v-if="$store.state.results.length === 0">No results yet.  Please take the test.</p>
+                        <div v-else>
+                            <div
+                                class="w-max mx-auto my-10"
+                                v-for="(result, index) in $store.state.results"
+                                :key="index"
+                                >
+                                <div class="flex w-full">
+                                    <h2 class="text-green-600 flex-1 font-medium">{{result["date/time"].toDate().toDateString()}}</h2>
+                                    <h2 class="text-green-600 flex-1 font-light">{{result["date/time"].toDate().toLocaleTimeString('en-US')}}</h2>
+                                    <button @click="deleteResult(index)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-300 hover:text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <Score :scores="result.score"/>
                             </div>
-                            <Score :scores="result.score"/>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>

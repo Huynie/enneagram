@@ -2,11 +2,11 @@
   <div class="mx-auto w-80 mt-10 h-screen">
     <h1 class="text-lg mx-auto w-max">Login</h1>
     <div class="flex flex-col my-2">
-        <label>username</label>
+        <label>Email</label>
         <input type="email" v-model="email" placeholder="enter email" class="rounded-sm border-2 border-gray-100"/>
     </div>
     <div class="flex flex-col my-2">
-        <label>password</label>
+        <label>Password</label>
         <input type="password" v-model="password" placeholder="enter password" class="rounded-sm border-2 border-gray-100"/>
     </div>
     <div class="mb-5 font-normal">
@@ -47,8 +47,8 @@ export default {
     },
     data () {
         return {
-            email: "",
-            password: "",
+            email: "test@test.com",
+            password: "test123",
             error: null,
             errorMsg: ""
         }
@@ -65,7 +65,7 @@ export default {
                 this.error = true;
                 this.errorMsg = error;
             }
-        },
+        }
     },
 }
 </script>

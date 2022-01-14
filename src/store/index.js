@@ -13,7 +13,7 @@ const store = createStore({
         id: null,
         initials: "...",
         descriptions: require('../../types.json'),
-        results: null,
+        results: [],
         core: 0,
         lows: [],
         highs: [],
@@ -36,6 +36,8 @@ const store = createStore({
       state.userName = userData.username;
       state.initials = userData.firstName.charAt(0) + userData.lastName.charAt(0);
       state.results = userData.results.reverse();
+
+      if (state.results.length === 0) return;
 
       const latestScore = [...state.results[0].score];
 
@@ -68,11 +70,13 @@ const store = createStore({
   // Actions are to be 'dispatched' when triggered.
   actions: {
    async getCurrentUser({commit}) {
-      const userDataBase = doc(db,`users/${auth.currentUser.uid}`);
+      const userDatabase = doc(db, "users", auth.currentUser.uid);
+      // const userDatabase = doc(db, "users", "JGelZDzdG6PvgYcM2yITKgFzyB93" );
       try{
-      //  const doc = await getDoc(userDataBase);
-      //  const userData = doc.data();
-        commit("setProfileInfo", (await getDoc(userDataBase)).data());
+        // const doc = await getDoc(userDatabase);
+        // const userData = doc.data();
+        // commit("setProfileInfo", userData);
+        commit("setProfileInfo", (await getDoc(userDatabase)).data());
       } catch (error) {
         console.log(error);
       }

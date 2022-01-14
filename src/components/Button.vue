@@ -1,9 +1,11 @@
 <template>
     <button
+        class="btnBase"
         @click="onClick()"
-        :class="[tailwindClass, btnBaseStyle] "
+        :class="[tailwindClass]"
         :disabled="isDisabled"
     >
+        <slot></slot>
         {{ text }}
     </button>
 </template>
@@ -28,3 +30,16 @@ export default {
     }
 }
 </script>
+
+<style>
+    .btnBase{
+        @apply
+        rounded-md
+        py-3
+        px-4
+        tracking-wide
+        text-white
+        focus:outline-none
+        my-3
+    }
+</style>
