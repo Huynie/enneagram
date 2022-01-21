@@ -1,0 +1,24 @@
+{
+  "name": "engram-mobile",
+  "version": "1.0.0",
+  "description": "en-gram mobile version",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Huynie/enneagram.git"
+  },
+  "keywords": [
+    "engram",
+    "react-native",
+    "mobile"
+  ],
+  "author": "Huy Chau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Huynie/enneagram/issues"
+  },
+  "homepage": "https://github.com/Huynie/enneagram#readme"
+}
