@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-auto p-10 text-center h-screen">
+    <div class="mx-auto p-10 text-center">
         <!-- QUESTION NUMBER COUNTER -->
         <!-- <h1 class="font-bold text-2xl">
             Question {{JSON.parse(counter) + 1}}/{{totalQuestions.length}}
@@ -108,16 +108,20 @@ export default {
         }
     },
     methods:{
-        choice1() {
+        choice1(e) {
             document.getElementById("choice1").focus();
             this.answer1 = this.totalQuestions[this.counter].answer1;
             this.choice = this.answer1;
+            document.getElementById('choice2').classList.remove('selected');
+            e.target.classList.add('selected');
             this.disabledBtn = false;
         },
-        choice2() {
+        choice2(e) {
             document.getElementById("choice2").focus();
             this.answer2 = this.totalQuestions[this.counter].answer2;
             this.choice = this.answer2;
+            document.getElementById('choice1').classList.remove('selected');
+            e.target.classList.add('selected');
             this.disabledBtn = false;
         },
         next() {
@@ -130,6 +134,7 @@ export default {
                 this.filled = `${(parseInt(this.counter) + 1) * 0.695}%`;
                 this.questions1 = this.totalQuestions[this.counter].choice1
                 this.questions2 = this.totalQuestions[this.counter].choice2
+                document.querySelector('.selected').classList.remove('selected');
                 // this.showNext = this.counter === 143 ? false : true
                 // this.showGetType = this.counter === 143 ? true : false
             }else{
@@ -143,9 +148,6 @@ export default {
         async getType() {
             if(this.choice !== '') {
                 this.tally[this.choice] ++
-                // localStorage.tally = JSON.stringify(this.tally);
-                // this.counter ++
-                // localStorage.progress = this.counter;
                 const score = [
                     this.tally.D,
                     this.tally.F,
@@ -214,11 +216,14 @@ export default {
         min-w-min
         outline-none
         text-left
-        focus:bg-pressed
-        focus:ring-pink-500
-        focus:ring-2
-        focus:outline-none
     ;
+}
+.selected{
+    @apply
+    bg-pressed
+    ring-pink-500
+    ring-2
+    outline-none
 }
 .btn-next{
     @apply 

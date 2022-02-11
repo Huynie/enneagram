@@ -11,7 +11,7 @@
         </div>
         <div class="mainInfoContainer h-5/12">
             <!-- HEALTH STATE -->
-            <div class="grid grid-row-3 lg:flex h-auto lg:h-screen">
+            <div class="grid grid-row-3 lg:flex">
                 <section class="section relative row-start-2 row-end-3 z-50">
                     <h1 class="section__title z-50">Health State</h1>
                     <p v-if="$store.state.results.length === 0">No result history yet.  Please take the test.</p>
@@ -125,10 +125,6 @@ export default {
 </script>
 
 <style scoped>
-/*     .profile{
-        box-shadow: inset 0 5px 2px rgba(0, 0, 0, 0.25);
-        border-radius: 10rem 0 0 0;
-    } */
     .profile{
         box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
         border-radius: 0 0 5vw 0;

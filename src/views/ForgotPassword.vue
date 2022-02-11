@@ -1,8 +1,8 @@
 <template>
-  <div class="p-10 h-screen">
+  <div class="pt-10 h-screen mx-auto w-80">
     <!-- <Modal/>
     <Loading/> -->
-    <form class="w-80 mx-auto" v-show="!reset">
+    <form v-show="!reset">
       <div class="flex flex-col space-y-3">
         <label class="text-center">Enter your email to reset your password</label>
         <input type="email" v-model="email" placeholder="enter email" class="rounded-sm border-2 border-gray-100"/>
@@ -11,7 +11,7 @@
         <Button
           text="Reset"
           @click.prevent="resetPassword"
-          tailwindClass="bg-primary hover:bg-questions px-5"
+          tailwindClass="bg-primary hover:bg-questions px-5 font-semibold"
         />
       </div>
     </form>

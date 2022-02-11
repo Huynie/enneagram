@@ -1,7 +1,7 @@
 <template>
     <div class="resultsContainer">
-        <p class="text-gray-400 w-96 mx-auto" v-show="showRegister">
-            <router-link :to="{ name: 'Register' }" class="font-medium hover:text-pink-500">Register</router-link>
+        <p class="text-gray-400 mx-auto" v-show="showRegister">
+            <router-link :to="{ name: 'Register' }" class="font-semibold hover:text-pink-500">Register</router-link>
              for an account to save your result.  Result will reset otherwise.</p>
         <h3 class="font-bold text-2xl my-3 capitalize text-transparent bg-gradient-to-b from-green-500 to-blue-300 bg-clip-text">score</h3>
         <Score :scores="scores"/>
@@ -50,7 +50,6 @@ export default {
 <style scoped>
 .resultsContainer{
     @apply
-        w-96
         sm:w-full
         max-w-500
         mx-auto

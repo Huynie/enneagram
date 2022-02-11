@@ -18,15 +18,7 @@ export default {
   components: {
     Nav,
     Footer
-  },
-  // created() {
-  //   onAuthStateChanged(auth, (user) => {
-  //     // this.$store.commit("updateUser", user);
-  //     if(user) {
-  //       this.$store.dispatch("getCurrentUser");
-  //     }
-  //   });
-  // }
+  }
 }
 </script>
 

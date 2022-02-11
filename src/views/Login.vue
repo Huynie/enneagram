@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto w-80 mt-10 h-screen">
-    <h1 class="text-lg mx-auto w-max">Login</h1>
+    <h1 class="title">Login</h1>
     <div class="flex flex-col my-2">
         <label>Email</label>
         <input type="email" v-model="email" placeholder="enter email" class="rounded-sm border-2 border-gray-100"/>
@@ -9,14 +9,14 @@
         <label>Password</label>
         <input type="password" v-model="password" placeholder="enter password" class="rounded-sm border-2 border-gray-100"/>
     </div>
-    <div class="mb-5 font-normal">
-        <div class="text-center text-gray-400">
+    <div class="mb-5 ">
+        <div class="text-center text-gray-400 font-normal">
             Forgot your password?
-            <router-link :to="{ name: 'ForgotPassword' }" class="hover:text-pink-400 font-medium">Click here.</router-link>
+            <router-link :to="{ name: 'ForgotPassword' }" class="hover:text-pink-400 font-semibold">Click here.</router-link>
         </div>
-        <div class="text-center  text-gray-400">
+        <div class="text-center  text-gray-400 font-normal">
             Don't have an account? 
-            <router-link :to="{ name: 'Register' }" class="hover:text-pink-400 font-medium">Register here.</router-link>
+            <router-link :to="{ name: 'Register' }" class="hover:text-pink-400 font-semibold">Register here.</router-link>
         </div>
     </div>
     <div v-show="error">
@@ -71,18 +71,31 @@ export default {
 </script>
 
 <style scope>
-.btn-login{
-    @apply
-        bg-primary
-        mx-auto
-        w-full
-        outline-none
-        focus:bg-pressed
-        focus:ring-pink-400
-        focus:ring-2
-        focus:outline-none
-        hover:bg-questions
-        font-semibold
-    ;
-}
+    .btn-login{
+        @apply
+            bg-primary
+            mx-auto
+            w-full
+            outline-none
+            focus:bg-pressed
+            focus:ring-pink-400
+            focus:ring-2
+            focus:outline-none
+            hover:bg-questions
+            font-semibold
+        ;
+    }
+    .title{
+        @apply
+            w-max
+            mx-auto
+            text-4xl
+            py-5 font-medium
+            text-transparent
+            bg-gradient-to-b
+            from-green-500
+            to-blue-300
+            bg-clip-text
+        ;
+    }
 </style>

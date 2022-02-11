@@ -164,9 +164,9 @@ export default {
     }
     label{
         @apply
-            text-gray-600;
+            text-gray-600 capitalize;
     }
     input{
-        @apply rounded-sm border-2 border-gray-100;
+        @apply rounded-sm border-2 border-gray-100 p-2; 
     }
 </style>

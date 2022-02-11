@@ -13,9 +13,6 @@ module.exports = {
         'questions': '#5CDCBD',
         'pressed': '#67D2D2'
        }),
-      //  borderRadius: {
-      //   'divider': '10rem'
-      //  },
         maxWidth:{
           '20': '20%',
           '40': '40%',
