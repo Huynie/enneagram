@@ -1,6 +1,5 @@
 # EN-GRAM
 
-(readme/homepage.jpg?raw=true "Title")
 An enneagram personality test that tracks your mental health by comparing the history of your scores with your most recent scores.
 
 <br/>
