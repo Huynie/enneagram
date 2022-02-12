@@ -12,16 +12,16 @@
         <div class="mainInfoContainer h-5/12">
             <!-- HEALTH STATE -->
             <div class="grid grid-row-3 lg:flex">
-                <section class="section relative row-start-2 row-end-3 z-50">
-                    <h1 class="section__title z-50">Health State</h1>
+                <section class="section row-start-2 row-end-3 md:z-50">
+                    <h1 class="section__title">Health State</h1>
                     <p v-if="$store.state.results.length === 0">No result history yet.  Please take the test.</p>
                     <RadarChart v-else/>
                 </section>
                 <!-- TYPE DESCRIPTION -->
-                <section class="section rounded-tl-3xl relative row-start-1 row-end-2">
+                <section class="section rounded-tl-3xl row-start-1 row-end-2 z-50 md:z-0">
                     <p v-if="$store.state.results.length === 0">No results yet.  Please take the test.</p>
                     <div v-else>
-                        <div class="font-bold z-50 text-center">
+                        <div class="font-bold text-center relative z-50">
                             <h4 class="capitalize text-pink-500 text-3xl">{{$store.state.descriptions[$store.state.core].type}}</h4>
                             <h3 class="text-pink-300 text-xl mt-2">Type {{$store.state.core + 1}}</h3>
                         </div>
@@ -188,7 +188,8 @@ export default {
         flex
         flex-col
         items-center
-        pt-10
+        py-10
+        relative
         ;
     }
     .section__title{
