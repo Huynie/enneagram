@@ -1,5 +1,5 @@
 # EN-GRAM
-![logo](https://github.com/Huynie/enneagram/blob/verbatim/readme/homepage.JPG)
+![logo](../verbatim/readme/homepage.JPG)
 An enneagram personality test that tracks your mental health by comparing the history of your scores with your most recent scores.
 
 <br/>
