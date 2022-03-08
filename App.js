@@ -1,24 +1,47 @@
-import "react-native-gesture-handler";
+import { Text, View } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Home!</Text>
+    </View>
+  );
+}
 
-import { useLoadedAssets } from "./hooks/useLoadedAssets";
-import Navigation from "./navigation";
-import { useColorScheme } from "react-native";
+function SettingsScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const isLoadingComplete = useLoadedAssets();
-  const colorScheme = useColorScheme();
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ tabBarIcon: makeIconRender("home") }}
+        />
+        <Tab.Screen
+          name="Settings"
+          component={SettingsScreen}
+          options={{ tabBarIcon: makeIconRender("cog") }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
 
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </SafeAreaProvider>
-    );
-  }
+function makeIconRender(name) {
+  return ({ color, size }) => (
+    <MaterialCommunityIcons name={name} color={color} size={size} />
+  );
 }
