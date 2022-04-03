@@ -5,14 +5,17 @@ import { head } from "lodash";
 import Login from "./src/screens/LoginScreen";
 import TestScreen from "./src/screens/TestScreen";
 import Dashboard from "./src/screens/Dashboard";
-// import { QueryClientProvider, QueryClient } from 'react-query';
+import Register from "./src/screens/Register";
+import ForgotPassword from "./src/screens/ForgotPassword";
+import ReactQuery from "./src/component/reactQuery";
+import { QueryClientProvider, QueryClient, useQuery } from 'react-query';
 import { db, auth } from './src/firebase/config';
 import { doc, getDoc } from "firebase/firestore/lite";
 import { onAuthStateChanged } from 'firebase/auth';
 import * as React from 'react';
 
 
-// const queryClient = new QueryClient();
+const queryClient = new QueryClient();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -20,9 +23,9 @@ export default function App() {
 
   React.useEffect(() => {
     onAuthStateChanged(auth, user => {
-      user ? console.log("logged in", user) : console.log('logged out', user)
       if (user) {
         setUser(user);
+        // console.log(user);
         // const userDatabase = doc(db, "users", auth.currentUser.uid);
         // getDoc(userDatabase)
         // .then(data => {
@@ -37,9 +40,9 @@ export default function App() {
   const navTheme = DefaultTheme;
   navTheme.colors.background = 'white';
   return (
-    // <QueryClientProvider>
-    // </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
       <NavigationContainer theme={navTheme}>
+        
         <Tab.Navigator>
           <Tab.Screen
             name="Login"
@@ -47,7 +50,7 @@ export default function App() {
             options={{
               tabBarIcon: makeIconRender("login"),
               headerShown: false,
-              tabBarButton: user !== null ? () => null : undefined
+              tabBarButton: user ? () => null : undefined
             }}
           />
           <Tab.Screen
@@ -56,13 +59,10 @@ export default function App() {
             options={{
               tabBarIcon: makeIconRender("view-dashboard"),
               headerShown: false,
-              tabBarButton: user ?undefined : () => null,
+              tabBarButton: user ? undefined : () => null,
               tabBarVisible: false
             }}
           />
-          {/* { user ?
-            :
-          } */}
           <Tab.Screen
             name="Test"
             component={TestScreen}
@@ -70,8 +70,33 @@ export default function App() {
             headerShown: false
             }}
           />
+          <Tab.Screen
+            name="Register"
+            component={Register}
+            options={{
+              headerShown: false,
+              tabBarButton: () => null
+            }}
+          />
+          <Tab.Screen
+            name="Forgot Password"
+            component={ForgotPassword}
+            options={{
+              headerShown: false,
+              tabBarButton: () => null
+            }}
+          />
+          <Tab.Screen
+            name="React Query"
+            component={ReactQuery}
+            options={{
+              headerShown: false,
+              tabBarButton: () => null
+            }}
+          />
         </Tab.Navigator>
       </NavigationContainer>
+    </QueryClientProvider>
   );
 }
 

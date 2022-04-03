@@ -1,0 +1,1629 @@
+[
+    {
+
+        "choice1": "I've been romantic and imaginative",
+        "answer1": "E",
+        "choice2": "I've been pragmatic and down-to-earth",
+        "answer2": "B"
+    },
+    {
+        "choice1": "I have tended to take on confrontation",
+        "answer1": "G",
+        "choice2": "I have tended to avoid confrontation",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I have typically been diplomatic, charming, and ambitious",
+        "answer1": "C",
+        "choice2": "I have typically been direct, formal, and idealistic",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I have tended to be focused and intense",
+        "answer1": "H",
+        "choice2": "I have tended to be spontaneous and fun-loving",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I have been a hospitable person and have enjoyed welcoming new friends into my life",
+        "answer1": "F",
+        "choice2": "I have been a private person and have not mixed much with others",
+        "answer2": "E"
+    },
+    {
+        "choice1": "It's been difficult for me to relax and stop worrying about potential problems",
+        "answer1": "B",
+        "choice2": "It's been difficult for me to get myself worked up about potential problems",
+        "answer2": "A"
+    },
+    {
+        "choice1": "I've been more of a 'street-smart' survivor",
+        "answer1": "G",
+        "choice2": "I've been more of a 'high-minded' idealist",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I have needed to show affection to people",
+        "answer1": "F",
+        "choice2": "I have preferred to maintain some distance with people",
+        "answer2": "H"
+    },
+    {
+        "choice1": "When presented with a new experience, I've usually asked myself if it would be useful to me",
+        "answer1": "C",
+        "choice2": "When presented with a new experience, I've usually asked myself if it would be enjoyable",
+        "answer2": "I"
+    },
+    {
+        "choice1": "I have tended to focus too much on myself",
+        "answer1": "E",
+        "choice2": "I have tended to focus too much on others",
+        "answer2": "A"
+    },
+    {
+        "choice1": "Others have depended on my insight and knowledge",
+        "answer1": "H",
+        "choice2": "Others have depended on my strength and decisiveness",
+        "answer2": "G"
+    },
+    {
+        "choice1": "I have come across as being too unsure of myself",
+        "answer1": "B",
+        "choice2": "I have come across as being too sure of myself",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I have been more relationship-oriented than goal-oriented",
+        "answer1": "F",
+        "choice2": "I have been more goal-oriented than relationship-oriented",
+        "answer2": "C"
+    },
+    {
+        "choice1": "I have not been able to speak up for myself very well",
+        "answer1": "E",
+        "choice2": "I have been outspoken -- I've said what others wished they had the nerve to say",
+        "answer2": "I"
+    },
+    {
+        "choice1": "It's been difficult for me to stop considering alternatives and do something definite",
+        "answer1": "H",
+        "choice2": "It's been difficult for me to take it easy and be more flexible",
+        "answer2": "D"
+    },
+    {
+        "choice1": "I have tended to be careful and hesitant",
+        "answer1": "B",
+        "choice2": "I have tended to be bold and domineering",
+        "answer2": "G"
+
+    },
+    {
+        "choice1": "My reluctance to get too involved has gotten me in trouble with people",
+        "answer1": "A",
+        "choice2": "My eagerness to have people depend on me has gotten me into trouble with them",
+        "answer2": "F"
+
+    },
+    {
+        "choice1": "Usually, I have been able to put my feelings aside to get the job done",
+
+        "answer1": "C",
+
+        "choice2": "Usually, I have needed to work through my feelings before I could act",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "Generally, I've been methodical and cautious",
+
+        "answer1": "B",
+
+        "choice2": "Generally, I've been adventurous and taken risks",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I have tended to be a supportive, giving person who seeks intimacy with others",
+
+        "answer1": "F",
+
+        "choice2": "I have tended to be a serious, reserved person who likes discussing issues",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I've often felt the need to be a 'pillar of strength'",
+
+        "answer1": "G",
+
+        "choice2": "I've often felt the need to perform perfectly",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "I've typically been interested in asking tough questions and maintaining my independence",
+
+        "answer1": "H",
+
+        "choice2": "I've typically been interested in maintaining my stability and peace of mind",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I've been a bit cynical and skeptical",
+
+        "answer1": "B",
+
+        "choice2": "I've been a bit mushy and sentimental",
+
+        "answer2": "F"
+
+    },
+
+    {
+
+        "choice1": "I've often worried that I'm missing out on something better",
+
+        "answer1": "I",
+
+        "choice2": "I've often worried that if I let down my guard, someone will take advantage of me",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "My habit of being 'stand-offish' has annoyed people",
+
+        "answer1": "E",
+
+        "choice2": "My habit of telling people what to do has annoyed people",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I have tended to get anxious if there was too much excitement and stimulation",
+
+        "answer1": "A",
+
+        "choice2": "I have tended to get anxious if there wasn't enough excitement and stimulation",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I have depended on my friends and they have known that they can depend on me",
+
+        "answer1": "B",
+
+        "choice2": "I have not depended on people, I have done things on my own",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "I have tended to be detached and preoccupied",
+
+        "answer1": "H",
+
+        "choice2": "I have tended to be moody and self-absorbed",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "I have liked to challenge people and 'shake them up'",
+
+        "answer1": "G",
+
+        "choice2": "I have liked to comfort people and calm them down",
+
+        "answer2": "F"
+
+    },
+
+    {
+
+        "choice1": "I have generally been an outgoing, sociable person",
+
+        "answer1": "I",
+
+        "choice2": "I have generally been an earnest, self-disciplined person",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I've wanted to 'fit in' with others -- I get uncomfortable when I stand out too much",
+
+        "answer1": "A",
+
+        "choice2": "I've wanted to stand out from others -- I get uncomfortable when I don't distinguish myself",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "Pursuing my personal interests has been more important to me than having stability and security",
+
+        "answer1": "H",
+
+        "choice2": "Having stability and security has been more important to me than pursuing my personal interests",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "When I've had conflicts with others, I've tended to withdraw",
+
+        "answer1": "E",
+
+        "choice2": "When I've had conflicts with others, I've rarely backed down",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "I have given in too easily and let others push me around",
+
+        "answer1": "A",
+
+        "choice2": "I have been too uncompromsing and demanding with others",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I've been appreciated for my unsinkable spirit and resourcefulness",
+
+        "answer1": "I",
+
+        "choice2": "I've been appreciated for my deep caring and personal warmth",
+
+        "answer2": "F"
+
+    },
+
+    {
+
+        "choice1": "I have wanted to make a favorable impression on others",
+
+        "answer1": "C",
+
+        "choice2": "I have cared little about making a favorable impression on others",
+
+        "answer2": "H"
+
+    },
+
+    {
+
+        "choice1": "I've depended on my perseverance and common sense",
+
+        "answer1": "B",
+
+        "choice2": "I've depended on my imagination and moments of inspiration",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "Basically, I have been easy-going and agreeable",
+
+        "answer1": "A",
+
+        "choice2": "Basically, I have been hard-driving and assertive",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "I have worked hard to be accepted and well-liked",
+
+        "answer1": "C",
+
+        "choice2": "Being accepted and well-liked has not been a high priority for me",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "In reaction to pressure from others, I have become more withdrawn",
+
+        "answer1": "H",
+
+        "choice2": "In reaction to pressure from others, I have become more assertive",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "People have been interested in me because I've been outgoing, engaging, and interested in them",
+
+        "answer1": "F",
+
+        "choice2": "People have been interested in me because I've been quiet, unusual, and deep",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "Duty and responsibility have been important values for me",
+
+        "answer1": "B",
+
+        "choice2": "Harmony and acceptance have been important values for me",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I've tried to motivate people by making big plans and big promises",
+
+        "answer1": "G",
+
+        "choice2": "I've tried to motivate people by pointing out the consequences of not following my advice",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I have seldom been emotionally demonstrative",
+
+        "answer1": "H",
+
+        "choice2": "I have often been emotionally demonstrative",
+
+        "answer2": "F"
+
+    },
+
+    {
+
+        "choice1": "Dealing with details has not been one of my strong suits",
+
+        "answer1": "I",
+
+        "choice2": "I have excelled at dealing with details",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "I have often emphasized how different I am from most people, especially my family",
+
+        "answer1": "E",
+
+        "choice2": "I have often emphasized how much I have in common with most people, especially my family",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "When situations have gotten heated, I have tended to stay on the sidelines",
+
+        "answer1": "H",
+
+        "choice2": "When situations have gotten heated, I Have tended to get right into the middle of things",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "I have stood by my friends, even when they have been wrong",
+
+        "answer1": "B",
+
+        "choice2": "I have not wanted to compromise what is right, even for friendship",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I've been a well-meaning supporter",
+
+        "answer1": "F",
+
+        "choice2": "I've been a highly-motivated go-getter",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "When troubled, I have tended to brood about my problems",
+
+        "answer1": "E",
+
+        "choice2": "When troubled, I have tended to find distractions for myself",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "Generally, I've had strong convictions and a sense of how things should be",
+
+        "answer1": "D",
+
+        "choice2": "Generally, I've had serious doubts and have questioned how things seemed to be",
+
+        "answer2": "H"
+
+    },
+
+    {
+
+        "choice1": "I've created problems with others by being pessimistic and complaining",
+
+        "answer1": "B",
+
+        "choice2": "I've created problems with others by being bossy and controlling",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "I have tended to act on my feelings and let the 'chips fall where they may'",
+
+        "answer1": "F",
+
+        "choice2": "I have tended not to act on my feelings lest they stir up more problems",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "Being the center of attention has usually felt natural to me",
+
+        "answer1": "C",
+
+        "choice2": "Being the center of attention has usually felt strange to me",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "I've been careful and have tried to prepare for unforeseen problems",
+
+        "answer1": "B",
+
+        "choice2": "I've been spontaneous and have preferred to improvise as problems come up",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I have gotten angry when others have not shown enough appreciation for what I have done for them",
+
+        "answer1": "F",
+
+        "choice2": "I have gotten angry when others have not listened to what I have told them",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "Being independent and self-reliant has been important to me",
+
+        "answer1": "G",
+
+        "choice2": "Being valued and admired has been important to me",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "When I've debated with friends, I've tended to press my arguments forcefully",
+
+        "answer1": "H",
+
+        "choice2": "When I've debated with friends, I've tended to let things go to prevent hard feelings",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I have often been possessive of loved ones -- I have had trouble letting them be",
+
+        "answer1": "F",
+
+        "choice2": "I have often 'tested' loved ones to see if they were really there for me",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "Organizing resources and making things happen has been one of my major strengths",
+
+        "answer1": "G",
+
+        "choice2": "Coming up with new ideas and getting people excited about them has been one of my major strengths",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I've tended to be driven and very hard on myself",
+
+        "answer1": "D",
+
+        "choice2": "I've tended to be too emotional and rather undisciplined",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "I have tried to keep my life fast-paced, intense, and exciting",
+
+        "answer1": "I",
+
+        "choice2": "I have tried to keep my life regular, stable, and peaceful",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "Even though I've had successes, I've tended to doubt my abilities",
+
+        "answer1": "B",
+
+        "choice2": "Even though I've had setbacks, I've had a lot of confidence in my abilities",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "I generally have tended to dwell on my feelings and to hold onto them for a long time",
+
+        "answer1": "E",
+
+        "choice2": "I generally have tended to minimize my feelings and not pay very much attention to them",
+
+        "answer2": "H"
+
+    },
+
+    {
+
+        "choice1": "I have provided many people with attention and nurturance",
+
+        "answer1": "F",
+
+        "choice2": "I have provided many people with direction and motivation",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "I've been a bit serious and strict with myself",
+
+        "answer1": "D",
+
+        "choice2": "I've been a bit free-wheeling and permissive with myself",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I've been self-assertive and driven to excel",
+
+        "answer1": "C",
+
+        "choice2": "I've been modest and have been happy to go at my own pace",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I have been proud of my clarity and objectivity",
+
+        "answer1": "H",
+
+        "choice2": "I have been proud of my reliabilitiy and commitment",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "I have spent a lot of time looking inward -- understanding my feelings has been important to me",
+
+        "answer1": "E",
+
+        "choice2": "I have not spent much time looking inward -- getting things done has been important to me",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "Generally, I have thought of myself as a sunny, casual person",
+
+        "answer1": "A",
+
+        "choice2": "Generally, I have thought of myself as a serious, dignified person",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I've had an agile mind and boundless energy",
+
+        "answer1": "I",
+
+        "choice2": "I've had a caring heart and deep dedication",
+
+        "answer2": "F"
+
+    },
+
+    {
+
+        "choice1": "I have pursued activities that had a substantial potential for reward and personal recognition",
+
+        "answer1": "C",
+
+        "choice2": "I have been willing to give up reward and personal recognition if it meant doing work I was really interested in",
+
+        "answer2": "H"
+
+    },
+
+    {
+
+        "choice1": "Fulfilling social obligations has seldom been high on my agenda",
+
+        "answer1": "E",
+
+        "choice2": "I have usually taken my social obligations very seriously",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "In most situations, I have preferred to take the lead",
+
+        "answer1": "G",
+
+        "choice2": "In most situations, I have preferred to let someone else take the lead",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "Over the years, my values and lifestyle have changed several times",
+
+        "answer1": "C",
+
+        "choice2": "Over the years, my values and lifestyle have remained fairly consistent",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "Typically, I have not had much self-discipline",
+
+        "answer1": "I",
+
+        "choice2": "Typically, I have not had much connection with people",
+
+        "answer2": "H"
+
+    },
+
+    {
+
+        "choice1": "I have tended to withhold my affection and have wanted others to come into my world",
+
+        "answer1": "E",
+
+        "choice2": "I have tended to give my affection too freely and have wanted to extend myself to others",
+
+        "answer2": "F"
+
+    },
+
+    {
+
+        "choice1": "I have had a tendency to think of worst-case scenarios",
+
+        "answer1": "B",
+
+        "choice2": "I have had a tendency to think that everything will work out for the best",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "People have trusted me because I am confident and can look out for them",
+
+        "answer1": "G",
+
+        "choice2": "People have trusted me because I am fair and will do what is right",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "Often, I have been so involved in my own projects that I have become isolated from others",
+
+        "answer1": "H",
+
+        "choice2": "Often, I have been so involved with others that I have neglected my own projects",
+
+        "answer2": "F"
+
+    },
+
+    {
+
+        "choice1": "When meeting someone new, I have usually been poised and self-contained",
+
+        "answer1": "C",
+
+        "choice2": "When meeting someone new, I have usually been chatty and entertaining",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "Generally speaking, I have tended to be pessimistic",
+
+        "answer1": "E",
+
+        "choice2": "Generally speaking, I have tended to be optimistic",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I have preferred to inhabit my own little world",
+
+        "answer1": "H",
+
+        "choice2": "I have preferred to let the world know I'm here",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "I have often been troubled by nervousness, insecurity, and doubt",
+
+        "answer1": "B",
+
+        "choice2": "I have often been troubled by anger, perfectionism, and impatience",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I realize that I have often been too personal and intimate",
+
+        "answer1": "F",
+
+        "choice2": "I realize that I have often been too cool and aloof",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "I have lost out because I have not felt up to taking opportunities",
+
+        "answer1": "E",
+
+        "choice2": "I have lost out because I have pursued too many possibilities",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I have tended to take a long time to get into action",
+
+        "answer1": "H",
+
+        "choice2": "I have tended to get into action quickly",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "I usually have had difficulty making decisions",
+
+        "answer1": "B",
+
+        "choice2": "I seldom have had difficulty making decisions",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "I have had a tendency to come on a little too strong with people",
+
+        "answer1": "F",
+
+        "choice2": "I have had a tendency to to assert myself enough with people",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "Typically, I have been even-tempered",
+
+        "answer1": "C",
+
+        "choice2": "Typically, I have had strong changes of mood",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "When I've been unsure of what to do, I've often sought the advice of others",
+
+        "answer1": "B",
+
+        "choice2": "When I've been unsure of what to do, I've tried different things to see what worked best for me",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I have worried that I would be left out of others' activities",
+
+        "answer1": "F",
+
+        "choice2": "I have worried that others' activities would distract me from what I had to do",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "Typically, when I have gotten angry, I have told people off",
+
+        "answer1": "G",
+
+        "choice2": "Typically, when I have gotten angry, I have become distant",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "I've tended to have trouble falling asleep",
+
+        "answer1": "H",
+
+        "choice2": "I've tended to fall asleep easily",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I have often tried to figure out how I could get closer to others",
+
+        "answer1": "F",
+
+        "choice2": "I have often tried to figure out what others want from me",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "I have usually been measured, straight-talking, and deliberate",
+
+        "answer1": "G",
+
+        "choice2": "I have usually been excitable, fast-talking, and witty",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "Often, I have not spoken up when I've seen others making a mistake",
+
+        "answer1": "E",
+
+        "choice2": "Often, I have helped others see that they are making a mistake",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "During most of my life, I have been a stormy person who has had many volatile feelings",
+
+        "answer1": "I",
+
+        "choice2": "During most of my life, I have been a steady person in whom 'still waters run deep'",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "When I have disliked people, I have usually tried hard to stay cordial -- despite my feelings",
+
+        "answer1": "C",
+
+        "choice2": "When I have disliked people, I have usually let them know it -- one way or another",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "Much of my difficulty with people has come from my touchiness and taking everything too personally",
+
+        "answer1": "E",
+
+        "choice2": "Much of my difficulty with people has come from my not caring about social conventions",
+
+        "answer2": "H"
+
+    },
+
+    {
+
+        "choice1": "My approach has been to jump in and rescue people",
+
+        "answer1": "F",
+
+        "choice2": "My approach has been to show people how to help themselves",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "Generally, I have enjoyed 'letting go' and pushing the limits",
+
+        "answer1": "I",
+
+        "choice2": "Generally, I have not enjoyed losing control of myself very much",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I've been overly concerned with doing better than others",
+
+        "answer1": "C",
+
+        "choice2": "I've been overly concerned with making things okay for others",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "My thoughts generally have been speculative -- involving my imagination and curiosity",
+
+        "answer1": "H",
+
+        "choice2": "My thoughts generally have been practical -- just trying to keep things going",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "One of my main assets has been my ability to take charge of situations",
+
+        "answer1": "G",
+
+        "choice2": "One of my main assets has been my ability to describe internal states",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "I have pushed to get things done correctly, even if it made people uncomfortable",
+
+        "answer1": "D",
+
+        "choice2": "I have not liked feeling pressured, so I have not liked pressuring anyone else",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I've often taken pride in how important I am in others' lives",
+
+        "answer1": "F",
+
+        "choice2": "I've often taken pride in my gusto and openness to new experiences",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I have perceived that I've often come across to others as presentable, even admirable",
+
+        "answer1": "C",
+
+        "choice2": "I have perceived that I've often come across to others as unusual, even odd",
+
+        "answer2": "H"
+
+    },
+
+    {
+
+        "choice1": "I have mostly done what I had to do",
+
+        "answer1": "B",
+
+        "choice2": "I have mostly done what I wanted to do",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "I have usually enjoyed high-pressure, even difficult, situations",
+
+        "answer1": "G",
+
+        "choice2": "I have usually disliked being in high-pressure, even difficult, situations",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I've been proud of my ability to be flexible -- what's appropriate or important often changes",
+
+        "answer1": "C",
+
+        "choice2": "I've been proud of my ability to take a stand -- I've been firm about what I believe in",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "My style has leaned toward spareness and austerity",
+
+        "answer1": "H",
+
+        "choice2": "My style has leaned toward excess and overdoing things",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "My own health and well-being have suffered because of my strong desire to help others",
+
+        "answer1": "F",
+
+        "choice2": "My relationships have suffered because of my strong desire to attend to my personal needs",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "Generally speaking, I've been too open and naive",
+
+        "answer1": "A",
+
+        "choice2": "Generally speaking, I've been too wary and guarded",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "I have sometimes put people off by being too aggressive",
+
+        "answer1": "G",
+
+        "choice2": "I have sometimes put people off by being too 'uptight'",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "Being of service and attending to the needs of others has been a high priority for me",
+
+        "answer1": "F",
+
+        "choice2": "Finding alternative ways of seeing and doing things has been a high priority for me",
+
+        "answer2": "H"
+
+    },
+
+    {
+
+        "choice1": "I've been single-minded and persistent in pursuing my goals",
+
+        "answer1": "C",
+
+        "choice2": "I've preferred to explore various courses of action to see where they lead",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I have frequently been drawn to situations that stir up deep, intense emotions",
+
+        "answer1": "E",
+
+        "choice2": "I have frequently been drawn to situations that make me feel calm and at ease",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I have cared less about practical results than about pursuing my interests",
+
+        "answer1": "H",
+
+        "choice2": "I have been practical and have expected my work to have concrete results",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "I have had a deep need to belong",
+
+        "answer1": "B",
+
+        "choice2": "I have had a deep need to feel balanced",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "In the past, I've probably insisted on too much closeness in my friendships",
+
+        "answer1": "F",
+
+        "choice2": "In the past, I've probably kept too much distance in my friendships",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "I've had a tendency to keep thinking about things from the past",
+
+        "answer1": "E",
+
+        "choice2": "I've had a tendency to keep anticipating things I'm going to do",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I've tended to see people as intrusive as demanding",
+
+        "answer1": "H",
+
+        "choice2": "I've tended to see people as disorganized and irresponsible",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "Generally, I have not had much confidence in myself",
+
+        "answer1": "B",
+
+        "choice2": "Generally, I have had confidence only in myself",
+
+        "answer2": "G"
+
+    },
+
+    {
+
+        "choice1": "I've probably been too passive and uninvolved",
+
+        "answer1": "A",
+
+        "choice2": "I've probably been too controlling and manipulative",
+
+        "answer2": "F"
+
+    },
+
+    {
+
+        "choice1": "I've frequently been stopped in my tracks by my self-doubt",
+
+        "answer1": "E",
+
+        "choice2": "I've rarely let self-doubt stand in my way",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "Given a choice between something familiar and something new, I've usually chosen something new",
+
+        "answer1": "I",
+
+        "choice2": "I've generally chosen what I knew I already liked: why be disappointed with something I might not like?",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "I have given a lot of physical contact to reassure others about how I feel about them",
+
+        "answer1": "F",
+
+        "choice2": "I have generally felt that real love does not depend on physical contact",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "When I've needed to confront someone, I've often been too harsh and direct",
+
+        "answer1": "G",
+
+        "choice2": "When I've needed to confront someone, I've often 'beaten around the bush' too much",
+
+        "answer2": "C"
+
+    },
+
+    {
+
+        "choice1": "I have been attracted to subjects that others would probably find disturbing, even frightening",
+
+        "answer1": "H",
+
+        "choice2": "I have preferred not to spend my time dwelling on disturbing, frightening subjects",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I have gotten into trouble with people by being too intrusive and interfering",
+
+        "answer1": "F",
+
+        "choice2": "I have gotten into trouble with people by being too evasive and uncommunicative",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "I have worried that I don't have the resources to fulfill the responsibilities I've taken on",
+
+        "answer1": "G",
+
+        "choice2": "I've worried that I don't have the self-discipline to focus on what will really fulfill me",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "Generally, I've been a highly intuitive, individualistic person",
+
+        "answer1": "E",
+
+        "choice2": "Generally, I've been a highly organized responsible person",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "Overcoming inertia has been one of my main problems",
+
+        "answer1": "A",
+
+        "choice2": "Being unable to slow down has been one of my main problems",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "When I've felt insecure, I've reacted by becoming arrogant and dismissive",
+
+        "answer1": "C",
+
+        "choice2": "When I've felt insecure, I've reacted by becoming defensive and argumentative",
+
+        "answer2": "B"
+
+    },
+
+    {
+
+        "choice1": "I have generally been open-minded and willing to try new approaches",
+
+        "answer1": "H",
+
+        "choice2": "I have generally been self-revealing and willing to share my feelings with others",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "I've presented myself to others as tougher than I really am",
+
+        "answer1": "G",
+
+        "choice2": "I've presented myself to others as caring more than I really do",
+
+        "answer2": "F"
+
+    },
+
+    {
+
+        "choice1": "I usually have followed my conscience and reason",
+
+        "answer1": "D",
+
+        "choice2": "I usually have followed my feelings and impulses",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "Serious adversity has made me feel hardened and resolute",
+
+        "answer1": "C",
+
+        "choice2": "Serious adversity has made me feel discouraged and resigned",
+
+        "answer2": "A"
+
+    },
+
+    {
+
+        "choice1": "I usually have made sure that I had some kind of 'safety net' to fall back on",
+
+        "answer1": "B",
+
+        "choice2": "I usually have chosen to live on the edge and to depend on others as little as possible",
+
+        "answer2": "H"
+
+    },
+
+    {
+
+        "choice1": "I've had to be strong for others, so I haven't had time to deal with my feelings and fears",
+
+        "answer1": "G",
+
+        "choice2": "I've had difficulty coping with my feelings and fears, so it's been hard for me to be strong for others",
+
+        "answer2": "E"
+
+    },
+
+    {
+
+        "choice1": "I have often wondered why people focus on the negative when there is so much that's wonderful about life",
+
+        "answer1": "A",
+
+        "choice2": "I have often wondered why people are so happy when so much in life is messed up",
+
+        "answer2": "D"
+
+    },
+
+    {
+
+        "choice1": "I have tried hard not to be seen as a selfish person",
+
+        "answer1": "F",
+
+        "choice2": "I have tried hard to not be seen as a boring person",
+
+        "answer2": "I"
+
+    },
+
+    {
+
+        "choice1": "I have avoided intimacy when I feared I would be overwhelmed by people's needs and demands",
+
+        "answer1": "H",
+
+        "choice2": "I have avoided intimacy when I feared I would not be able to live up to people's expectations of me",
+
+        "answer2": "C"
+
+    }
+]

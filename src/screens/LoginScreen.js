@@ -1,9 +1,9 @@
-import { Text, View, TextInput, StyleSheet } from "react-native";
+import * as React from 'react';
+import { Text, View, TextInput, StyleSheet,  } from "react-native";
 import Graphic from '../component/graphic';
 import Button from "../component/Button";
 import { auth, db } from "../firebase/config";
 import { signInWithEmailAndPassword } from "@firebase/auth";
-import * as React from 'react';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = React.useState("test@test.com");
@@ -38,9 +38,22 @@ const Login = ({navigation}) => {
           title="Login"
           onPress={() => signIn()}
         />
-        <Text>Forgot Password? Click here</Text>
-        <Text>Register Here</Text>
+        <View style={{flexDirection: 'row', marginTop:  10}}>
+          <Text>Forgot Password?</Text>
+          <Text
+            style={{color: 'blue'}}
+            onPress={() => navigation.navigate('Forgot Password')}
+            >Click here</Text>
+        </View>
+        <Text
+          style={{color: 'blue'}}
+          onPress={() => navigation.navigate('Register')}
+        >Register Here</Text>
       </View>
+      <Button
+        title="React Query"
+        onPress={() => navigation.navigate('React Query')}
+      />
     </View>
   );
 };
