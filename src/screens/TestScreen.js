@@ -3,13 +3,12 @@ import * as React from 'react';
 import Graphic from '../component/graphic';
 import Button from '../component/Button';
 import questions from '../questions.json';
-import { set } from "react-native-reanimated";
 
 export default function TestScreen() {
   const [counter, setCounter]= React.useState(0);
   const [question1, setQuestion1]= React.useState(questions[counter].choice1);
   const [question2, setQuestion2]= React.useState(questions[counter].choice2);
-  const [choice, setChoice]= React.useState(null);
+  const [choice, setChoice]= React.useState([]);
   const [tally, setTally] = React.useState({
     D:0,
     F:0,
@@ -21,23 +20,22 @@ export default function TestScreen() {
     G:0,
     A:0,
   });
-  const [focused, setFocused] = React.useState(null);
+  
   const questionSelect = (choiceNum) => {
     const answer = choiceNum === 1 ? questions[counter].answer1 : questions[counter].answer2;
-    setFocused(choiceNum === 1 ? 'button1' : 'button2');
-    setChoice(answer);
+    setChoice([`choice${choiceNum}`, answer]);
     // enable "next" button
   };
   const next = () => {
     if(choice) {
-      setTally({...tally, [choice]: + 1});
+      setTally({...tally, [choice[1]]: + 1});
       // add tally to local storage
       setCounter(counter + 1);
       // save counter as progress in local storage
       // setProgressBarFill(`${(parseInt(counter) + 1) * 0.695}%`);
-      setQuestion1(questions[counter].choice1)
-      setQuestion2(questions[counter].choice2)
-      setFocused(null);
+      setQuestion1(questions[counter].choice1);
+      setQuestion2(questions[counter].choice2);
+      setChoice([null]);
       // showNext = counter === 143 ? false : true
       // showGetType = counter === 143 ? true : false
     }else{
@@ -51,13 +49,13 @@ export default function TestScreen() {
       <Graphic />
       <View style={styles.screenContainer}>
         <Pressable
-          style={{ ...styles.questionContainer, ...focused === 'button1' ? styles.focused : null}}
+          style={{ ...styles.questionContainer, ...choice[0] === 'choice1' ? styles.focused : null}}
           onPress={() => questionSelect(1)}
         >
           <Text style={styles.questions}>{question1}</Text>
         </Pressable>
         <Pressable
-          style={{ ...styles.questionContainer, ...focused === 'button2' ? styles.focused : null}}
+          style={{ ...styles.questionContainer, ...choice[0] === 'choice2' ? styles.focused : null}}
           onPress={() => questionSelect(2)}
         >
           <Text style={styles.questions}>{question2}</Text>
@@ -67,7 +65,7 @@ export default function TestScreen() {
           backgroundColor="#89E5CF"
           color="white"
           onPress={next}
-          // disabled={true}
+          disabled={choice[0] ? false : true}
         />
       </View>
     </View>

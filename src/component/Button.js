@@ -6,10 +6,10 @@ const Button = ({title, onPress, backgroundColor, color, disabled}) => {
       onPress={onPress}
       style={{
         ...styles.buttonContainer,
-        backgroundColor: backgroundColor ?? '#89E5CF'
+        backgroundColor: backgroundColor ?? '#89E5CF',
+        opacity: disabled ? 0.5 : 1 
       }}
       disabled={disabled}
-      activeOpacity={disabled ? 0.5 : 1}
     >
       <Text style={{...styles.buttonText, color: color ?? 'white'}}>{title}</Text>
     </TouchableOpacity>
