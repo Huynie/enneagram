@@ -8,6 +8,7 @@ import Avatar from '../component/Avatar';
 import { db, auth } from '../firebase/config';
 import { doc, getDoc } from "firebase/firestore/lite"
 import { useQuery } from 'react-query';
+import Types from '../types.json';
 
 const Dashboard = ({navigation}) => {
   const {data, isLoading} = useQuery('userData', async () => {
@@ -16,22 +17,27 @@ const Dashboard = ({navigation}) => {
     const {firstName, lastName, results} = res.data();
     if(results) {
       const latestScore = results[0].score;
-      const highNums = latestScore.sort((a,b) => b-a).slice(0,3);
+      const highNums = [...latestScore].sort((a,b) => b-a).slice(0,3);
       const highs = []; 
       const lows = [];
-      highNums.forEach((num) => {
+      let core;
+      //GET HIGHEST SCORE
+      highNums.forEach((num, idx) => {
+        if(idx === 0) {core = latestScore.indexOf(num) + 1; return};
         highs.push(latestScore.indexOf(num) + 1);
       });
-      //GET 2 LOWEST TYPE
-      const lowNums = latestScore.sort((a,b) => a-b).slice(0,2);
+      //GET 2 LOWEST SCORE
+      const lowNums = [...latestScore].sort((a,b) => a-b).slice(0,2);
       lowNums.forEach((num) => {
         lows.push(latestScore.indexOf(num) + 1);
       });
+      console.log(latestScore, highNums, lowNums)
       return {
         firstName,
         lastName,
         highs,
         lows,
+        core,
         results
       }
     }
@@ -58,19 +64,32 @@ const Dashboard = ({navigation}) => {
           />
         }
       />
+      <Button
+        title="sign out"
+        onPress={() => logOut()}
+      />
       <View style={styles.typeBreakdown}>
         <View style={{alignItems: 'center', marginBottom: 10}}>
-          <Text>Reformer</Text>
+          <Text>{!isLoading ? Types[data.core - 1].type : '...'}</Text>
           <Text>Type 1</Text>
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, alignItems: 'center'}}>
             <Text>Highs</Text>
             <View style={{flexDirection: 'row'}}>
               {!isLoading ?
                 data.highs.map((num, idx) => {
                   return(
-                    <Text key={idx}>{num}</Text>
+                    <Text
+                      key={idx}
+                      style={{
+                        borderRadius: 99,
+                        borderWidth: 2,
+                        backgroundColor: 'pink'
+                      }}
+                    >
+                      T{num}
+                    </Text>
                   )
                 })
                 :
@@ -78,13 +97,22 @@ const Dashboard = ({navigation}) => {
               }
             </View>
           </View>
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, alignItems: 'center'}}>
             <Text>Lows</Text>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
               {!isLoading ?
                 data.lows.map((num, idx) => {
                   return(
-                    <Text key={idx}>{num}</Text>
+                    <Text
+                    key={idx}
+                    style={{
+                      borderRadius: 99,
+                      borderWidth: 2,
+                      backgroundColor: 'pink'
+                    }}
+                  >
+                    T{num}
+                  </Text>
                   )
                 })
                 :
@@ -94,14 +122,7 @@ const Dashboard = ({navigation}) => {
           </View>
         </View>
       </View>
-      <Button
-        title="sign out"
-        onPress={() => logOut()}
-      />
-      <Button
-        title="React Query"
-        onPress={() => navigation.navigate('React Query')}
-      />
+
       <View style={styles.divider}/>
       <Text>Radar Chart</Text>
       <View style={styles.divider}/>
@@ -141,6 +162,7 @@ const styles = StyleSheet.create({
   },
   typeBreakdown: {
     alignItems: 'center',
+    justifyContent: 'center'
     // width: 500
   }
 })

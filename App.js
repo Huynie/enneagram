@@ -50,7 +50,7 @@ export default function App() {
             options={{
               tabBarIcon: makeIconRender("login"),
               headerShown: false,
-              tabBarButton: user ? () => null : undefined
+              tabBarButton: user ?  undefined :() => null
             }}
           />
           <Tab.Screen
@@ -59,7 +59,7 @@ export default function App() {
             options={{
               tabBarIcon: makeIconRender("view-dashboard"),
               headerShown: false,
-              tabBarButton: user ? undefined : () => null,
+              tabBarButton: user ? () => null : undefined ,
               tabBarVisible: false
             }}
           />
