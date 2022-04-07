@@ -3,6 +3,7 @@ import { View, Text, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
 import Button from '../component/Button';
 import Graphic from '../component/graphic';
 import Score from '../component/Score';
+import { Description, TypeTitle } from '../component/Results';
 import { signOut } from '@firebase/auth';
 import Avatar from '../component/Avatar';
 import { db, auth } from '../firebase/config';
@@ -46,8 +47,8 @@ const Dashboard = ({navigation}) => {
       <Graphic 
         children={
           <Avatar
-            firstName={!isLoading ? data.firstName : '...'}
-            lastName={!isLoading ? data.lastName : '...'}
+          firstName={!isLoading ? data.firstName : '...'}
+          lastName={!isLoading ? data.lastName : '...'}
           />
         }
       />
@@ -56,27 +57,26 @@ const Dashboard = ({navigation}) => {
         onPress={() => logOut()}
       />
       <View style={styles.typeBreakdown}>
-        <View style={{alignItems: 'center', marginBottom: 10}}>
+        {/* <View style={{alignItems: 'center', marginBottom: 10}}>
           <Text>{!isLoading ? Types[data.core - 1].type : '...'}</Text>
           <Text>Type 1</Text>
-        </View>
+        </View> */}
+        {
+          !isLoading ?
+          <TypeTitle core={data.core}/>
+          :
+          <Text>...</Text>
+        }
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
           <View style={{flex: 1, alignItems: 'center'}}>
-            <Text>Highs</Text>
+            <Text style={{fontSize: 18, fontWeight: '700', color: 'gray', marginVertical: 5}}>Highs</Text>
             <View style={{flexDirection: 'row'}}>
               {!isLoading ?
                 data.highs.map((num, idx) => {
                   return(
-                    <Text
-                      key={idx}
-                      style={{
-                        borderRadius: 99,
-                        borderWidth: 2,
-                        backgroundColor: 'pink'
-                      }}
-                    >
-                      T{num}
-                    </Text>
+                    <View style={styles.highsLows}>
+                    <Text key={idx} style={styles.highsLowsText}>T{num}</Text>
+                  </View>
                   )
                 })
                 :
@@ -85,21 +85,14 @@ const Dashboard = ({navigation}) => {
             </View>
           </View>
           <View style={{flex: 1, alignItems: 'center'}}>
-            <Text>Lows</Text>
+            <Text style={{fontSize: 18, fontWeight: '700', color: 'gray', marginVertical: 10}}>Lows</Text>
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
               {!isLoading ?
                 data.lows.map((num, idx) => {
                   return(
-                    <Text
-                    key={idx}
-                    style={{
-                      borderRadius: 99,
-                      borderWidth: 2,
-                      backgroundColor: 'pink'
-                    }}
-                  >
-                    T{num}
-                  </Text>
+                    <View style={styles.highsLows}>
+                      <Text key={idx} style={styles.highsLowsText}>T{num}</Text>
+                    </View>
                   )
                 })
                 :
@@ -109,18 +102,29 @@ const Dashboard = ({navigation}) => {
           </View>
         </View>
       </View>
+      <View style={{paddingHorizontal: 20}}>
+        {
+          !isLoading ? 
+          <Description core={data.core}/>
+          :
+          <Text>...</Text>
+        }
+      </View>
 
       <View style={styles.divider}/>
       <Text>Radar Chart</Text>
       <View style={styles.divider}/>
-      <View>
-        <Text>History</Text>
+      <View style={{alignItems: 'center'}}>
+        <Text style={styles.sectionTitle}>History</Text>
         {!isLoading ? 
           data.results.map((result, idx) => {
             return (
-              <View key={idx}>
-                <Text>{result["date/time"].toDate().toDateString()}</Text>
-                <Text>{result["date/time"].toDate().toLocaleTimeString('en-US')}</Text>
+              <View key={idx} style={{marginVertical: 10}}>
+                <View style={{flexDirection: 'row',paddingVertical: 5}}>
+                  <Text style={styles.dateTime}>{result["date/time"].toDate().toDateString()}</Text>
+                  <Text style={styles.dateTime}>{result["date/time"].toDate().toLocaleTimeString('en-US')}</Text>
+                  <Text style={{flex: 0.1}}>x</Text>
+                </View>
                 <Score score={result.score}/>
               </View>
             )
@@ -135,10 +139,10 @@ const Dashboard = ({navigation}) => {
 const styles = StyleSheet.create({
   divider: {
     shadowColor: "black",
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 2,
     shadowOffset: {
-      height: 1,
+      height: 3,
       width: 5
     },
     padding: 10,
@@ -151,6 +155,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
     // width: 500
+  },
+  highsLows:{
+    overflow: 'hidden',
+    borderRadius: 99,
+    marginHorizontal: 10,
+    padding: 5,
+    backgroundColor: '#FCE7F3'
+  },
+  highsLowsText:{
+    color: '#EC4899',
+    fontSize: 16,
+    fontWeight: '400'
+  },
+  sectionTitle:{
+    fontSize: 30,
+    fontWeight: '700'
+  },
+  dateTime:{
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#059669',
+    flex: 1
   }
 })
 

@@ -4,14 +4,19 @@ import Score from './Score';
 import Types from '../types.json';
 import useCalculateScore from '../hooks/useCalculateScore';
 
+export const TypeTitle = ({core}) => {
+  return(
+    <View style={{marginTop: 20}}>
+      <Text style={styles.typeTitle}>{Types[core - 1].type}</Text>
+      <Text style={[styles.typeTitle,{color: '#F9A8D4'}]}>Type {core}</Text>
+    </View>
+  )
+}
+
 export const Description = ({core}) => {
   return (
     <ScrollView contentContainerStyle={styles.typeContainer}>
-      <View>
-        <Text style={styles.typeTitle}>Type {core}</Text>
-        <Text style={styles.typeTitle}>{Types[core - 1].type}</Text>
-        <Text style={[styles.description, {marginTop: 10}]}>{Types[core - 1].description}</Text>
-      </View>
+      <Text style={[styles.description, {marginTop: 10}]}>{Types[core - 1].description}</Text>
       <Text style={styles.description}>
         <Text style={{ color: 'red', fontWeight: '700'}}>Fear: </Text>
         {Types[core - 1].fear}
@@ -46,6 +51,7 @@ const Results = ({score}) => {
   return (
     <View style={{paddingHorizontal: 20}}>
       <Score score={sorted}/>
+      <TypeTitle core={core}/>
       <Description core={core}/>
     </View>
   )
@@ -55,7 +61,6 @@ const styles = StyleSheet.create({
   typeContainer:{
     justifyContent: 'space-evenly',
     minHeight: 450,
-    marginTop: 20
   },
   typeTitle: {
     fontSize: 20,
@@ -64,7 +69,8 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   description:{
-    fontSize: 15
+    fontSize: 15,
+
   }
 })
 
