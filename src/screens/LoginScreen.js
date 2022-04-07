@@ -50,10 +50,6 @@ const Login = ({navigation}) => {
           onPress={() => navigation.navigate('Register')}
         >Register Here</Text>
       </View>
-      <Button
-        title="React Query"
-        onPress={() => navigation.navigate('React Query')}
-      />
     </View>
   );
 };

@@ -1,11 +1,12 @@
 import { Text, View, StyleSheet, Pressable } from "react-native";
 import * as React from 'react';
 import Graphic from '../component/graphic';
+import ProgressBar from "../component/progressBar";
 import Button from '../component/Button';
 import questions from '../questions.json';
 
 export default function TestScreen() {
-  const [counter, setCounter]= React.useState(0);
+  const [counter, setCounter]= React.useState(142);
   const [question1, setQuestion1]= React.useState(questions[counter].choice1);
   const [question2, setQuestion2]= React.useState(questions[counter].choice2);
   const [choice, setChoice]= React.useState([]);
@@ -47,27 +48,36 @@ export default function TestScreen() {
   return (
     <View>
       <Graphic />
-      <View style={styles.screenContainer}>
-        <Pressable
-          style={{ ...styles.questionContainer, ...choice[0] === 'choice1' ? styles.focused : null}}
-          onPress={() => questionSelect(1)}
-        >
-          <Text style={styles.questions}>{question1}</Text>
-        </Pressable>
-        <Pressable
-          style={{ ...styles.questionContainer, ...choice[0] === 'choice2' ? styles.focused : null}}
-          onPress={() => questionSelect(2)}
-        >
-          <Text style={styles.questions}>{question2}</Text>
-        </Pressable>
-        <Button 
-          title="next"
-          backgroundColor="#89E5CF"
-          color="white"
-          onPress={next}
-          disabled={choice[0] ? false : true}
-        />
-      </View>
+      {counter !== 143 ? 
+        <View style={styles.screenContainer}>
+          <ProgressBar
+            progress={counter}
+          />
+          <Pressable
+            style={{ ...styles.questionContainer, ...choice[0] === 'choice1' ? styles.focused : null}}
+            onPress={() => questionSelect(1)}
+          >
+            <Text style={styles.questions}>{question1}</Text>
+          </Pressable>
+          <Pressable
+            style={{ ...styles.questionContainer, ...choice[0] === 'choice2' ? styles.focused : null}}
+            onPress={() => questionSelect(2)}
+          >
+            <Text style={styles.questions}>{question2}</Text>
+          </Pressable>
+          <Button 
+            title={counter === 142 ? "Results" : "next"}
+            backgroundColor="#89E5CF"
+            color="white"
+            onPress={next}
+            disabled={choice[0] ? false : true}
+          />
+        </View>
+        :
+        <View>
+          <Text>Results</Text>
+        </View>
+      }
     </View>
   );
 }
