@@ -1,15 +1,19 @@
 import { Text, View, StyleSheet, Pressable } from "react-native";
 import * as React from 'react';
 import Graphic from '../component/graphic';
-import ProgressBar from "../component/progressBar";
+import ProgressBar from "../component/ProgressBar";
+import Results from "../component/Results";
 import Button from '../component/Button';
 import questions from '../questions.json';
+import Types from '../types.json';
+
 
 export default function TestScreen() {
   const [counter, setCounter]= React.useState(142);
   const [question1, setQuestion1]= React.useState(questions[counter].choice1);
   const [question2, setQuestion2]= React.useState(questions[counter].choice2);
   const [choice, setChoice]= React.useState([]);
+  // Tally object gets sorted automatically
   const [tally, setTally] = React.useState({
     D:0,
     F:0,
@@ -21,7 +25,7 @@ export default function TestScreen() {
     G:0,
     A:0,
   });
-  
+
   const questionSelect = (choiceNum) => {
     const answer = choiceNum === 1 ? questions[counter].answer1 : questions[counter].answer2;
     setChoice([`choice${choiceNum}`, answer]);
@@ -74,9 +78,7 @@ export default function TestScreen() {
           />
         </View>
         :
-        <View>
-          <Text>Results</Text>
-        </View>
+        <Results score={tally}/>
       }
     </View>
   );

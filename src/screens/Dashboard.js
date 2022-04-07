@@ -9,6 +9,7 @@ import { db, auth } from '../firebase/config';
 import { doc, getDoc } from "firebase/firestore/lite"
 import { useQuery } from 'react-query';
 import Types from '../types.json';
+import useCalculateScore from '../hooks/useCalculateScore';
 
 const Dashboard = ({navigation}) => {
   const {data, isLoading} = useQuery('userData', async () => {
@@ -17,21 +18,7 @@ const Dashboard = ({navigation}) => {
     const {firstName, lastName, results} = res.data();
     if(results) {
       const latestScore = results[0].score;
-      const highNums = [...latestScore].sort((a,b) => b-a).slice(0,3);
-      const highs = []; 
-      const lows = [];
-      let core;
-      //GET HIGHEST SCORE
-      highNums.forEach((num, idx) => {
-        if(idx === 0) {core = latestScore.indexOf(num) + 1; return};
-        highs.push(latestScore.indexOf(num) + 1);
-      });
-      //GET 2 LOWEST SCORE
-      const lowNums = [...latestScore].sort((a,b) => a-b).slice(0,2);
-      lowNums.forEach((num) => {
-        lows.push(latestScore.indexOf(num) + 1);
-      });
-      console.log(latestScore, highNums, lowNums)
+      const [core, highs, lows] = useCalculateScore(latestScore);
       return {
         firstName,
         lastName,
