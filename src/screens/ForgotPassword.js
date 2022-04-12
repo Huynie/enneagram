@@ -7,7 +7,7 @@ const ForgotPassword = () => {
   return (
     <View>
       <Graphic/>
-      <Text>Register</Text>
+      <Text>Forgot Password</Text>
       <Input/>
     </View>
   )

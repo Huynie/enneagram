@@ -36,7 +36,7 @@ export default function App() {
       }
     })
   }, []);
-
+  
   const navTheme = DefaultTheme;
   navTheme.colors.background = 'white';
   return (
@@ -50,7 +50,7 @@ export default function App() {
             options={{
               tabBarIcon: makeIconRender("login"),
               headerShown: false,
-              tabBarButton: user ?  undefined :() => null
+              tabBarButton: user ?  () => null :undefined
             }}
           />
           <Tab.Screen
@@ -59,7 +59,7 @@ export default function App() {
             options={{
               tabBarIcon: makeIconRender("view-dashboard"),
               headerShown: false,
-              tabBarButton: user ? () => null : undefined ,
+              tabBarButton: user ? undefined : () => null ,
               tabBarVisible: false
             }}
           />
