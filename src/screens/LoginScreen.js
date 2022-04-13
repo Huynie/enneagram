@@ -3,7 +3,13 @@ import { Text, View, TextInput, StyleSheet,  } from "react-native";
 import Graphic from '../component/graphic';
 import Button from "../component/Button";
 import { auth, db } from "../firebase/config";
-import { signInWithEmailAndPassword } from "@firebase/auth";
+import { 
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  FacebookAuthProvider,
+ } from "@firebase/auth";
 
 const Login = ({navigation}) => {
   const [email, setEmail] = React.useState("test@test.com");

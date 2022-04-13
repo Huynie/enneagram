@@ -7,7 +7,6 @@ import TestScreen from "./src/screens/TestScreen";
 import Dashboard from "./src/screens/Dashboard";
 import Register from "./src/screens/Register";
 import ForgotPassword from "./src/screens/ForgotPassword";
-import ReactQuery from "./src/component/reactQuery";
 import { QueryClientProvider, QueryClient, useQuery } from 'react-query';
 import { db, auth } from './src/firebase/config';
 import { doc, getDoc } from "firebase/firestore/lite";
@@ -36,7 +35,7 @@ export default function App() {
       }
     })
   }, []);
-  
+
   const navTheme = DefaultTheme;
   navTheme.colors.background = 'white';
   return (
@@ -81,14 +80,6 @@ export default function App() {
           <Tab.Screen
             name="Forgot Password"
             component={ForgotPassword}
-            options={{
-              headerShown: false,
-              tabBarButton: () => null
-            }}
-          />
-          <Tab.Screen
-            name="React Query"
-            component={ReactQuery}
             options={{
               headerShown: false,
               tabBarButton: () => null

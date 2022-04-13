@@ -19,8 +19,10 @@
 // export { firebase };
 
 import {initializeApp} from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, initializeAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore/lite';
+import { getReactNativePersistence } from 'firebase/auth/react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const firebaseApp = initializeApp({
   apiKey: "AIzaSyCULs8RNL-aOMXhpBUrX7Mn7fyIov9h6Tc",
@@ -30,7 +32,9 @@ export const firebaseApp = initializeApp({
   messagingSenderId: "1096010449978",
   appId: "1:1096010449978:web:ce2c4b7cf9f955d3746103",
   measurementId: "G-K9KVYT5P2M"
+  
 });
 
 export const db = getFirestore(firebaseApp);
-export const auth = getAuth(firebaseApp);
+// export const auth = getAuth(firebaseApp);
+export const auth = initializeAuth(firebaseApp, { persistence: getReactNativePersistence(AsyncStorage) })

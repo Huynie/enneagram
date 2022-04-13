@@ -7,17 +7,12 @@ import { Description, TypeTitle } from '../component/Results';
 import { signOut } from '@firebase/auth';
 import Avatar from '../component/Avatar';
 import { db, auth } from '../firebase/config';
-import { doc, getDoc, setDoc, updateDoc, arrayRemove } from "firebase/firestore/lite"
-import { useQuery, useMutation } from 'react-query';
-import Types from '../types.json';
-import useCalculateScore from '../hooks/useCalculateScore';
 import { useGetUser, useDeleteResult, useAddResult } from '../hooks/useFirebaseQuery';
+// import AsyncStorage from '@async-storage';
 
 const Dashboard = ({navigation}) => {
   const {isLoading, data, error} = useGetUser();
-
   const deleteResult = useDeleteResult();
-
   const addDummyResults = useAddResult();
 
   const logOut = async() => {
