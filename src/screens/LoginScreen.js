@@ -3,21 +3,16 @@ import { Text, View, TextInput, StyleSheet,  } from "react-native";
 import Graphic from '../component/graphic';
 import Button from "../component/Button";
 import { auth, db } from "../firebase/config";
-import { 
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
-  GithubAuthProvider,
-  FacebookAuthProvider,
- } from "@firebase/auth";
+import { signInWithEmailAndPassword } from "@firebase/auth";
+import OauthButtons from '../component/OauthButtons';
 
 const Login = ({navigation}) => {
-  const [email, setEmail] = React.useState("test@test.com");
+  const [email, setEmail] = React.useState("test2@test.com");
   const [password, setPassword] = React.useState("test123");
   const signIn = async () => {
     try {
-      const user = await signInWithEmailAndPassword(auth, email, password);
-      navigation.navigate('Dashboard', {user});
+      await signInWithEmailAndPassword(auth, email, password);
+      navigation.navigate('Dashboard');
     } catch (error) {
       console.log(error)
     }
@@ -56,6 +51,7 @@ const Login = ({navigation}) => {
           onPress={() => navigation.navigate('Register')}
         >Register Here</Text>
       </View>
+      <OauthButtons/>
     </View>
   );
 };

@@ -12,28 +12,31 @@ import { db, auth } from './src/firebase/config';
 import { doc, getDoc } from "firebase/firestore/lite";
 import { onAuthStateChanged } from 'firebase/auth';
 import * as React from 'react';
-
+import {View, Text} from 'react-native';
 
 const queryClient = new QueryClient();
 const Tab = createBottomTabNavigator();
+
+// firebase is connected from onAuthStateChange
+// default initializing component is needed
+// otherwise _config.auth.currentUser is null error
+
+const Spinner = () => (
+  <View>
+    <Text>Loading...</Text>
+  </View>
+)
 
 export default function App() {
   const [user, setUser] = React.useState(null);
 
   React.useEffect(() => {
-    onAuthStateChanged(auth, user => {
-      if (user) {
-        setUser(user);
-        // console.log(user);
-        // const userDatabase = doc(db, "users", auth.currentUser.uid);
-        // getDoc(userDatabase)
-        // .then(data => {
-        //   console.log(data);
-        // })
-      } else {
-        setUser(null)
-      }
-    })
+    const subscriber = onAuthStateChanged(auth, user => {
+      setUser(user);
+      console.log(user)
+    });
+    auth.currentUser ? console.log(auth.currentUser) : console.log('no user: ', user)
+    return subscriber;
   }, []);
 
   const navTheme = DefaultTheme;
@@ -54,12 +57,12 @@ export default function App() {
           />
           <Tab.Screen
             name="Dashboard"
-            component={Dashboard}
+            component={user ? Dashboard : Spinner}
             options={{
               tabBarIcon: makeIconRender("view-dashboard"),
               headerShown: false,
               tabBarButton: user ? undefined : () => null ,
-              tabBarVisible: false
+              // tabBarVisible: false
             }}
           />
           <Tab.Screen

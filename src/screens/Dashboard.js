@@ -8,7 +8,7 @@ import { signOut } from '@firebase/auth';
 import Avatar from '../component/Avatar';
 import { db, auth } from '../firebase/config';
 import { useGetUser, useDeleteResult, useAddResult } from '../hooks/useFirebaseQuery';
-// import AsyncStorage from '@async-storage';
+import { RadarChart } from 'react-native-charts-wrapper';
 
 const Dashboard = ({navigation}) => {
   const {isLoading, data, error} = useGetUser();
@@ -109,6 +109,21 @@ const Dashboard = ({navigation}) => {
         <View style={styles.divider}/>
         <View style={{alignItems: 'center'}}>
           <Text style={styles.sectionTitle}>Radar Chart</Text>
+          {/* {
+            !isLoading ?
+            <RadarChart
+            data={{
+              dataSets:[
+                {
+                  label: 'latest',
+                  values: data.results[0].score
+                }
+              ]
+            }}
+            />
+            :
+            <Text>{data?.results[0].score}</Text>
+          } */}
         </View>
         <View style={styles.divider}/>
         <View style={{alignItems: 'center'}}>
