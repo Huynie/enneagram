@@ -39,17 +39,27 @@ const Login = ({navigation}) => {
           title="Login"
           onPress={() => signIn()}
         />
-        <View style={{flexDirection: 'row', marginTop:  10}}>
-          <Text>Forgot Password?</Text>
+        <View style={{flexDirection: 'row', marginTop: 10, marginBottom: 5}}>
+          <Text style={{fontSize: 16, color: 'gray'}}>
+            Forgot Password? </Text>
           <Text
-            style={{color: 'blue'}}
+            style={{fontSize: 16, color: 'gray', fontWeight: '700'}}
             onPress={() => navigation.navigate('Forgot Password')}
-            >Click here</Text>
+          >
+            Click here
+          </Text>
         </View>
-        <Text
-          style={{color: 'blue'}}
-          onPress={() => navigation.navigate('Register')}
-        >Register Here</Text>
+        <View
+          style={{flexDirection: 'row',}}
+        >
+          <Text style={{color: 'gray', fontSize: 16}}>Register </Text>
+          <Text
+             style={{color: 'gray', fontSize: 16, fontWeight: '700'}}
+             onPress={() => navigation.navigate('Register')}
+          >
+            here
+          </Text>
+        </View>
       </View>
       <OauthButtons/>
     </View>

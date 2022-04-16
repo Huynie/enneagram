@@ -111,6 +111,7 @@ const OauthButtons = ({navigation}) => {
   }
   return (
     <View style={{padding: 10, justifyContent: 'space-between', height: 250}}>
+      <View style={{borderColor: 'gray', borderWidth: 0.5, width: 250, alignSelf: 'center'}}/>
       <Text style={{color: 'gray', fontSize: 16, marginVertical: 10, alignSelf: 'center'}}>or continue with</Text>
       <Button
         title="google"
