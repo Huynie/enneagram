@@ -92,7 +92,7 @@ export default {
             if(
                 this.firstName !== "" &&
                 this.lastName !== "" &&
-                this.username !== "" &&
+                // this.username !== "" &&
                 this.email !== "" &&
                 this.password !== "" 
             ) {
@@ -108,7 +108,7 @@ export default {
                     const userData = {
                         firstName: this.firstName,
                         lastName: this.lastName,
-                        userName: this.username,
+                        // userName: this.username,
                         email: this.email,
                         results: resultExist,
                     };
