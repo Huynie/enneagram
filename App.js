@@ -8,7 +8,7 @@ import Dashboard from "./src/screens/Dashboard";
 import Register from "./src/screens/Register";
 import ForgotPassword from "./src/screens/ForgotPassword";
 import { QueryClientProvider, QueryClient, useQuery } from 'react-query';
-import { db, auth } from './src/firebase/config';
+import { db, auth } from './src/firebaseConfig/config';
 import { doc, getDoc } from "firebase/firestore/lite";
 import { onAuthStateChanged } from 'firebase/auth';
 import * as React from 'react';
@@ -32,10 +32,9 @@ export default function App() {
 
   React.useEffect(() => {
     const subscriber = onAuthStateChanged(auth, user => {
-      setUser(user);
-      console.log(user)
+      setUser(user)
+      console.log('Auth State Changed: ', user ? 'logged in' : 'no user')
     });
-    auth.currentUser ? console.log(auth.currentUser) : console.log('no user: ', user)
     return subscriber;
   }, []);
 

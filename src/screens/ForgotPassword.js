@@ -4,7 +4,7 @@ import Graphic from '../component/graphic';
 import Button from '../component/Button';
 import { Input } from 'react-native-elements';
 import { sendPasswordResetEmail } from '@firebase/auth';
-import { auth, db } from "../firebase/config";
+import { auth, db } from "../firebaseConfig/config";
 
 const ForgotPassword = () => {
   const [email, setEmail] = React.useState('');

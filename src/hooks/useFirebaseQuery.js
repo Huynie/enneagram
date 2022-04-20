@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
-import { db, auth } from '../firebase/config';
+import { db, auth } from '../firebaseConfig/config';
 import { doc, getDoc, setDoc, updateDoc,arrayUnion, arrayRemove } from "firebase/firestore/lite";
 
 
@@ -30,8 +30,8 @@ const invalidateQuery = () => {
 const fetchUser =  async () => {
   const userDatabase = doc(db, "users", auth.currentUser.uid);
   const res = await getDoc(userDatabase);
-  const {firstName, lastName, results} = await res.data();
-  if(results) {
+  const {firstName, lastName, results} = res.data();
+  if(results !== []) {
     const latestScore = results[0].score;
     const [core, highs, lows] = breakDownScore(latestScore);
     return {

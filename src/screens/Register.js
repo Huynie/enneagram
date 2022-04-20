@@ -4,7 +4,7 @@ import Graphic from '../component/graphic';
 import Button from "../component/Button";
 import { Input } from 'react-native-elements';
 import OauthButtons from '../component/OauthButtons';
-import { auth, db } from "../firebase/config";
+import { auth, db } from "../firebaseConfig/config";
 import { createUserWithEmailAndPassword } from '@firebase/auth';
 import { setDoc, doc, arrayUnion } from '@firebase/firestore/lite';
 

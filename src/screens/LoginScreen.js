@@ -2,19 +2,19 @@ import * as React from 'react';
 import { Text, View, TextInput, StyleSheet,  } from "react-native";
 import Graphic from '../component/graphic';
 import Button from "../component/Button";
-import { auth, db } from "../firebase/config";
-import { signInWithEmailAndPassword } from "@firebase/auth";
+import { auth, db } from "../firebaseConfig/config";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import OauthButtons from '../component/OauthButtons';
 
 const Login = ({navigation}) => {
-  const [email, setEmail] = React.useState("test2@test.com");
+  const [email, setEmail] = React.useState("test@test.com");
   const [password, setPassword] = React.useState("test123");
   const signIn = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigation.navigate('Dashboard');
     } catch (error) {
-      console.log(error)
+      console.log(error.message)
     }
   };
 
@@ -61,7 +61,7 @@ const Login = ({navigation}) => {
           </Text>
         </View>
       </View>
-      <OauthButtons/>
+      <OauthButtons navigation={navigation}/>
     </View>
   );
 };

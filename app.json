@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "engram",
+    "slug": "engram",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "usesAppleSignIn": true
+    },
+    "scheme": "engramredirects"
+  }
+}

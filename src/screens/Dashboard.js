@@ -6,9 +6,8 @@ import Score from '../component/Score';
 import { Description, TypeTitle } from '../component/Results';
 import { signOut } from '@firebase/auth';
 import Avatar from '../component/Avatar';
-import { db, auth } from '../firebase/config';
+import { db, auth } from '../firebaseConfig/config';
 import { useGetUser, useDeleteResult, useAddResult } from '../hooks/useFirebaseQuery';
-import { RadarChart } from 'react-native-charts-wrapper';
 
 const Dashboard = ({navigation}) => {
   const {isLoading, data, error} = useGetUser();
@@ -52,12 +51,8 @@ const Dashboard = ({navigation}) => {
           onPress={() => addDummyResults.mutate([1,1,1,1,1,1,1,1,1])}
         />
         <View style={styles.typeBreakdown}>
-          {/* <View style={{alignItems: 'center', marginBottom: 10}}>
-            <Text>{!isLoading ? Types[data.core - 1].type : '...'}</Text>
-            <Text>Type 1</Text>
-          </View> */}
           {
-            !isLoading ?
+            !isLoading && data.results ?
             <TypeTitle core={data.core}/>
             :
             <Text>...</Text>
@@ -66,7 +61,7 @@ const Dashboard = ({navigation}) => {
             <View style={{flex: 1, alignItems: 'center'}}>
               <Text style={{fontSize: 18, fontWeight: '700', color: 'gray', marginVertical: 5}}>Highs</Text>
               <View style={{flexDirection: 'row'}}>
-                {!isLoading ?
+                {!isLoading && data.results ?
                   data.highs.map((num, idx) => {
                     return(
                       <View key={idx} style={styles.highsLows}>
@@ -82,7 +77,7 @@ const Dashboard = ({navigation}) => {
             <View style={{flex: 1, alignItems: 'center'}}>
               <Text style={{fontSize: 18, fontWeight: '700', color: 'gray', marginVertical: 10}}>Lows</Text>
               <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                {!isLoading ?
+                {!isLoading && data.results ?
                   data.lows.map((num, idx) => {
                     return(
                       <View key={idx} style={styles.highsLows}>
@@ -99,7 +94,7 @@ const Dashboard = ({navigation}) => {
         </View>
         <View style={{paddingHorizontal: 20}}>
           {
-            !isLoading ? 
+            !isLoading && data.results ? 
             <Description core={data.core}/>
             :
             <Text>...</Text>
@@ -109,26 +104,11 @@ const Dashboard = ({navigation}) => {
         <View style={styles.divider}/>
         <View style={{alignItems: 'center'}}>
           <Text style={styles.sectionTitle}>Radar Chart</Text>
-          {/* {
-            !isLoading ?
-            <RadarChart
-            data={{
-              dataSets:[
-                {
-                  label: 'latest',
-                  values: data.results[0].score
-                }
-              ]
-            }}
-            />
-            :
-            <Text>{data?.results[0].score}</Text>
-          } */}
         </View>
         <View style={styles.divider}/>
         <View style={{alignItems: 'center'}}>
           <Text style={styles.sectionTitle}>History</Text>
-          {!isLoading ? 
+          {!isLoading && data.results ? 
             data.results.map((result, idx) => {
               return (
                 <View key={idx} style={{marginVertical: 16}}>
