@@ -13,6 +13,9 @@ import { doc, getDoc } from "firebase/firestore/lite";
 import { onAuthStateChanged } from 'firebase/auth';
 import * as React from 'react';
 import {View, Text} from 'react-native';
+import Button from './src/component/Button';
+import { useAuthRequest, makeRedirectUri } from "expo-auth-session";
+
 
 const queryClient = new QueryClient();
 const Tab = createBottomTabNavigator();

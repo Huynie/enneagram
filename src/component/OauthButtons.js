@@ -39,7 +39,7 @@ const OauthButtons = ({navigation}) => {
         backgroundColor='black'
         containerStyle={styles.OauthButtonContainer}
         textStyle={styles.OauthButtonText}
-        onPress={signInWith.github}
+        onPress={() => signInWith.github({useProxy: true})}
       />
       {appleAvailable ? 
         <AppleAuthentication.AppleAuthenticationButton
