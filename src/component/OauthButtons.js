@@ -1,14 +1,11 @@
 import * as React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Button from './Button';
-import { db, auth } from '../firebaseConfig/config';
-// import { doc, getDoc, setDoc, updateDoc,arrayUnion, arrayRemove } from "firebase/firestore/lite";
 import useProviderSignIn from '../hooks/useProviderSignIn';
 import * as AppleAuthentication from 'expo-apple-authentication';
 
 
 const OauthButtons = ({navigation}) => {
-  // const navigation = useNavigation();
   const [appleAvailable, setAppleAvailable] = React.useState(false);
   React.useEffect(() => {
     AppleAuthentication.isAvailableAsync().then(setAppleAvailable(true))
@@ -34,19 +31,21 @@ const OauthButtons = ({navigation}) => {
         containerStyle={styles.OauthButtonContainer}
         onPress={signInWith.facebook}
       />
-      <Button
+      {/* // Github only offers 1 redirect per app
+        // so web will be the only platform using github Oauth
+       <Button
         title="github"
         backgroundColor='black'
         containerStyle={styles.OauthButtonContainer}
         textStyle={styles.OauthButtonText}
-        onPress={() => signInWith.github({useProxy: true})}
-      />
+        onPress={() => (signInWith('github'))({useProxy:true})}
+      /> */}
       {appleAvailable ? 
         <AppleAuthentication.AppleAuthenticationButton
           buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.BLACK}
           buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
           cornerRadius={25}
-          onPress={signInWith.apple}
+          onPress={() => console.log('apple log in')}
           style={{ width: 250, height: 50, borderRadius: 10, alignSelf: 'center' }}
         />
         :
