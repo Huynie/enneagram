@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-auto p-10 text-center">
+    <div class="mx-auto p-10 text-center h-screen">
         <!-- QUESTION NUMBER COUNTER -->
         <!-- <h1 class="font-bold text-2xl">
             Question {{JSON.parse(counter) + 1}}/{{totalQuestions.length}}

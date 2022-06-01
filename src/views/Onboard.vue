@@ -3,9 +3,9 @@
     <div class=" relative banner bg-primary">
       <h1 class="text-5xl text-pink-500 mx-auto w-max font-bold">Welcome to</h1>
       <div>
-        <h1 class="text-6xl text-white mx-auto w-max font-semibold">En-Gram</h1>
+        <h1 class="mb-20 text-6xl text-white mx-auto w-max font-semibold">En-Gram</h1>
       </div>
-      <img :src="require('@/assets/landing-graphic.png')" class="w-3/5 md:w-2/5 max-w-800 max-h-800"/>
+      <img :src="require('@/assets/landing-graphic.png')" class="logo"/>
       <div class="mt-20 cursor-pointer transform hover:translate-y-5 transition-all" @click="scrollDown">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
@@ -74,6 +74,16 @@ export default {
   }
   .banner__copy{
     @apply text-2xl md:text-5xl text-pink-500 mx-auto w-4/5 md:w-1/2 text-center font-medium;
+  }
+
+  .logo{
+    filter: drop-shadow(0 30px 8px rgb(159, 159, 159));
+    @apply
+    drop-shadow-2xl
+    w-3/5
+    md:w-2/5
+    max-w-800
+    max-h-800 
   }
 
   @media only screen and (max-height: 800px) {
