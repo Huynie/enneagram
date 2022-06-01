@@ -51,9 +51,6 @@ export default {
   .home{
     scroll-behavior: smooth;
   }
-  .landing{
-    @apply bg-primary;
-  }
   .banner{
     @apply w-full h-screen flex flex-col justify-center items-center min-h-700;
   }
@@ -77,19 +74,18 @@ export default {
   }
 
   .logo{
-    filter: drop-shadow(0 30px 8px rgb(159, 159, 159));
     @apply
-    drop-shadow-2xl
     w-3/5
     md:w-2/5
     max-w-800
-    max-h-800 
+    max-h-800;
+
+    filter: drop-shadow(0 30px 8px rgb(159, 159, 159));
   }
 
-  @media only screen and (max-height: 800px) {
-    /* prevents landing banner from cliping into navbar at small screen height */
-    .landing{
-      @apply h-full;
+  @media (max-width: 800px) {
+    .logo{
+      filter: drop-shadow(0 15px 6px rgb(159, 159, 159)) !important;
     }
 }
 </style>
