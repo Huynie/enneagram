@@ -85,7 +85,7 @@ export default {
 
   @media (max-width: 800px) {
     .logo{
-      filter: drop-shadow(0 15px 6px rgb(159, 159, 159)) !important;
+      filter: drop-shadow(0 15px 6px rgb(159, 159, 159));
     }
 }
 </style>
