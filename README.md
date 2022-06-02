@@ -28,7 +28,9 @@ npm run build
 <p>Test is taken without an option to return to previous question to discourage overthinking of questions. Users should answer in a timely manner and what first comes to mind.</P>
 <p>Demo version has significantly less questions than the real one.</p>
 
-![test](../vue/readme/test.JPG)
+<p align="center">
+  <img src="../vue/readme/test.JPG" width="500"/>
+</p>
 
 
 <br/>
@@ -45,7 +47,7 @@ npm run build
 
 <p>Saved scores of your test results organized from newest to oldest.</P>
 <p align="center">
-  <img src="readme/history.JPG" width="500"/>
+  <img src="../vue/readme/history.JPG" width="500"/>
 </p?
 <br/>
 
@@ -53,7 +55,7 @@ npm run build
 
 <p>A radar chart comparing 3 of your latest results to gauge health state.</P>
 <p align="center">
-  <img src="readme/chart.JPG" width="500"/>
+  <img src="../vue/readme/chart.JPG" width="500"/>
 </p>
 <br/>
 
