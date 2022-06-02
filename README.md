@@ -27,7 +27,10 @@ npm run build
 
 <p>Test is taken without an option to return to previous question to discourage overthinking of questions. Users should answer in a timely manner and what first comes to mind.</P>
 <p>Demo version has significantly less questions than the real one.</p>
-<img align="center" src="readme/test.JPG" width="500"/>
+<p align="center">
+  <img src="readme/test.JPG" width="500"/>  
+</p>
+
 
 <br/>
 
