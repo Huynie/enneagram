@@ -26,7 +26,7 @@ npm run build
 
 <p>Test is taken without an option to return to previous question to discourage overthinking of questions. Users should answer in a timely manner and what first comes to mind.</P>
 <p>Demo version has significantly less questions than the real one.</p>
-<img src="https://github.com/Huynie/enneagram/blob/verbatim/readme/test.JPG" width="500"/>
+<img src="https://github.com/Huynie/enneagram/blob/vue/readme/test.jpg" width="500"/>
 <br/>
 
 ## Type Profile
