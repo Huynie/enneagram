@@ -1,7 +1,7 @@
 # EN-GRAM
 
 ![logo](../vue/readme/homepage.png)
-An enneagram personality test that tracks your mental health by comparing the history of your scores with your most recent scores.
+A personality test offering registered users features to track their mental health over time based on the enneagram health state system. Built using firebase for backend database and user accounts, ReactJS and React Query for front end data handling and components.
 
 <br/>
 
