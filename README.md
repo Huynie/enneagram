@@ -30,7 +30,7 @@ npm run build
 <p align="center">
   <img src="readme/test.JPG" width="500"/>  
 </p>
-
+![logo](../vue/readme/homepage.png)
 
 <br/>
 
