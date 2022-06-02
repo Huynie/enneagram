@@ -28,7 +28,7 @@ npm run build
 <p>Test is taken without an option to return to previous question to discourage overthinking of questions. Users should answer in a timely manner and what first comes to mind.</P>
 <p>Demo version has significantly less questions than the real one.</p>
 
-![test](../vue/readme/test.jpg)
+![test](../vue/readme/test.JPG)
 
 
 <br/>
