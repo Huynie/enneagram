@@ -33,8 +33,7 @@ npm run build
 ## Type Profile
 
 <p>Your core type is the highest scored type.  Your highs are the 2nd and 3rd highest type and your lows are your lowest 2 type.</p>
-<img src="https://user-images.githubusercontent.com/16319058/171530951-32d933f6-311b-4e74-afff-4e8fb5ec67d3.png
-" width="500"/>
+<img src="https://user-images.githubusercontent.com/16319058/171530951-32d933f6-311b-4e74-afff-4e8fb5ec67d3.png" width="500"/>
 
 <br/>
 
