@@ -28,6 +28,7 @@ npm run build
 <p>Test is taken without an option to return to previous question to discourage overthinking of questions. Users should answer in a timely manner and what first comes to mind.</P>
 <p>Demo version has significantly less questions than the real one.</p>
 <img src="https://user-images.githubusercontent.com/16319058/171530700-787d2311-1616-4f69-869f-dd1c7498f4e3.png" width="700"/>
+![test](../vue/readme/test.jpg)
 
 <br/>
 
