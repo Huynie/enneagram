@@ -37,21 +37,25 @@ npm run build
 ## Type Profile
 
 <p>Your core type is the highest scored type.  Your highs are the 2nd and 3rd highest type and your lows are your lowest 2 type.</p>
-<img src="readme/breakdown.JPG" width="800"/>
-
+<p align="center">
+  <img src="readme/breakdown.JPG" width="500"/>
+</p>
 <br/>
 
 ## Result History
 
 <p>Saved scores of your test results organized from newest to oldest.</P>
-<img src="readme/history.JPG" width="800"/>
-
+<p align="center">
+  <img src="readme/history.JPG" width="500"/>
+</p?
 <br/>
 
 ## Chart
 
 <p>A radar chart comparing 3 of your latest results to gauge health state.</P>
-<img src="readme/chart.JPG" width="800"/>
+<p align="center">
+  <img src="readme/chart.JPG" width="500"/>
+</p>
 <br/>
 
 <br/>
