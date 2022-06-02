@@ -37,7 +37,7 @@ npm run build
 
 <p>Your core type is the highest scored type.  Your highs are the 2nd and 3rd highest type and your lows are your lowest 2 type.</p>
 <p align="center">
-  <img src="readme/breakdown.JPG" width="500"/>
+  <img src="../vue/readme/breakdown.JPG" width="500"/>
 </p>
 <br/>
 
