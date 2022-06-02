@@ -77,7 +77,7 @@ export default {
     @apply
     w-3/5
     md:w-2/5
-    max-w-800
+    max-w-600
     max-h-800;
 
     filter: drop-shadow(0 30px 8px rgb(159, 159, 159));
