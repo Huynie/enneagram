@@ -33,21 +33,22 @@ npm run build
 ## Type Profile
 
 <p>Your core type is the highest scored type.  Your highs are the 2nd and 3rd highest type and your lows are your lowest 2 type.</p>
-<img src="https://github.com/Huynie/enneagram/blob/verbatim/readme/breakdown.JPG" width="500"/>
+<img src="https://user-images.githubusercontent.com/16319058/171530951-32d933f6-311b-4e74-afff-4e8fb5ec67d3.png
+" width="500"/>
 
 <br/>
 
 ## Result History
 
 <p>Saved scores of your test results organized from newest to oldest.</P>
-<img src="https://github.com/Huynie/enneagram/blob/verbatim/readme/history.JPG" width="500"/>
+<img src="https://user-images.githubusercontent.com/16319058/171531400-f8bec213-c732-4e0b-8d9b-d286eec0388a.png" width="500"/>
 
 <br/>
 
 ## Chart
 
 <p>A radar chart comparing 3 of your latest results to gauge health state.</P>
-<img src="https://github.com/Huynie/enneagram/blob/verbatim/readme/chart.JPG" width="500"/>
+<img src="https://user-images.githubusercontent.com/16319058/171531145-e6051c74-0f8c-4802-bcae-9afdc09c846b.png" width="500"/>
 <br/>
 
 <br/>
