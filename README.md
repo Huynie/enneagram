@@ -2,7 +2,7 @@
 
 ![logo](../vue/readme/homepage.png)
 An enneagram personality test that tracks your mental health by comparing the history of your scores with your most recent scores.
-
+![logo](../vue/readme/homepage.png)
 <br/>
 
 ### Project setup
@@ -30,7 +30,7 @@ npm run build
 <p align="center">
   <img src="readme/test.JPG" width="500"/>  
 </p>
-![logo](../vue/readme/homepage.png)
+
 
 <br/>
 
