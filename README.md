@@ -22,9 +22,9 @@ npm run serve
 ```
 npm run build
 ```
-![logo](../vue/readme/homepage.png)
-## Test
 
+## Test
+![logo](../vue/readme/homepage.png)
 <p>Test is taken without an option to return to previous question to discourage overthinking of questions. Users should answer in a timely manner and what first comes to mind.</P>
 <p>Demo version has significantly less questions than the real one.</p>
 <p align="center">
