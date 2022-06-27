@@ -28,4 +28,8 @@ export default {
   html, body {
     font-family: 'Work Sans', sans-serif;
   }
+  .app{
+    @apply
+    h-screen;
+  }
 </style>

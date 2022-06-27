@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-auto p-10 text-center h-screen">
+    <div class="test__page">
         <!-- QUESTION NUMBER COUNTER -->
         <!-- <h1 class="font-bold text-2xl">
             Question {{JSON.parse(counter) + 1}}/{{totalQuestions.length}}
@@ -205,7 +205,16 @@ export default {
 }
 </script>
 
-<style >
+<style>
+.test__page{
+    @apply
+        mx-auto
+        p-10
+        text-center
+        h-screen
+        overflow-scroll
+    ;
+}
 .test__btn{
     @apply
         bg-questions
